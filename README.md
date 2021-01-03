@@ -72,6 +72,25 @@ Grid system
 | to                      | mixin                             | true
 | from                    | mixin                             | true
 
+example
+```
+.query(xs,{.p(1px); color:red}, 1200px, .m(2px));
+```
+```
+@media (min-width: 540px) and (max-width: 1200px) {
+  .class-grid {
+    padding: 1px;
+    color: red;
+  }
+}
+
+@media (min-width: 1200px) {
+  .class-grid {
+    margin: 2px;
+  }
+}
+```
+
 Shift mixin
 | name mixin              | input  or type                    | prefix      | output          | grid system
 |:---|:---|:---|:---|:---
@@ -101,10 +120,14 @@ example grid system
 }
 ```
 
-Text
+Short mixin (emmet type)
 | example name            | post prefix | output          | grid system
 |:---|:---|:---|:---
 | t                       | a d i s t v | text            | true
+| w                       | b s w       | word            | true
+| fx                      | b d f g s w | flex            | true
+| b                       | sh b        | box             | true
+
 
 example
 ```
@@ -129,6 +152,8 @@ Standart mixin
 | w                       | number                            | width           | true
 | h                       | number                            | height          | true
 | va                      | number                            | vertical-align  | true
+| fx                      | grow shrink basis                 | flex            | true
+
 
 
 Position
