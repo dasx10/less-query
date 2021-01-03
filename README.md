@@ -105,6 +105,7 @@ Text
 | example name            | post prefix | output          | grid system
 |:---|:---|:---|:---
 | t                       | a d i s t v | text            | true
+
 example
 ```
 .tt(uppercase);
