@@ -13,16 +13,16 @@ set the entry point to your file
 
 
 ## example 
-
+|
 .class-grid{
     .row
     .class-col{
         .col(12, xs , 6 , sm , 4 , md, 3, lg, 2)
     }
 }
-
+|
 ## output 
-
+|
 .class-grid {
   margin-left: -15px;
   margin-right: -15px;
@@ -65,7 +65,7 @@ set the entry point to your file
     margin-right: 15px;
   }
 }
-
+|
 ## mixin 
 
 Grid system
@@ -85,7 +85,7 @@ Shift mixin
 
 post prefix name
 | prefix name             | output     
-|:---|:---|:---|:---
+|:---|:---
 | l                       | left      
 | r                       | right 
 | t                       | top     
@@ -105,7 +105,7 @@ Border
 
 Standart mixin
 | name mixin              | input  or type                    | output          | grid system
-|:---|:---|:---|:---|:---|:---
+|:---|:---|:---|:---
 | d                       | display type                      | display         | true
 | ls                      | number                            | leter-spacyng   | true
 | lh                      | number                            | line-height     | true
