@@ -2,9 +2,9 @@
 Modified approach to responsive layout
 
 ## install
-
+```
 npm install -D less-query
-
+```
 
 ## use
 set the entry point to your file
@@ -78,16 +78,6 @@ Shift mixin
 | m                       | number                            | r l t b x y | margin          | true
 | p                       | number                            | r l t b x y | padding         | true
 
-post prefix name
-| prefix name             | output     
-|:---|:---
-| l                       | left      
-| r                       | right 
-| t                       | top     
-| b                       | bottom      
-| x                       | left right  
-| y                       | top bottom   
-
 example
 ```
 .mx(1px 2px);
@@ -99,7 +89,7 @@ margin-left:2px;
 example grid system
 ```
 .class{
-    .px(xs,2px);
+    .px(xs,1px);
 }
 ```
 ```
@@ -142,6 +132,16 @@ Text
 | example name            | post prefix | output          | grid system
 |:---|:---|:---|:---
 | t                       | a d i s t v | text            | true
+
+prefix name
+| prefix name             | output     
+|:---|:---
+| l                       | left      
+| r                       | right 
+| t                       | top     
+| b                       | bottom      
+| x                       | left right  
+| y                       | top bottom  
 
 post prefix name
 | prefix name             | input  or type                    | output     
