@@ -73,12 +73,13 @@ set the entry point to your file
 |:---|:---|:---|:---|:---|:---
 
 Grid
-| .row();                 | row row-reverse grid left right   |             |             |                 | true
-| .col();                 | number                            |             |             |                 | true
+|:---|:---|:---|:---|:---|:---
+| .row();                 | row row-reverse grid left right   | false       |   false     |  false          | true
+| .col();                 | number                            | false       |   false     |  false          | true
 
 
 
-
+|:---|:---|:---|:---|:---|:---
 | .bd();                  | number style color                | r l t b x y | w s c       | border          | true
 | .d();                   | display type                      |             |             | display         | true
 | .ls();                  | number                            |             |             | leter-spacyng   | true
@@ -93,6 +94,7 @@ Grid
 
 
 Position
+|:---|:---|:---|:---|:---|:---
 | .a();                   | number                            |             |             | all position    | true
 | .r();                   | number                            |             |             | right           | true
 | .l();                   | number                            |             |             | left            | true
