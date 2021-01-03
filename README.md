@@ -132,7 +132,7 @@ Text
 
 post prefix name
 | prefix name             | input  or type                    | output     
-|:---|:---|:---|:---
+|:---|:---|:---
 | a                       | keyword                           | align      
 | d                       | keyword                           | dicoration 
 | i                       | number                            | indent     
@@ -142,7 +142,7 @@ post prefix name
 
 example
 | example use             | input  or type                    | output                      
-|:---|:---|:---|:---
+|:---|:---|:---
 | .tt(uppercase)          | keyword                           | text-transform:uppercase;   
 
 Any
