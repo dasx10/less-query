@@ -16,7 +16,7 @@ set the entry point to your file
 ## example 
 
 .class-grid{
-    .row();
+    .row
     .class-col{
         .col(12, xs , 6 , sm , 4 , md, 3, lg, 2)
     }
@@ -69,37 +69,60 @@ set the entry point to your file
 
 ## mixin 
 
-Grid
+Grid system
 | name mixin              | input  or type                    | grid system
 |:---|:---|:---
-| .row();                 | row row-reverse grid left right   | true
-| .col();                 | number                            | true
+| row                     | row row-reverse grid left right   | true
+| col                     | number                            | true
+| query                   | mixin                             | true
+| to                      | mixin                             | true
+| from                    | mixin                             | true
 
 
-
+Standart mixin
 | name mixin              | input  or type                    | prefix      | post prefix | output          | grid system
 |:---|:---|:---|:---|:---|:---
-| .bd();                  | number style color                | r l t b x y | w s c       | border          | true
-| .d();                   | display type                      |             |             | display         | true
-| .ls();                  | number                            |             |             | leter-spacyng   | true
-| .lh();                  | number                            |             |             | line-height     | true
-| .m();                   | number                            | r l t b x y |             | margin          | true
-| .p();                   | number                            | r l t b x y |             | padding         | true
-| .rz();                  | keyword                           |             |             | resize          | true
-| .w();                   | number                            |             |             | width           | true
-| .h();                   | number                            |             |             | height          | true
-| .va();                  | number                            |             |             | vertical-align  | true
-
+| bd                      | number style color                | r l t b x y | w s c       | border          | true
+| d                       | display type                      |             |             | display         | true
+| ls                      | number                            |             |             | leter-spacyng   | true
+| lh                      | number                            |             |             | line-height     | true
+| m                       | number                            | r l t b x y |             | margin          | true
+| p                       | number                            | r l t b x y |             | padding         | true
+| rz                      | keyword                           |             |             | resize          | true
+| w                       | number                            |             |             | width           | true
+| h                       | number                            |             |             | height          | true
+| va                      | number                            |             |             | vertical-align  | true
 
 
 Position
 | name mixin              | input  or type                    | output          | grid system
 |:---|:---|:---|:---
-| .a();                   | number                            | all position    | true
-| .r();                   | number                            | right           | true
-| .l();                   | number                            | left            | true
-| .t();                   | number                            | top             | true
-| .b();                   | number                            | bottom          | true
+| a                       | number                            | all position    | true
+| r                       | number                            | right           | true
+| l                       | number                            | left            | true
+| t                       | number                            | top             | true
+| b                       | number                            | bottom          | true\
+
+
+Text
+| example name            | input  or type                    | prefix      | post prefix | output          | grid system
+|:---|:---|:---|:---|:---|:---
+| t                       |                                   |             | a d i s t v | text            | true
+
+| example use             | input  or type                    | output                      | grid system
+|:---|:---|:---|:---
+| .tt(uppercase)          | keyword                           | text-transform:uppercase;   | true
+
+| prefix name             | input  or type                    | output       | grid system
+|:---|:---|:---|:---
+| a                       | keyword                           | align        | true
+| d                       | keyword                           | dicoration   | true
+| i                       | number                            | indent       | true
+| s                       | keyword                           | style        | true
+| t                       | keyword                           | transform    | true
+| v                       | number                            | overflov     | true
+
+
 
 
 
