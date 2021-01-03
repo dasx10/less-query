@@ -70,7 +70,7 @@ set the entry point to your file
 ## mixin 
 
 | name mixin              | input  or type                    | prefix      | post prefix | output          | grid system
-| ---:|:---
+|:---|:---|:---|:---|:---|:---
 
 Grid
 | .row();                 | row row-reverse grid left right   |             |             |                 | true
