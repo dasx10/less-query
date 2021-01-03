@@ -1,0 +1,22 @@
+{
+  "name": "less-query",
+  "version": "1.0.1",
+  "description": "grid mixin for less ",
+  "main": "style.less",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dasx10/less-mixin.git"
+  },
+  "keywords": [
+    "less",
+    "mixin",
+    "media",
+    "query"
+  ],
+  "author": "<dasx10@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dasx10/less-mixin/issues"
+  },
+  "homepage": "https://github.com/dasx10/less-mixin#readme"
+}

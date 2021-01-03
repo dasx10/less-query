@@ -1,0 +1,19 @@
+// @import './_data.less';
+@import './width/_a.less';
+@import './width/_max.less';
+@import './width/_min.less';
+@import './height/_a.less';
+@import './height/_max.less';
+@import './height/_min.less';
+
+
+
+.fullscreen(@width:100,@height:@width){
+    width:~"@{width}vw";
+    height:~"@{width}vh";
+}
+
+.full(@width:100,@height:@width){
+    width:~"@{width}%";
+    height:~"@{width}%";
+}

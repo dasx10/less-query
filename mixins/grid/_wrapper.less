@@ -1,0 +1,25 @@
+.container-full(@px:@offset_one_side, @px_lg:@offset_lg_one_side, @px_md:@offset_md_one_side, @px_sm:@offset_sm_one_side, @px_xs:@offset_xs_one_side){
+    .px(@px);
+}
+
+.container(@width:@widthWrap){
+    .max-w(@width);
+    box-sizing: border-box;
+    .mx(auto);
+    .container-full();
+}
+
+.wrp(@width:@widthWrap){
+    box-sizing: border-box;
+    position: relative;
+    @val: ((@width) / 2);
+    @medW:@width + @offset;
+    @off:- @offset_one_side;
+    @media (max-width:@medW - @offset){
+        .px(@offset_one_side);
+    }
+    @media (min-width:@medW - @offset){
+        @padding_wrap : @val - (@offset_one_side);
+        .px(calc(50% - @padding_wrap));
+    }
+}

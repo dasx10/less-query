@@ -1,0 +1,19 @@
+.round(@radius:50%){
+    border-radius:@radius;
+}
+
+.circle(@size:30px){
+    .box(@size);
+    .round();
+}
+
+.elipse(@width:30px,@height:30px,@radius:0){
+    width:@width;
+    height:@height;
+    & when (@width >= @height ){
+        .round(@width / 2);
+    }
+    & when (@width < @height){
+        .round(@height / 2);
+    }
+}

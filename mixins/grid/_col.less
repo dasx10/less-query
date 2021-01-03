@@ -1,0 +1,199 @@
+.set-columns(@set_size : @default_columns, @set_length : @set_size, @set_row:flex){
+    
+    @columns_set_size : @set_size;
+    @columns_set_length : @set_length;
+    @set_col : @set_row;
+
+    .col(
+        @value_1-1 : @false, @value_2-1 : @false,
+        @value_1-2 : @false, @value_2-2 : @false,
+        @value_1-3 : @false, @value_2-3 : @false,
+        @value_1-4 : @false, @value_2-4 : @false,
+        @value_1-5 : @false, @value_2-5 : @false,
+        @value_1-6 : @false, @value_2-6 : @false,
+        @value_1-7 : @false, @value_2-7 : @false,
+        @value_1-8 : @false, @value_2-8 : @false,
+        @value_1-9 : @false, @value_2-9 : @false,
+        @value_1-10: @false, @value_2-10: @false,
+        @value_1-11: @false, @value_2-11: @false,
+        @value_1-12: @false, @value_2-12: @false
+    ){
+        
+        & when (includes(@breaks, @value_1-1) = 0){
+            .ww(
+                if(@value_1-1  = @false, @false, break-word), @value_2-1,
+                if(@value_1-2  = @false, @false, break-word), @value_2-2,
+                if(@value_1-3  = @false, @false, break-word), @value_2-3,
+                if(@value_1-4  = @false, @false, break-word), @value_2-4,
+                if(@value_1-5  = @false, @false, break-word), @value_2-5,
+                if(@value_1-6  = @false, @false, break-word), @value_2-6,
+                if(@value_1-7  = @false, @false, break-word), @value_2-7,
+                if(@value_1-8  = @false, @false, break-word), @value_2-8,
+                if(@value_1-9  = @false, @false, break-word), @value_2-9,
+                if(@value_1-10 = @false, @false, break-word), @value_2-10,
+                if(@value_1-11 = @false, @false, break-word), @value_2-11,
+                if(@value_1-12 = @false, @false, break-word), @value_2-12
+            );
+            .bz(
+                if(@value_1-1  = @false, @false, border-box), @value_2-1,
+                if(@value_1-2  = @false, @false, border-box), @value_2-2,
+                if(@value_1-3  = @false, @false, border-box), @value_2-3,
+                if(@value_1-4  = @false, @false, border-box), @value_2-4,
+                if(@value_1-5  = @false, @false, border-box), @value_2-5,
+                if(@value_1-6  = @false, @false, border-box), @value_2-6,
+                if(@value_1-7  = @false, @false, border-box), @value_2-7,
+                if(@value_1-8  = @false, @false, border-box), @value_2-8,
+                if(@value_1-9  = @false, @false, border-box), @value_2-9,
+                if(@value_1-10 = @false, @false, border-box), @value_2-10,
+                if(@value_1-11 = @false, @false, border-box), @value_2-11,
+                if(@value_1-12 = @false, @false, border-box), @value_2-12
+            );
+        }
+
+        & when (includes(@breaks, @value_1-1) = 1){
+            .bz(
+                if(@value_2-1  = @false, @false, border-box), @value_1-1,
+                if(@value_2-2  = @false, @false, border-box), @value_1-2,
+                if(@value_2-3  = @false, @false, border-box), @value_1-3,
+                if(@value_2-4  = @false, @false, border-box), @value_1-4,
+                if(@value_2-5  = @false, @false, border-box), @value_1-5,
+                if(@value_2-6  = @false, @false, border-box), @value_1-6,
+                if(@value_2-7  = @false, @false, border-box), @value_1-7,
+                if(@value_2-8  = @false, @false, border-box), @value_1-8,
+                if(@value_2-9  = @false, @false, border-box), @value_1-9,
+                if(@value_2-10 = @false, @false, border-box), @value_1-10,
+                if(@value_2-11 = @false, @false, border-box), @value_1-11,
+                if(@value_2-12 = @false, @false, border-box), @value_1-12
+            );
+            .ww(
+                if(@value_2-1  = @false, @false, break-word), @value_1-1,
+                if(@value_2-2  = @false, @false, break-word), @value_1-2,
+                if(@value_2-3  = @false, @false, break-word), @value_1-3,
+                if(@value_2-4  = @false, @false, break-word), @value_1-4,
+                if(@value_2-5  = @false, @false, break-word), @value_1-5,
+                if(@value_2-6  = @false, @false, break-word), @value_1-6,
+                if(@value_2-7  = @false, @false, break-word), @value_1-7,
+                if(@value_2-8  = @false, @false, break-word), @value_1-8,
+                if(@value_2-9  = @false, @false, break-word), @value_1-9,
+                if(@value_2-10 = @false, @false, break-word), @value_1-10,
+                if(@value_2-11 = @false, @false, break-word), @value_1-11,
+                if(@value_2-12 = @false, @false, break-word), @value_1-12
+            );
+        }
+        
+
+        & when (@set_col = inline-block),(@set_col = inline-flex),(@set_col = inline-grid),(@set_col = inline){
+            .col-ib(){
+                display: @set_col;
+                vertical-align: top;
+            }
+            .col-ib();
+        }
+
+        & when (@set_col = left) , (@set_col = right){
+            .col-float(){
+                float: @set_col;
+            }
+            .col-float();
+        }
+
+        // * init size column * //
+        .col-size(@column_size : @columns_set_size){
+            & when (@column_size > @columns_set_length){
+                console-error("Incorrect number of columns - maximum @{columns_set_length}")
+            }
+            & when not (@set_col = grid) {
+                @width_without_offset: 100% / @columns_set_length * @column_size;
+                width:~"calc(@{width_without_offset} - @{offset})";
+                .col-gap(1);
+            }
+        }
+        ._mixin-col(
+            @value_1-1  : @false, @value_2-1  : @false,
+            @value_1-2  : @false, @value_2-2  : @false,
+            @value_1-3  : @false, @value_2-3  : @false,
+            @value_1-4  : @false, @value_2-4  : @false,
+            @value_1-5  : @false, @value_2-5  : @false,
+            @value_1-6  : @false, @value_2-6  : @false,
+            @value_1-7  : @false, @value_2-7  : @false,
+            @value_1-8  : @false, @value_2-8  : @false,
+            @value_1-9  : @false, @value_2-9  : @false,
+            @value_1-10 : @false, @value_2-10 : @false,
+            @value_1-11 : @false, @value_2-11 : @false,
+            @value_1-12 : @false, @value_2-12 : @false
+        ){
+            
+            & when not (@value_1-1 = @false){
+                
+                & when(includes(@breaks, @value_1-1) = 0){
+                    
+                    
+                    & when not (@value_2-1 = @false){
+                        
+                        .break( .col-size(@value_1-1) , 0 , @breaks[@@value_2-1] );
+                        & when not (@value_1-2 = @false) {
+                            ._mixin-col(
+                                @value_2-1,  @value_1-2, 
+                                @value_2-2,  @value_1-3,
+                                @value_2-3,  @value_1-4,
+                                @value_2-4,  @value_1-5,
+                                @value_2-5,  @value_1-6,
+                                @value_2-6,  @value_1-6,
+                                @value_2-7,  @value_1-7,
+                                @value_2-8,  @value_1-8,
+                                @value_2-9,  @value_1-9,
+                                @value_2-10, @value_1-10,
+                                @value_2-11, @value_1-11,
+                                @value_2-12
+                            );
+                        }
+                    }
+                    & when ( @value_2-1 = @false ) {
+                        .col-size( @value_1-1 );
+                    }
+                }
+            
+                & when (includes(@breaks, @value_1-1) = 1){
+                    & when not(@value_1-2 = @false){
+                        .break( .col-size(@value_2-1) , @breaks[@@value_1-1], @breaks[@@value_1-2] );
+                        
+                        & when not (@value_2-2 = @false){
+                            ._mixin-col(
+                                @value_1-2,  @value_2-2, 
+                                @value_1-3,  @value_2-3,
+                                @value_1-4,  @value_2-4,
+                                @value_1-5,  @value_2-5,
+                                @value_1-6,  @value_2-6,
+                                @value_1-7,  @value_2-7, 
+                                @value_1-8,  @value_2-8,
+                                @value_1-9,  @value_2-9,
+                                @value_1-10, @value_2-10,
+                                @value_1-11, @value_2-11,
+                                @value_1-12, @value_2-12
+                            );
+                        }
+                    }
+                    & when (@value_1-2 = @false){
+                        .break( .col-size(@value_2-1) , @breaks[@@value_1-1])
+                    }
+                }
+            }    
+        }
+    
+        ._mixin-col(
+            @value_1-1, @value_2-1,
+            @value_1-2, @value_2-2,
+            @value_1-3, @value_2-3,
+            @value_1-4, @value_2-4,
+            @value_1-5, @value_2-5,
+            @value_1-6, @value_2-6,
+            @value_1-7, @value_2-7,
+            @value_1-8, @value_2-8,
+            @value_1-9, @value_2-9,
+            @value_1-10, @value_2-10,
+            @value_1-11, @value_2-11,
+            @value_1-12, @value_2-12
+        );
+        // * end init size column * //
+    }
+}

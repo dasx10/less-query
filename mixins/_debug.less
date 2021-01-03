@@ -1,0 +1,17 @@
+@plugin '../../plugin/dcol.js';
+
+.debug(){
+    body::before{
+        content:'';
+        position:fixed;
+        height: 100vh;
+        position: fixed;
+        width: 100%;
+        background: linear-gradient(
+        to right,
+        rgba(100,0,0,0.5) calc(100% / 12 - @offset), 
+        rgba(0,100,0,0.5) calc(100% / 12 - @offset) calc(100% / 12),
+        dcol(12,@offset)
+        );
+    }
+}

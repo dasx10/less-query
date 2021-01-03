@@ -1,0 +1,72 @@
+.triangle-t(@color, @l, @r:@l, @b:@l){
+    & when (isNumber(@color)){
+        .triangle-t(@color:#000, @l, @r, @b)
+    }
+    & when not (isNumber(@color)){
+        .box(0);
+        .bdwx(@l,@r);
+        .bdbw(@b);
+        .bdsxb(solid);
+        .bdcxb(transparent,@color);
+    }
+}
+
+.triangle-b(@color, @l, @r:@l, @b:@l){
+    & when (isNumber(@color)){
+        .triangle-b(@color:#000, @l, @r, @b)
+    }
+    & when not (isNumber(@color)){
+        .box(0);
+        .bdwx(@l,@r);
+        .bdtw(@b);
+        .bdsxt(solid);
+        .bdcxt(transparent,@color);
+    }
+}
+
+.triangle-l(@color, @l, @r:@l, @b:@l){
+    & when (isNumber(@color)){
+        .triangle-l(@color:#000, @l, @r, @b)
+    }
+    & when not (isNumber(@color)){
+        .box(0);
+        .bdwy(@l,@r);
+        .bdrw(@b);
+        .bdsyr(solid);
+        .bdcyr(transparent,@color);
+    }
+}
+.triangle-r(@color, @l, @r:@l, @b:@l){
+    & when (isNumber(@color)){
+        .triangle-r(@color:#000, @l, @r, @b)
+    }
+    & when not (isNumber(@color)){
+        .box(0);
+        .bdwy(@l,@r);
+        .bdlw(@b);
+        .bdsyl(solid);
+        .bdcyl(transparent,@color);
+    }
+}
+
+.triangle-rb(@color,@r,@t:@r){
+    & when (isNumber(@color)){
+        .triangle-rb(@color:#000, @r, @t)
+    }
+    & when not (isNumber(@color)){
+        .box(0);
+        border-right:@r solid @color;
+        border-top:@t solid transparent;
+    }
+}
+
+.triangle-rt(@color,@r,@b:@r){
+    & when (isNumber(@color)){
+        .triangle-rb(@color:#000, @r, @b)
+    }
+    & when not (isNumber(@color)){
+        .box(0);
+        border-right:@r solid @color;
+        border-bottom:@b solid transparent;
+    }
+}
