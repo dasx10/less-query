@@ -105,9 +105,9 @@ Position
 
 
 Text
-| example name            | input  or type                    | prefix      | post prefix | output          | grid system
-|:---|:---|:---|:---|:---|:---
-| t                       |                                   |             | a d i s t v | text            | true
+| example name            | post prefix | output          | grid system
+|:---|:---|:---|:---
+| t                       | a d i s t v | text            | true
 
 | example use             | input  or type                    | output                      | grid system
 |:---|:---|:---|:---
