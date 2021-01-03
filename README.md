@@ -203,7 +203,7 @@ post prefix name
 
 ## Function
 | function name    | input or type                                                 | output     | description
-|:---|:---|:---
+|:---|:---|:---|:---
 | fw               | mobile-size desctop-size mobile-size-lyout desctop-syze-lyout | calc(...)  | flexible size from the width 
 | fр               | mobile-size desctop-size mobile-size-lyout desctop-syze-lyout | calc(...)  | flexible size from the height 
 | fmin             | mobile-size desctop-size mobile-size-lyout desctop-syze-lyout | calc(...)  | flexible size from the min screen 
