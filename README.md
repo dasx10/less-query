@@ -3,7 +3,6 @@ Modified approach to responsive layout
 
 ## install
 
-cmd
 npm install -D less-query
 
 
@@ -78,20 +77,42 @@ Grid system
 | to                      | mixin                             | true
 | from                    | mixin                             | true
 
+Shift mixin
+| name mixin              | input  or type                    | prefix      | output          | grid system
+|:---|:---|:---|:---|:---|:---
+| m                       | number                            | r l t b x y | margin          | true
+| p                       | number                            | r l t b x y | padding         | true
 
-Standart mixin
+post prefix name
+| prefix name             | output     
+|:---|:---|:---|:---
+| l                       | left      
+| r                       | right 
+| t                       | top     
+| b                       | bottom      
+| x                       | left right  
+| y                       | top bottom   
+
+| example use             | output      
+|:---|:---
+| .mx(1px 2px)            | margin-right:1px; margin-left:2px; 
+| .class{.px(xs,2px);}    | @media(min-width:540px){.class{padding-left:1px;padding-right:1px;}}
+
+Border
 | name mixin              | input  or type                    | prefix      | post prefix | output          | grid system
 |:---|:---|:---|:---|:---|:---
 | bd                      | number style color                | r l t b x y | w s c       | border          | true
-| d                       | display type                      |             |             | display         | true
-| ls                      | number                            |             |             | leter-spacyng   | true
-| lh                      | number                            |             |             | line-height     | true
-| m                       | number                            | r l t b x y |             | margin          | true
-| p                       | number                            | r l t b x y |             | padding         | true
-| rz                      | keyword                           |             |             | resize          | true
-| w                       | number                            |             |             | width           | true
-| h                       | number                            |             |             | height          | true
-| va                      | number                            |             |             | vertical-align  | true
+
+Standart mixin
+| name mixin              | input  or type                    | output          | grid system
+|:---|:---|:---|:---|:---|:---
+| d                       | display type                      | display         | true
+| ls                      | number                            | leter-spacyng   | true
+| lh                      | number                            | line-height     | true
+| rz                      | keyword                           | resize          | true
+| w                       | number                            | width           | true
+| h                       | number                            | height          | true
+| va                      | number                            | vertical-align  | true
 
 
 Position
@@ -101,7 +122,7 @@ Position
 | r                       | number                            | right           | true
 | l                       | number                            | left            | true
 | t                       | number                            | top             | true
-| b                       | number                            | bottom          | true\
+| b                       | number                            | bottom          | true
 
 
 Text
@@ -109,21 +130,20 @@ Text
 |:---|:---|:---|:---
 | t                       | a d i s t v | text            | true
 
-| example use             | input  or type                    | output                      | grid system
+post prefix name
+| prefix name             | input  or type                    | output     
 |:---|:---|:---|:---
-| .tt(uppercase)          | keyword                           | text-transform:uppercase;   | true
+| a                       | keyword                           | align      
+| d                       | keyword                           | dicoration 
+| i                       | number                            | indent     
+| s                       | keyword                           | style      
+| t                       | keyword                           | transform  
+| v                       | number                            | overflov   
 
-| prefix name             | input  or type                    | output       | grid system
+example
+| example use             | input  or type                    | output                      
 |:---|:---|:---|:---
-| a                       | keyword                           | align        | true
-| d                       | keyword                           | dicoration   | true
-| i                       | number                            | indent       | true
-| s                       | keyword                           | style        | true
-| t                       | keyword                           | transform    | true
-| v                       | number                            | overflov     | true
+| .tt(uppercase)          | keyword                           | text-transform:uppercase;   
 
-
-
-
-
-
+Any
+scroll
