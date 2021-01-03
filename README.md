@@ -15,9 +15,9 @@ set the entry point to your file
 ## example 
 ```
 .class-grid{
-    .row
+    .row();
     .class-col{
-        .col(12, xs , 6 , sm , 4 , md, 3, lg, 2)
+        .col(12, xs , 6 , sm , 4 , md, 3, lg, 2);
     }
 }
 ```
@@ -28,11 +28,6 @@ set the entry point to your file
   margin-right: -15px;
   display: flex;
   flex-flow: row wrap;
-}
-
-.class-grid .class-col {
-  border-left-width: 1px;
-  border-right-width: 1px;
 }
 
 @media (min-width: 540px) {
