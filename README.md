@@ -79,7 +79,7 @@ Grid system
 
 Shift mixin
 | name mixin              | input  or type                    | prefix      | output          | grid system
-|:---|:---|:---|:---|:---|:---
+|:---|:---|:---|:---|:---
 | m                       | number                            | r l t b x y | margin          | true
 | p                       | number                            | r l t b x y | padding         | true
 
