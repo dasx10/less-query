@@ -101,6 +101,18 @@ example grid system
 }
 ```
 
+Text
+| example name            | post prefix | output          | grid system
+|:---|:---|:---|:---
+| t                       | a d i s t v | text            | true
+example
+```
+.tt(uppercase);
+```
+```
+text-transform:uppercase;
+```
+
 Border
 | name mixin              | input  or type                    | prefix      | post prefix | output          | grid system
 |:---|:---|:---|:---|:---|:---
@@ -127,12 +139,6 @@ Position
 | t                       | number                            | top             | true
 | b                       | number                            | bottom          | true
 
-
-Text
-| example name            | post prefix | output          | grid system
-|:---|:---|:---|:---
-| t                       | a d i s t v | text            | true
-
 prefix name
 | prefix name             | output     
 |:---|:---
@@ -152,11 +158,3 @@ post prefix name
 | s                       | keyword                           | style      
 | t                       | keyword                           | transform  
 | v                       | number                            | overflov   
-
-example
-```
-.tt(uppercase);
-```
-```
-text-transform:uppercase;
-```
