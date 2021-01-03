@@ -75,7 +75,7 @@ set the entry point to your file
 | xt             | 320px             | extra tiny                 
 
 
-## mixin 
+## Mixin 
 
 Grid system
 | name mixin              | input  or type                    | grid system
@@ -200,3 +200,24 @@ post prefix name
 | s                       | keyword                           | style      
 | t                       | keyword                           | transform  
 | v                       | number                            | overflov   
+
+## Function
+| function name    | input or type                                                 | output     | description
+|:---|:---|:---
+| fw               | mobile-size desctop-size mobile-size-lyout desctop-syze-lyout | calc(...)  | flexible size from the width 
+| fр               | mobile-size desctop-size mobile-size-lyout desctop-syze-lyout | calc(...)  | flexible size from the height 
+| fmin             | mobile-size desctop-size mobile-size-lyout desctop-syze-lyout | calc(...)  | flexible size from the min screen 
+| fmax             | mobile-size desctop-size mobile-size-lyout desctop-syze-lyout | calc(...)  | flexible size from the max screen 
+| fd               | mobile-size desctop-size mobile-size-lyout desctop-syze-lyout | calc(...)  | flexible size from the screen 
+| console-log      | console.log                                                   | trminal log| log from the terminal 
+| console-error    | console.error "red output"                                    | trminal log| log from the terminal 
+| console-dir      | console.dir                                                   | trminal log| log from the terminal full params
+
+
+example // flexible font
+```
+.fz(fw(12,20));
+```
+```
+font-size: calc(10.4 + (100vw * 0.005));
+```
