@@ -69,12 +69,9 @@ set the entry point to your file
 
 ## mixin 
 
-| name mixin              | input  or type                    | prefix      | post prefix | output          | grid system
-|:---|:---|:---|:---|:---|:---
-
 Grid
 | name mixin              | input  or type                    | grid system
-|:---|:---|:---|:---|:---|:---
+|:---|:---|:---
 | .row();                 | row row-reverse grid left right   | true
 | .col();                 | number                            | true
 
@@ -97,7 +94,7 @@ Grid
 
 Position
 | name mixin              | input  or type                    | output          | grid system
-|:---|:---|:---|:---|:---|:---
+|:---|:---|:---|:---
 | .a();                   | number                            | all position    | true
 | .r();                   | number                            | right           | true
 | .l();                   | number                            | left            | true
