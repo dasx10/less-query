@@ -8,9 +8,9 @@ npm install -D less-query
 
 ## use
 set the entry point to your file
-
+```
 @import './node_modules/less-query/style.less';
-
+```
 
 ## example 
 ```
@@ -88,10 +88,28 @@ post prefix name
 | x                       | left right  
 | y                       | top bottom   
 
-| example use             | output      
-|:---|:---
-| .mx(1px 2px)            | margin-right:1px; margin-left:2px; 
-| .class{.px(xs,2px);}    | @media(min-width:540px){.class{padding-left:1px;padding-right:1px;}}
+example
+```
+.mx(1px 2px);
+```
+```
+margin-right:1px; 
+margin-left:2px;
+```
+example grid system
+```
+.class{
+    .px(xs,2px);
+}
+```
+```
+@media(min-width:540px){
+    .class{
+        padding-left:1px;
+        padding-right:1px;
+    }
+}
+```
 
 Border
 | name mixin              | input  or type                    | prefix      | post prefix | output          | grid system
@@ -136,9 +154,9 @@ post prefix name
 | v                       | number                            | overflov   
 
 example
-| example use             | input  or type                    | output                      
-|:---|:---|:---
-| .tt(uppercase)          | keyword                           | text-transform:uppercase;   
-
-Any
-scroll
+```
+.tt(uppercase);
+```
+```
+text-transform:uppercase;
+```
