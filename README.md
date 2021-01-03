@@ -17,7 +17,7 @@ set the entry point to your file
 .class-grid{
     .row();
     .class-col{
-        .col(12, xs , 6 , sm , 4 , md, 3, lg, 2);
+        .col(12, xs , 6 , sm , 4);
     }
 }
 ```
@@ -61,6 +61,20 @@ set the entry point to your file
   }
 }
 ```
+## Standart grid system
+| short name     | break point width | description
+|:---|:---|:---
+| xh             | 1680px            | extra huge                 
+| hu             | 1530px            | huge                 
+| xl             | 1320px            | extra large                 
+| lg             | 1140px            | large          
+| md             | 960px             | medium                
+| sm             | 720px             | small               
+| xs             | 540px             | extra small                
+| ti             | 430px             | tiny          
+| xt             | 320px             | extra tiny                 
+
+
 ## mixin 
 
 Grid system
@@ -74,7 +88,7 @@ Grid system
 
 example
 ```
-.query(xs,{.p(1px); color:red}, 1200px, .m(2px));
+.query(xs, { .p(1px); color:red }, 1200px, .m(2px));
 ```
 ```
 @media (min-width: 540px) and (max-width: 1200px) {
@@ -92,30 +106,32 @@ example
 ```
 
 Shift mixin
-| name mixin              | input  or type                    | prefix      | output          | grid system
+| name mixin              | input  or type                    | prefix      | output                | grid system
 |:---|:---|:---|:---|:---
-| m                       | number                            | r l t b x y | margin          | true
-| p                       | number                            | r l t b x y | padding         | true
+| m                       | number                            | r l t b x y | margin                | true
+| p                       | number                            | r l t b x y | padding               | true
+| mp                      | number                            | r l t b x y | margin and padding    | true
+
 
 example
 ```
 .mx(1px 2px);
 ```
 ```
-margin-right:1px; 
-margin-left:2px;
+margin-right: 1px; 
+margin-left: 2px;
 ```
 example grid system
 ```
 .class{
-    .px(xs,1px);
+    .px(xs, 1px);
 }
 ```
 ```
 @media(min-width:540px){
     .class{
-        padding-left:1px;
-        padding-right:1px;
+        padding-left: 1px;
+        padding-right: 1px;
     }
 }
 ```
