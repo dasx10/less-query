@@ -79,6 +79,7 @@ Grid
 
 
 
+| name mixin              | input  or type                    | prefix      | post prefix | output          | grid system
 |:---|:---|:---|:---|:---|:---
 | .bd();                  | number style color                | r l t b x y | w s c       | border          | true
 | .d();                   | display type                      |             |             | display         | true
@@ -94,12 +95,13 @@ Grid
 
 
 Position
+| name mixin              | input  or type                    | output          | grid system
 |:---|:---|:---|:---|:---|:---
-| .a();                   | number                            |             |             | all position    | true
-| .r();                   | number                            |             |             | right           | true
-| .l();                   | number                            |             |             | left            | true
-| .t();                   | number                            |             |             | top             | true
-| .b();                   | number                            |             |             | bottom          | true
+| .a();                   | number                            | all position    | true
+| .r();                   | number                            | right           | true
+| .l();                   | number                            | left            | true
+| .t();                   | number                            | top             | true
+| .b();                   | number                            | bottom          | true
 
 
 
