@@ -73,9 +73,10 @@ set the entry point to your file
 |:---|:---|:---|:---|:---|:---
 
 Grid
+| name mixin              | input  or type                    | grid system
 |:---|:---|:---|:---|:---|:---
-| .row();                 | row row-reverse grid left right   | false       |   false     |  false          | true
-| .col();                 | number                            | false       |   false     |  false          | true
+| .row();                 | row row-reverse grid left right   | true
+| .col();                 | number                            | true
 
 
 
