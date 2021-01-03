@@ -79,15 +79,26 @@ Grid
 
 
 
-| .m();                   | number                            | r l t b x y |             | margin          | true
-| .p();                   | number                            | r l t b x y |             | padding         | true
-| .l();                   | number                            |             |             | left            | true
-| .r();                   | number                            |             |             | right           | true
-| .t();                   | number                            |             |             | top             | true
-| .b();                   | number                            |             |             | bottom          | true
 | .bd();                  | number style color                | r l t b x y | w s c       | border          | true
 | .d();                   | display type                      |             |             | display         | true
 | .ls();                  | number                            |             |             | leter-spacyng   | true
+| .lh();                  | number                            |             |             | line-height     | true
+| .m();                   | number                            | r l t b x y |             | margin          | true
+| .p();                   | number                            | r l t b x y |             | padding         | true
+| .rz();                  | keyword                           |             |             | resize          | true
+| .w();                   | number                            |             |             | width           | true
+| .h();                   | number                            |             |             | height          | true
+| .va();                  | number                            |             |             | vertical-align  | true
+
+
+
+Position
+| .a();                   | number                            |             |             | all position    | true
+| .r();                   | number                            |             |             | right           | true
+| .l();                   | number                            |             |             | left            | true
+| .t();                   | number                            |             |             | top             | true
+| .b();                   | number                            |             |             | bottom          | true
+
 
 
 
