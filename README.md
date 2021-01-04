@@ -172,9 +172,11 @@ Content mixin
 | j                       | c s         | justify         | true
 | a                       | c s i       | align           | true
 
-c - content
-s - self
-i - item 
+| post prefix | output 
+|:---|:---
+| c           | content
+| s           | self
+| i           | item 
 
 
 example
@@ -269,9 +271,12 @@ prefix name
 example
 ```
 .pt(10px);
+.my(5px 10px);
 ```
 ```
 padding-top: 10px;
+margin-top: 5px;
+margin-bottom: 10px;
 ```
 
 
@@ -293,28 +298,35 @@ example
 text-align: center;
 ```
 
-Pixel ratio 
+Pixel ratio example
 ```
-.pixel-ratio(1,{background-image:url('1.webp')},2,{background-image:url('2.webp')});
-// retina 2x upload 2.webp
-// 1x upload 1.webp
+.pixel-ratio(
+  1, { background-image:url('1.webp') },
+  2, { background-image:url('2.webp') },
+  3, { background-image:url('3.webp') }
+);
+
+// retina 2x upload only 2.webp
+// retina 3x upload only 3.webp
+// 1x upload only 1.webp
 ```
 
 ## Function
-| function name    | input or type                                                  | output     | description
+| function name    | input or type                                                  | output      | description
 |:---|:---|:---|:---
-| fw               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)  | flexible size from the width 
-| fр               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)  | flexible size from the height 
-| fmin             | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)  | flexible size from the min screen 
-| fmax             | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)  | flexible size from the max screen 
-| fd               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)  | flexible size from the screen 
-| console-log      | console.log                                                    | trminal log| log from the terminal 
-| console-error    | console.error "red output"                                     | trminal log| log from the terminal 
-| console-dir      | console.dir                                                    | trminal log| log from the terminal full params
+| fw               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the width 
+| fh               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the height 
+| fmin             | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the min screen 
+| fmax             | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the max screen 
+| fd               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the screen 
+| console-log      | console.log                                                    | trminal log | log from the terminal 
+| console-error    | console.error "red output"                                     | trminal log | log from the terminal 
+| console-dir      | console.dir                                                    | trminal log | log from the terminal full params
 
-default :
-mobile-size-layout = 320px ,
-desctop-syze-layout = 1920px .
+| name params            | default params 
+|:---|:---
+| mobile-size-layout     | 320px 
+| desctop-syze-layout    | 1920px
 
 example // flexible font
 ```
@@ -332,7 +344,41 @@ if the property is still missing, then you can create your own mix and use it li
   color:@params;
 }
 
-.query(xs,.my-mixin(red),sm,.my-mixin(darkred));
+.query(
+  xs,     .my-mixin(red),
+  sm,     .my-mixin(darkred),
+  1280px, .my-mixin(#000)
+);
+```
+
+We strongly recommend not using this approach
+
+```
+.query(
+  xs,     .px(10px, sm, 20px),
+  sm,     .my(5px, md, 12px, lg, auto),
+);
+```
+
+Use so
+```
+.px(xs, 10px, sm, 20px);
+.my(sm, 5px, md, 12px, lg, auto);
+
+```
+or
+```
+.query(
+  xs, .px(10px), 
+  sm, .px(20px)
+);
+
+.query(
+  sm, .my(5px),
+  md, .my(12px), 
+  lg, .my(auto)
+);
+
 ```
 
 If you find a bug or have suggestions for improving the system, I will be glad to your feedback.
