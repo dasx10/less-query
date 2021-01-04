@@ -381,4 +381,18 @@ or
 
 ```
 
+or
+```
+.query(
+  xs, .px(10px), 
+  sm, {
+    .px(20px);
+    .my(12px);
+  }
+  md, .my(12px), 
+  lg, .my(auto)
+);
+
+```
+
 If you find a bug or have suggestions for improving the system, I will be glad to your feedback.
