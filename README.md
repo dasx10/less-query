@@ -94,7 +94,7 @@ example grid 24
 
 ## container
 ```
-  .container(1200px); // max size container
+.container(1200px); // max size container
 ```
 
 ## Mixin 
@@ -334,3 +334,5 @@ if the property is still missing, then you can create your own mix and use it li
 
 .query(xs,.my-mixin(red),sm,.my-mixin(darkred));
 ```
+
+If you find a bug or have suggestions for improving the system, I will be glad to your feedback.
