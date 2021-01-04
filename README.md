@@ -78,13 +78,13 @@ set the entry point to your file
 ## Mixin 
 
 Grid system
-| name mixin              | input  or type                    | grid system
+| name mixin              | input  or type                                                          | grid system
 |:---|:---|:---
-| row                     | row row-reverse grid left right   | true
-| col                     | number                            | true
-| query                   | mixin                             | true
-| to                      | mixin                             | true
-| from                    | mixin                             | true
+| row                     | row row-reverse grid left right inline-block inline-flex inline-grid    | true
+| col                     | number                                                                  | true
+| query                   | mixin                                                                   | true
+| to                      | mixin                                                                   | true
+| from                    | mixin                                                                   | true
 
 example
 ```
@@ -157,6 +157,14 @@ Border
 | name mixin              | input  or type                    | prefix      | post prefix | output          | grid system
 |:---|:---|:---|:---|:---|:---
 | bd                      | number style color                | r l t b x y | w s c       | border          | true
+example
+```
+.bdxw(2px);
+```
+```
+border-left-width: 2px;
+border-right-width: 2px;
+```
 
 Standart mixin
 | name mixin              | input  or type                    | output          | grid system

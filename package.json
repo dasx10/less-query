@@ -1,6 +1,6 @@
 {
   "name": "less-query",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "description": "grid mixin for less ",
   "main": "style.less",
   "repository": {
