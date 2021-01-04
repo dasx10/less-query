@@ -1,6 +1,6 @@
 {
   "name": "less-query",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "grid mixin for less ",
   "main": "style.less",
   "repository": {
@@ -15,7 +15,9 @@
     "front-end",
     "mixin",
     "media",
+    "flexible",
     "query",
+    "mq",
     "framework"
   ],
   "author": "<dasx10@gmail.com>",
