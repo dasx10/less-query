@@ -295,7 +295,7 @@ text-align: center;
 
 Pixel ratio 
 ```
-.pixel-ratio(1,background-image:url('1.webp'),2,background-image:url('2.webp'));
+.pixel-ratio(1,{background-image:url('1.webp')},2,{background-image:url('2.webp')});
 // retina 2x upload 2.webp
 // 1x upload 1.webp
 ```
