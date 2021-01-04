@@ -157,6 +157,7 @@ Border
 | name mixin              | input  or type                    | prefix      | post prefix | output          | grid system
 |:---|:---|:---|:---|:---|:---
 | bd                      | number style color                | r l t b x y | w s c       | border          | true
+
 example
 ```
 .bdxw(2px);
@@ -178,6 +179,26 @@ Standart mixin
 | va                      | number                            | vertical-align  | true
 | fx                      | grow shrink basis                 | flex            | true
 
+example
+```
+.class{
+  .d(block,sm,flex);
+}
+```
+```
+@media (min-width: 720px) {
+  .class {
+    display: flex;
+  }
+}
+
+@media (max-width: 720px) {
+  .class {
+    display: block;
+  }
+}
+```
+
 
 
 Position
@@ -189,6 +210,18 @@ Position
 | t                       | number                            | top             | true
 | b                       | number                            | bottom          | true
 
+example
+```
+.a(10px);
+```
+```
+top: 10px;
+bottom: 10px;
+left: 10px;
+right: 10px;
+```
+
+
 prefix name
 | prefix name             | output     
 |:---|:---
@@ -199,6 +232,15 @@ prefix name
 | x                       | left right  
 | y                       | top bottom  
 
+example
+```
+.pt(10px);
+```
+```
+padding-top: 10px;
+```
+
+
 post prefix name
 | prefix name             | input  or type                    | output     
 |:---|:---|:---
@@ -208,6 +250,14 @@ post prefix name
 | s                       | keyword                           | style      
 | t                       | keyword                           | transform  
 | v                       | number                            | overflov   
+
+example
+```
+.ta(center);
+```
+```
+text-align: center;
+```
 
 ## Function
 | function name    | input or type                                                 | output     | description
