@@ -72,8 +72,30 @@ set the entry point to your file
 | sm             | 720px             | small               
 | xs             | 540px             | extra small                
 | ti             | 430px             | tiny          
-| xt             | 320px             | extra tiny                 
+| xt             | 320px             | extra tiny   
 
+you can override these parameters
+```
+node_modules/less-mixin/mixins/grid/_data.less
+```
+
+default columns = 12
+override the number of columns
+
+example grid 24
+```
+.set-columns(24, 24, flex); // .set-columns(@set_size, @set_length, @set_row);
+```
+
+## wraper
+```
+  .wrp(1200px); // padding max size
+```
+
+## container
+```
+  .container(1200px); // max size container
+```
 
 ## Mixin 
 
@@ -144,13 +166,25 @@ Short mixin (emmet type)
 | fx                      | b d f g s w | flex            | true
 | b                       | sh b        | box             | true
 
+Content mixin
+| example name            | post prefix | output          | grid system
+|:---|:---|:---|:---
+| j                       | c s         | justify         | true
+| a                       | c s i       | align           | true
+
+c - content
+s - self
+i - item 
+
 
 example
 ```
 .tt(uppercase);
+.ai(center);
 ```
 ```
 text-transform:uppercase;
+align-items:center;
 ```
 
 Border
@@ -259,18 +293,26 @@ example
 text-align: center;
 ```
 
-## Function
-| function name    | input or type                                                 | output     | description
-|:---|:---|:---|:---
-| fw               | mobile-size desctop-size mobile-size-lyout desctop-syze-lyout | calc(...)  | flexible size from the width 
-| fр               | mobile-size desctop-size mobile-size-lyout desctop-syze-lyout | calc(...)  | flexible size from the height 
-| fmin             | mobile-size desctop-size mobile-size-lyout desctop-syze-lyout | calc(...)  | flexible size from the min screen 
-| fmax             | mobile-size desctop-size mobile-size-lyout desctop-syze-lyout | calc(...)  | flexible size from the max screen 
-| fd               | mobile-size desctop-size mobile-size-lyout desctop-syze-lyout | calc(...)  | flexible size from the screen 
-| console-log      | console.log                                                   | trminal log| log from the terminal 
-| console-error    | console.error "red output"                                    | trminal log| log from the terminal 
-| console-dir      | console.dir                                                   | trminal log| log from the terminal full params
+Pixel ratio
+```
 
+```
+
+## Function
+| function name    | input or type                                                  | output     | description
+|:---|:---|:---|:---
+| fw               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)  | flexible size from the width 
+| fр               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)  | flexible size from the height 
+| fmin             | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)  | flexible size from the min screen 
+| fmax             | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)  | flexible size from the max screen 
+| fd               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)  | flexible size from the screen 
+| console-log      | console.log                                                    | trminal log| log from the terminal 
+| console-error    | console.error "red output"                                     | trminal log| log from the terminal 
+| console-dir      | console.dir                                                    | trminal log| log from the terminal full params
+
+default 
+mobile-size-lyout = 320px
+desctop-syze-layout = 1920px
 
 example // flexible font
 ```
@@ -278,4 +320,15 @@ example // flexible font
 ```
 ```
 font-size: calc(10.4 + (100vw * 0.005));
+```
+
+## Information
+
+if the property is still missing, then you can create your own mix and use it like this
+```
+.my-mixin(@params){
+  color:@params;
+}
+
+.query(xs,.my-mixin(red),sm,.my-mixin(darkred));
 ```
