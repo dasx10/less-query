@@ -1,4 +1,4 @@
-.container-full(@px:@offset_one_side, @px_lg:@offset_lg_one_side, @px_md:@offset_md_one_side, @px_sm:@offset_sm_one_side, @px_xs:@offset_xs_one_side){
+.container-full(@px:@offsetOneSide, @px_lg:@offset_lg_one_side, @px_md:@offset_md_one_side, @px_sm:@offset_sm_one_side, @px_xs:@offset_xs_one_side){
     .px(@px);
 }
 
@@ -14,12 +14,12 @@
     position: relative;
     @val: ((@width) / 2);
     @medW:@width + @offset;
-    @off:- @offset_one_side;
+    @off:- @offsetOneSide;
     @media (max-width:@medW - @offset){
-        .px(@offset_one_side);
+        .px(@offsetOneSide);
     }
     @media (min-width:@medW - @offset){
-        @padding_wrap : @val - (@offset_one_side);
+        @padding_wrap : @val - (@offsetOneSide);
         .px(calc(50% - @padding_wrap));
     }
 }

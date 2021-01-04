@@ -14,7 +14,7 @@
 ){
     ._mixin(@n1 : @offsets){
         @this_ofset : @n1 * -1;
-        ._mx(@offset_one_side * @this_ofset);
+        ._mx(@offsetOneSide * @this_ofset);
     }
     
     ._mixin-grid(
@@ -126,13 +126,13 @@
 
 
 .col-gap(@offsets : 1){
-    .mx(@offset_one_side * @offsets);
+    .mx(@offsetOneSide * @offsets);
 }
 
 .col-gap-r(@offsets : 1){
-    .mr(@offset_one_side * @offsets);
+    .mr(@offsetOneSide * @offsets);
 }
 
 .col-gap-l(@offsets : 1){
-    .ml(@offset_one_side * @offsets);
+    .ml(@offsetOneSide * @offsets);
 }
