@@ -313,7 +313,7 @@ Pixel ratio
 | console-dir      | console.dir                                                    | trminal log| log from the terminal full params
 
 default 
-mobile-size-lyout = 320px
+mobile-size-layout = 320px
 desctop-syze-layout = 1920px
 
 example // flexible font
