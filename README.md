@@ -312,9 +312,9 @@ Pixel ratio
 | console-error    | console.error "red output"                                     | trminal log| log from the terminal 
 | console-dir      | console.dir                                                    | trminal log| log from the terminal full params
 
-default 
-mobile-size-layout = 320px
-desctop-syze-layout = 1920px
+default :
+mobile-size-layout = 320px ,
+desctop-syze-layout = 1920px .
 
 example // flexible font
 ```
