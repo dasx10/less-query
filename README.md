@@ -104,13 +104,13 @@ Grid system
 |:---|:---|:---
 | row                     | row row-reverse grid left right inline-block inline-flex inline-grid    | true
 | col                     | number                                                                  | true
-| query                   | mixin                                                                   | true
+| mq                      | mixin                                                                   | true
 | to                      | mixin                                                                   | true
 | from                    | mixin                                                                   | true
 
 example
 ```
-.query(xs, { .p(1px); color:red }, 1200px, .m(2px));
+.mq(xs, { .p(1px); color:red }, 1200px, .m(2px));
 ```
 ```
 @media (min-width: 540px) and (max-width: 1200px) {
@@ -300,7 +300,7 @@ text-align: center;
 
 Pixel ratio example
 ```
-.pixel-ratio(
+.pxrt(
   1, { background-image:url('1.webp') },
   2, { background-image:url('2.webp') },
   3, { background-image:url('3.webp') }
@@ -344,7 +344,7 @@ if the property is still missing, then you can create your own mix and use it li
   color:@params;
 }
 
-.query(
+.mq(
   xs,     .my-mixin(red),
   sm,     .my-mixin(darkred),
   1280px, .my-mixin(#000)
@@ -354,7 +354,7 @@ if the property is still missing, then you can create your own mix and use it li
 We strongly recommend not using this approach
 
 ```
-.query(
+.mq(
   xs,     .px(10px, sm, 20px),
   sm,     .my(5px, md, 12px, lg, auto),
 );
@@ -368,12 +368,12 @@ Use so
 ```
 or
 ```
-.query(
+.mq(
   xs, .px(10px), 
   sm, .px(20px)
 );
 
-.query(
+.mq(
   sm, .my(5px),
   md, .my(12px), 
   lg, .my(auto)
@@ -383,12 +383,12 @@ or
 
 or
 ```
-.query(
+.mq(
   xs, .px(10px), 
   sm, {
     .px(20px);
     .my(12px);
-  }
+  },
   md, .my(12px), 
   lg, .my(auto)
 );

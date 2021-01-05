@@ -20,7 +20,7 @@
     }
 }
 
-.pixel-ratio(
+.pxrt(
     @value_1-1 : @false, @value_2-1 : @false,
     @value_1-2 : @false, @value_2-2 : @false,
     @value_1-3 : @false, @value_2-3 : @false,
@@ -39,7 +39,7 @@
             & when not (@value_2-1 = @false){
                 .resalution( @value_1-1 , 0 , @value_2-1 );
                 & when not (@value_1-2 = @false) {
-                    .pixel-ratio(
+                    .pxrt(
                         @value_2-1,  @value_1-2, 
                         @value_2-2,  @value_1-3,
                         @value_2-3,  @value_1-4,
@@ -64,7 +64,7 @@
             & when not(@value_1-2 = @false){
                 .resalution( @value_2-1 , @value_1-1, @value_1-2 );
                 & when not (@value_2-2 = @false){
-                    .pixel-ratio(
+                    .pxrt(
                         @value_1-2,  @value_2-2, 
                         @value_1-3,  @value_2-3,
                         @value_1-4,  @value_2-4,
