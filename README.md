@@ -167,7 +167,7 @@ Short mixin (emmet type)
 | w                       | b s w             | word            | true
 | fx                      | b d f g s w       | flex            | true
 | b                       | sh z              | box             | true
-| bg                      | a cl c i o p r z  | box             | true
+| bg                      | a cl c i o p r z  | background      | true
 
 
 Content mixin
