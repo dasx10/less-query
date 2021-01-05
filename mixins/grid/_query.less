@@ -1,4 +1,4 @@
-.query(
+.mq(
     @value_1-1 : @false, @value_2-1 : @false,
     @value_1-2 : @false, @value_2-2 : @false,
     @value_1-3 : @false, @value_2-3 : @false,
@@ -23,7 +23,7 @@
                 }
                 
                 & when not (@value_1-2 = @false) {
-                    .query(
+                    .mq(
                         @value_2-1,  @value_1-2, 
                         @value_2-2,  @value_1-3,
                         @value_2-3,  @value_1-4,
@@ -53,7 +53,7 @@
                     .break( @value_2-1 , @value_1-1, @value_1-2);
                 }
                 & when not (@value_2-2 = @false){
-                    .query(
+                    .mq(
                         @value_1-2,  @value_2-2, 
                         @value_1-3,  @value_2-3,
                         @value_1-4,  @value_2-4,
@@ -82,7 +82,7 @@
                     .break( @value_2-1 , @breaks[@@value_1-1], @value_1-2);
                 }
                 & when not (@value_2-2 = @false){
-                    .query(
+                    .mq(
                         @value_1-2,  @value_2-2, 
                         @value_1-3,  @value_2-3,
                         @value_1-4,  @value_2-4,

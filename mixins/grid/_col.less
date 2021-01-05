@@ -98,7 +98,7 @@
         }
 
         // * init size column * //
-        .col-size(@column_size : @columns_set_size){
+        .col-sz(@column_size : @columns_set_size){
             & when (@column_size > @columns_set_length){
                 console-error("Incorrect number of columns - maximum @{columns_set_length}")
             }
@@ -130,7 +130,7 @@
                     
                     & when not (@value_2-1 = @false){
                         
-                        .break( .col-size(@value_1-1) , 0 , @breaks[@@value_2-1] );
+                        .break( .col-sz(@value_1-1) , 0 , @breaks[@@value_2-1] );
                         & when not (@value_1-2 = @false) {
                             ._mixin-col(
                                 @value_2-1,  @value_1-2, 
@@ -149,13 +149,13 @@
                         }
                     }
                     & when ( @value_2-1 = @false ) {
-                        .col-size( @value_1-1 );
+                        .col-sz( @value_1-1 );
                     }
                 }
             
                 & when (includes(@breaks, @value_1-1) = 1){
                     & when not(@value_1-2 = @false){
-                        .break( .col-size(@value_2-1) , @breaks[@@value_1-1], @breaks[@@value_1-2] );
+                        .break( .col-sz(@value_2-1) , @breaks[@@value_1-1], @breaks[@@value_1-2] );
                         
                         & when not (@value_2-2 = @false){
                             ._mixin-col(
@@ -174,7 +174,7 @@
                         }
                     }
                     & when (@value_1-2 = @false){
-                        .break( .col-size(@value_2-1) , @breaks[@@value_1-1])
+                        .break( .col-sz(@value_2-1) , @breaks[@@value_1-1])
                     }
                 }
             }    
