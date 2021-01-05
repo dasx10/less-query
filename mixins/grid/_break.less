@@ -1,16 +1,38 @@
 .break(@props, @min:0, @max:0){
     & when (@min > 0) and (@max > 0){
-        @media (min-width:@min) and (max-width:@max){
+        @media(min-width:@min) and (max-width:@max){
             @props();
         }
     }
-    & when (@min > 0) and (@max = 0){
-        @media (min-width:@min){
+    & when(@min > 0) and (@max = 0){
+        @media(min-width:@min){
             @props();
         }
     }
     & when (@min = 0) and (@max > 0){
-        @media (max-width:@max){
+        @media(max-width:@max){
+            @props();
+        }
+    }
+
+    & when (@min < 0){
+        .break(@props, @max, @min);
+    }
+}
+
+.break-h(@props, @min:0, @max:0){
+    & when (@min > 0) and (@max > 0){
+        @media(min-height:@min) and (max-height:@max){
+            @props();
+        }
+    }
+    & when(@min > 0) and (@max = 0){
+        @media(min-height:@min){
+            @props();
+        }
+    }
+    & when (@min = 0) and (@max > 0){
+        @media(max-height:@max){
             @props();
         }
     }

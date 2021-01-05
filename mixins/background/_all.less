@@ -1,9 +1,13 @@
+@import './_attachment.less';
+@import './_clip.less';
+@import './_color.less';
+@import './_image.less';
+@import './_origin.less';
+@import './_position.less';
+@import './_repeat.less';
 @import './_size.less';
-@import './_weight.less';
-@import './_style.less';
-@import './_family.less';
 
-.f(
+.bg(
     @value_1-1 : @false, @value_2-1 : @false,
     @value_1-2 : @false, @value_2-2 : @false,
     @value_1-3 : @false, @value_2-3 : @false,
@@ -18,7 +22,7 @@
     @value_1-12: @false, @value_2-12: @false
 ){
     .grid_mixin(
-        serif, font, 0, 0, 1,
+        none, background, 0, 0, 1,
         @value_1-1, @value_2-1,
         @value_1-2, @value_2-2,
         @value_1-3, @value_2-3,

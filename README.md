@@ -100,13 +100,14 @@ example grid 24
 ## Mixin 
 
 Grid system
-| name mixin              | input  or type                                                          | grid system
-|:---|:---|:---
-| row                     | row row-reverse grid left right inline-block inline-flex inline-grid    | true
-| col                     | number                                                                  | true
-| mq                      | mixin                                                                   | true
-| to                      | mixin                                                                   | true
-| from                    | mixin                                                                   | true
+| name mixin              | input  or type                                                          | grid system | decription
+|:---|:---|:---|:---
+| row                     | row row-reverse grid left right inline-block inline-flex inline-grid    | true        | 
+| col                     | number                                                                  | true        | 
+| mq                      | mixin                                                                   | true        | media width builder
+| to                      | mixin                                                                   | true        | media max width only
+| from                    | mixin                                                                   | true        | media min width only
+| mqh                     | mixin                                                                   | true        | media height builder
 
 example
 ```
@@ -159,12 +160,15 @@ example grid system
 ```
 
 Short mixin (emmet type)
-| example name            | post prefix | output          | grid system
+| example name            | post prefix       | output          | grid system
 |:---|:---|:---|:---
-| t                       | a d i s t v | text            | true
-| w                       | b s w       | word            | true
-| fx                      | b d f g s w | flex            | true
-| b                       | sh b        | box             | true
+| t                       | a d i s t v       | text            | true
+| f                       | s z w f           | font            | true
+| w                       | b s w             | word            | true
+| fx                      | b d f g s w       | flex            | true
+| b                       | sh z              | box             | true
+| bg                      | a cl c i o p r z  | box             | true
+
 
 Content mixin
 | example name            | post prefix | output          | grid system
@@ -214,6 +218,10 @@ Standart mixin
 | h                       | number                            | height          | true
 | va                      | number                            | vertical-align  | true
 | fx                      | grow shrink basis                 | flex            | true
+| ls                      | number                            | letter-spacing  | true
+| cp                      | keyword                           | clip            | true
+| f                       | keyword                           | font            | true
+
 
 example
 ```
@@ -235,8 +243,6 @@ example
 }
 ```
 
-
-
 Position
 | name mixin              | input  or type                    | output          | grid system
 |:---|:---|:---|:---
@@ -256,7 +262,6 @@ bottom: 10px;
 left: 10px;
 right: 10px;
 ```
-
 
 prefix name
 | prefix name             | output     
@@ -278,7 +283,6 @@ padding-top: 10px;
 margin-top: 5px;
 margin-bottom: 10px;
 ```
-
 
 post prefix name
 | prefix name             | input  or type                    | output     
