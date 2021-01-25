@@ -1,78 +1,78 @@
 .reset(){
     html,body{
-        line-height: 1.15;
+        .lh(1.15);
         overflow-x: hidden;
-        min-height:100vh;
+        .mih(100vh);
         -webkit-text-size-adjust: 100%;
     }
     body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{
-        margin: 0;
-        padding: 0;
+        .m(0);
+        .p(0);
     }
     a{
-        text-decoration: none;
-        color: inherit;
-        background-color: transparent;
+        .td(none);
+        .c(inherit);
+        .bgc(transparent);
     }
     b,strong {
-        font-weight:bolder;
+        .fw(bolder);
     }
     table{
         border-collapse: collapse;
         border-spacing: 0;
     }
     fieldset,img,abbr{
-        border:none;
+        .bd(none);
     }
     ul li{
-        list-style: none;
+        .ls(none);
     }
     caption,th{
-        text-align:left;
+        .ta(left);
     }
     h1,h2,h3,h4,h5,h6{
-        font-size: 100%;
-        font-weight: normal;
+        .fz(100%);
+        .fw(normal);
     }
     sup{
-        vertical-align: text-top;
+        .va(text-top);
     }
     sub{
-        vertical-align: text-bottom;
+        .va(text-bottom);
     }
     input,textarea,select,optgroup,button{
-        font-family: inherit;
-        font-size: inherit;
-        font-weight: inherit;
-        text-transform: none;
+        .ff(inherit);
+        .fz(inherit);
+        .fw(inherit);
+        .tt(none);
     }
     legend{
-        color: inherit;
-        max-width: 100%;
+        .c(inherit);
+        .mw(100%);
     }
     article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,main{
-        display: block;
+        .d(block);
     }
     
     img,video,iframe{
-        max-width: 100%;
-        height:auto;
-        border-style:none;
+        .mw(100%);
+        .h(auto);
+        .bds(none);
     }
     progress {
-        vertical-align: baseline;
+        .va(baseline);
     }
     button,[type="button"],[type="reset"],[type="submit"]{
         -webkit-appearance: button;
     }
     hr {
-        box-sizing: content-box;
-        height: 0;
+        .bz(content-box);
+        .h(0);
     }
     :disabled{
         cursor: not-allowed;
     }
     [hidden],template{
-        display: none;
+        .d(none);
     }
 }

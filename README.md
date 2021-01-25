@@ -315,7 +315,12 @@ Pixel ratio example
 // 1x upload only 1.webp
 ```
 
+.reset(); - normalize css
+
 ## Function
+
+Flexible size 
+
 | function name    | input or type                                                  | output      | description
 |:---|:---|:---|:---
 | fw               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the width 
@@ -323,9 +328,6 @@ Pixel ratio example
 | fmin             | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the min screen 
 | fmax             | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the max screen 
 | fd               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the screen 
-| console-log      | console.log                                                    | trminal log | log from the terminal 
-| console-error    | console.error "red output"                                     | trminal log | log from the terminal 
-| console-dir      | console.dir                                                    | trminal log | log from the terminal full params
 
 | name params            | default params 
 |:---|:---
@@ -339,6 +341,15 @@ example // flexible font
 ```
 font-size: calc(10.4 + (100vw * 0.005));
 ```
+
+Log
+
+| function name    | input or type                                                  | output      | description
+|:---|:---|:---|:---
+| console-log      | console.log                                                    | trminal log | log from the terminal 
+| console-error    | console.error "red output"                                     | trminal log | log from the terminal 
+| console-dir      | console.dir                                                    | trminal log | log from the terminal full params
+
 
 ## Information
 

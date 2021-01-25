@@ -1,3 +1,4 @@
+let prevent = false;
 module.exports = {
     install: function(less, pluginManager, functions) {
         functions.add('x',function(count, value) {
@@ -16,6 +17,7 @@ module.exports = {
         });
 
         functions.add('get-value',function(value, index = 0) {
+            if(value.name == 'calc' || typeof value.value!== `number` ) return value;
             if(!value.value.length) return value.value + (value.unit?.backupUnit || '');
             let result = 
             value.value[index.value] || 
@@ -24,6 +26,16 @@ module.exports = {
             value.value[index.value - 3] || 0;
             
             return result.value+(result.unit?.backupUnit || '');
+        });
+
+        functions.add('prevent',function(value) {
+            if(value.value != prevent) return prevent = value.value;
+            return 'not';
+        });
+
+        functions.add('isDimension',function(value) {
+            console.log()
+            return value.unit.backupUnit !== undefined ? '1' : '0';
         });
     }
 };

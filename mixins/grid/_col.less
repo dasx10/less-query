@@ -122,14 +122,9 @@
             @value_1-11 : @false, @value_2-11 : @false,
             @value_1-12 : @false, @value_2-12 : @false
         ){
-            
             & when not (@value_1-1 = @false){
-                
                 & when(includes(@breaks, @value_1-1) = 0){
-                    
-                    
                     & when not (@value_2-1 = @false){
-                        
                         .break( .col-sz(@value_1-1) , 0 , @breaks[@@value_2-1] );
                         & when not (@value_1-2 = @false) {
                             ._mixin-col(
@@ -156,7 +151,6 @@
                 & when (includes(@breaks, @value_1-1) = 1){
                     & when not(@value_1-2 = @false){
                         .break( .col-sz(@value_2-1) , @breaks[@@value_1-1], @breaks[@@value_1-2] );
-                        
                         & when not (@value_2-2 = @false){
                             ._mixin-col(
                                 @value_1-2,  @value_2-2, 
