@@ -182,7 +182,6 @@ Content mixin
 | s           | self
 | i           | item 
 
-
 example
 ```
 .tt(uppercase);
@@ -315,9 +314,14 @@ Pixel ratio example
 // retina 3x upload only 3.webp
 ```
 
+
+## any mixin
+```
+.reset(); // normilize
+```
 ## Function
 flexible size function
-| function name    | input or type                                              | description
+|input| params | description
 |:---|:---|:---
 |fw  |mobSize PCSize mobWidthLayout PCWidthLayout                               |from the width 
 |fh  |mobSize PCSize mobHeightLayout PCHeightLayout                             |from the height 
@@ -325,10 +329,12 @@ flexible size function
 |fmax|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the maxScreen 
 |fd  |mobSize PCSize mobWidthLayout mobHeightLayout PCWidthLayout PCHeightLayout|from the screen
 
-| name params  | default params 
+|params|default
 |:---|:---
-| mobSizeLayout|320px 
-| PCSizeLayout |1920px
+| mobWidthLayout  |320px 
+| mobHeightLayout |240px 
+| PCWidthLayout   |1920px
+| PCHeightLayout  |1080px
 
 example // flexible font
 ```
@@ -338,7 +344,7 @@ example // flexible font
 font-size: calc(10.4 + (100vw * 0.005));
 ```
 
-log finction
+log function
 | function name| input or type
 |:---|:---
 | console-log  | console.log
@@ -349,14 +355,15 @@ log finction
 
 if the property is still missing, then you can create your own mix and use it like this
 ```
-.my-mixin(@params){
-  color:@params;
+.myMix(@params){
+  .c(lighten(@params));
+  .bgc(darken(@params));
 }
 
 .mq(
-  xs,     .my-mixin(red),
-  sm,     .my-mixin(darkred),
-  1280px, .my-mixin(#000)
+  xs,     .myMix(red),
+  sm,     .myMix(darkred),
+  1280px, .myMix(#000)
 );
 ```
 

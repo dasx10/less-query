@@ -1,78 +1,74 @@
 .reset(){
     html,body{
-        line-height: 1.15;
-        overflow-x: hidden;
+        line-height:1.15;
+        overflow-x:hidden;
         min-height:100vh;
-        -webkit-text-size-adjust: 100%;
+        -webkit-text-size-adjust:100%;
     }
     body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{
-        margin: 0;
-        padding: 0;
+        margin:0;
+        padding:0;
+    }
+    article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,main{
+        display:block;
     }
     a{
-        text-decoration: none;
-        color: inherit;
-        background-color: transparent;
+        text-decoration:none;
+        color:inherit;
+        background-color:transparent;
     }
-    b,strong {
+    b,strong{
         font-weight:bolder;
     }
-    table{
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
-    fieldset,img,abbr{
+    img,fieldset,abbr{
         border:none;
     }
     ul li{
-        list-style: none;
+        list-style:none;
+    }
+    h1,h2,h3,h4,h5,h6{
+        font-size:100%;
+        font-weight:normal;
+    }
+    input,textarea,select,button,optgroup{
+        font-family:inherit;
+        font-size:inherit;
+        font-weight:inherit;
+        text-transform:none;
+    }
+    img,video,canvas,iframe,legend{
+        max-width:100%;
+        height:auto;
+        border-style:none;
+        color:inherit;
+    }
+    button,[type="button"],[type="reset"],[type="submit"]{
+        -webkit-appearance:button;
+    }
+    hr{
+        box-sizing:content-box;
+        height:0;
+    }
+    sup{
+        vertical-align:text-top;
+    }
+    sub{
+        vertical-align:text-bottom;
+    }
+    table{
+        border-collapse:collapse;
+        border-spacing:0;
     }
     caption,th{
         text-align:left;
     }
-    h1,h2,h3,h4,h5,h6{
-        font-size: 100%;
-        font-weight: normal;
+    progress{
+        vertical-align:baseline;
     }
-    sup{
-        vertical-align: text-top;
-    }
-    sub{
-        vertical-align: text-bottom;
-    }
-    input,textarea,select,optgroup,button{
-        font-family: inherit;
-        font-size: inherit;
-        font-weight: inherit;
-        text-transform: none;
-    }
-    legend{
-        color: inherit;
-        max-width: 100%;
-    }
-    article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,main{
-        display: block;
-    }
-    
-    img,video,iframe{
-        max-width: 100%;
-        height:auto;
-        border-style:none;
-    }
-    progress {
-        vertical-align: baseline;
-    }
-    button,[type="button"],[type="reset"],[type="submit"]{
-        -webkit-appearance: button;
-    }
-    hr {
-        box-sizing: content-box;
-        height: 0;
+    template,[type="hidden"],[hidden]{
+        display:none;
     }
     :disabled{
-        cursor: not-allowed;
-    }
-    [hidden],template{
-        display: none;
+        cursor:not-allowed;
     }
 }
