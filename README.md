@@ -210,6 +210,10 @@ Standart mixin
 |:---|:---|:---|:---
 | w                       | number                            | width           | true
 | h                       | number                            | height          | true
+| mw                      | number                            | max-width       | true
+| mh                      | number                            | max-height      | true
+| miw                     | number                            | min-width       | true
+| mih                     | number                            | min-height      | true
 | lh                      | number                            | line-height     | true
 | ls                      | number                            | letter-spacing  | true
 | d                       | keyword (block flex grid ...)     | display         | true
