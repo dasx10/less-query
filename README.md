@@ -30,11 +30,9 @@ set the entry point to your file
   flex-flow: row wrap;
 }
 
-@media (min-width: 720px) and (max-width: 1140px) {
-  .grid__col {
-    box-sizing: border-box;
-    word-wrap: break-word;
-  }
+.grid__col {
+  word-wrap: break-word;
+  box-sizing: border-box;
 }
 
 @media (min-width: 720px) and (max-width: 960px) {
