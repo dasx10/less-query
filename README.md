@@ -169,11 +169,10 @@ Short mixin (emmet type)
 | b                       | sh z              | box             | true
 | bg                      | a cl c i o p r z  | background      | true
 
-
 Content mixin
 | example name            | post prefix | output          | grid system
 |:---|:---|:---|:---
-| j                       | c s         | justify         | true
+| j                       | c s i       | justify         | true
 | a                       | c s i       | align           | true
 
 | post prefix | output 
@@ -209,18 +208,16 @@ border-right-width: 2px;
 Standart mixin
 | name mixin              | input  or type                    | output          | grid system
 |:---|:---|:---|:---
-| d                       | display type                      | display         | true
-| ls                      | number                            | leter-spacyng   | true
-| lh                      | number                            | line-height     | true
-| rz                      | keyword                           | resize          | true
 | w                       | number                            | width           | true
 | h                       | number                            | height          | true
-| va                      | number                            | vertical-align  | true
-| fx                      | grow shrink basis                 | flex            | true
+| lh                      | number                            | line-height     | true
 | ls                      | number                            | letter-spacing  | true
+| d                       | keyword (block flex grid ...)     | display         | true
+| rz                      | keyword                           | resize          | true
+| va                      | keyword                           | vertical-align  | true
+| fx                      | keyword (grow shrink basis)       | flex            | true
 | cp                      | keyword                           | clip            | true
 | f                       | keyword                           | font            | true
-
 
 example
 ```
@@ -314,7 +311,6 @@ Pixel ratio example
 // retina 3x upload only 3.webp
 ```
 
-
 ## any mixin
 ```
 .reset(); // normilize
@@ -368,7 +364,6 @@ if the property is still missing, then you can create your own mix and use it li
 ```
 
 We strongly recommend not using this approach
-
 ```
 .mq(
   xs, .px(10px, sm, 20px),
@@ -396,7 +391,6 @@ or
 );
 
 ```
-
 or
 ```
 .mq(
@@ -411,4 +405,4 @@ or
 
 ```
 
-If you find a bug or have suggestions for improving the system, I will be glad to your feedback.
+If you find a bug or have suggestions for improving the system, i will be glad to your feedback.
