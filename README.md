@@ -63,13 +63,13 @@ set the entry point to your file
 | short name     | break point width | description
 |:---|:---|:---
 | xh             | 1680px            | extra huge                 
-| hu             | 1530px            | huge                 
+| h              | 1530px            | huge                 
 | xl             | 1320px            | extra large                 
 | l              | 1140px            | large          
 | m              | 960px             | medium                
 | s              | 720px             | small               
 | xs             | 540px             | extra small                
-| ti             | 430px             | tiny          
+| t              | 430px             | tiny          
 | xt             | 320px             | extra tiny   
 
 you can override these parameters
