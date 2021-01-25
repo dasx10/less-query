@@ -20,6 +20,7 @@
     ){
         .ww(break-word);
         .bz(border-box);
+        .col-gap(1);
         & when (@set_col = inline-block),(@set_col = inline-flex),(@set_col = inline-grid),(@set_col = inline){
             .col-ib(){
                 display: @set_col;
@@ -43,7 +44,6 @@
             & when not (@set_col = grid) {
                 @width_without_offset: 100% / @columns_set_length * @column_size;
                 width:~"calc(@{width_without_offset} - @{offset})";
-                .col-gap(1);
             }
         }
         ._mixin-col(
