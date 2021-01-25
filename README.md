@@ -67,9 +67,9 @@ set the entry point to your file
 | xh             | 1680px            | extra huge                 
 | hu             | 1530px            | huge                 
 | xl             | 1320px            | extra large                 
-| lg             | 1140px            | large          
-| md             | 960px             | medium                
-| sm             | 720px             | small               
+| l              | 1140px            | large          
+| m              | 960px             | medium                
+| s              | 720px             | small               
 | xs             | 540px             | extra small                
 | ti             | 430px             | tiny          
 | xt             | 320px             | extra tiny   
@@ -226,7 +226,7 @@ Standart mixin
 example
 ```
 .class{
-  .d(block,sm,flex);
+  .d(block,s,flex);
 }
 ```
 ```
@@ -362,7 +362,7 @@ if the property is still missing, then you can create your own mix and use it li
 
 .mq(
   xs,     .myMix(red),
-  sm,     .myMix(darkred),
+  s,     .myMix(darkred),
   1280px, .myMix(#000)
 );
 ```
@@ -370,28 +370,28 @@ if the property is still missing, then you can create your own mix and use it li
 We strongly recommend not using this approach
 ```
 .mq(
-  xs, .px(10px, sm, 20px),
-  sm, .my(5px, md, 12px, lg, auto),
+  xs, .px(10px, s, 20px),
+  s, .my(5px, m, 12px, l, auto),
 );
 ```
 
 Use so
 ```
-.px(xs, 10px, sm, 20px);
-.my(sm, 5px, md, 12px, lg, auto);
+.px(xs, 10px, s, 20px);
+.my(s, 5px, m, 12px, l, auto);
 
 ```
 or
 ```
 .mq(
   xs, .px(10px), 
-  sm, .px(20px)
+  s, .px(20px)
 );
 
 .mq(
-  sm, .my(5px),
-  md, .my(12px), 
-  lg, .my(auto)
+  s, .my(5px),
+  m, .my(12px), 
+  l, .my(auto)
 );
 
 ```
@@ -399,12 +399,12 @@ or
 ```
 .mq(
   xs, .px(10px), 
-  sm, {
+  s, {
     .px(20px);
     .my(12px);
   },
-  md, .my(12px), 
-  lg, .my(auto)
+  m, .my(12px), 
+  l, .my(auto)
 );
 
 ```
