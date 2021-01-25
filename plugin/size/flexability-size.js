@@ -83,14 +83,12 @@ module.exports = {
 
         functions.add('fmax',function(m=0,d,sm={value:320},sd={value:1920}){
             d?.value === undefined ? d = m : d;
-
             if((m.value === d.value) && (m?.unit?.backupUnit === d?.unit?.backupUnit)){
                 if(m.value === 0){
                     return `${m.value}`;
                 }
                 return `${m.value}${m?.unit?.backupUnit||''}`
             }
-
             return getCalc('vmax',m,d,sm,sd,'fmax');
         });
         

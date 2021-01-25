@@ -15,10 +15,10 @@ set the entry point to your file
 ## example 
 ```
 .class-grid{
-    .row();
-    .class-col{
-        .col(12, xs , 6 , sm , 4);
-    }
+  .row();
+  .class-col{
+    .col(12, xs , 6 , sm , 4);
+  }
 }
 ```
 ## output 
@@ -84,12 +84,12 @@ override the number of columns
 
 example grid 24
 ```
-.set-columns(24, 24, flex); // .set-columns(@set_size, @set_length, @set_row);
+.set-columns(24); // .set-columns(@set_size, @set_length, @set_row);
 ```
 
 ## wraper
 ```
-  .wrp(1200px); // padding max size
+.wrp(1200px); // padding max size
 ```
 
 ## container
@@ -147,15 +147,15 @@ margin-left: 2px;
 example grid system
 ```
 .class{
-    .px(xs, 1px);
+  .px(xs, 1px);
 }
 ```
 ```
 @media(min-width:540px){
-    .class{
-        padding-left: 1px;
-        padding-right: 1px;
-    }
+  .class{
+    padding-left: 1px;
+    padding-right: 1px;
+  }
 }
 ```
 
@@ -310,27 +310,20 @@ Pixel ratio example
   3, { background-image:url('3.webp') }
 );
 
+// 1x upload only 1.webp
 // retina 2x upload only 2.webp
 // retina 3x upload only 3.webp
-// 1x upload only 1.webp
 ```
 
 ## Function
-| function name    | input or type                                                  | output      | description
-|:---|:---|:---|:---
-| fw               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the width 
-| fh               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the height 
-| fmin             | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the min screen 
-| fmax             | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the max screen 
-| fd               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the screen 
-| console-log      | console.log                                                    | trminal log | log from the terminal 
-| console-error    | console.error "red output"                                     | trminal log | log from the terminal 
-| console-dir      | console.dir                                                    | trminal log | log from the terminal full params
-
-| name params            | default params 
-|:---|:---
-| mobile-size-layout     | 320px 
-| desctop-syze-layout    | 1920px
+flexible size function
+| function name    | input or type                                              | description
+|:---|:---|:---
+|fw  |mobSize PCSize mobWidthLayout PCWidthLayout                               |from the width 
+|fh  |mobSize PCSize mobHeightLayout PCHeightLayout                             |from the height 
+|fmin|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the minScreen 
+|fmax|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the maxScreen 
+|fd  |mobSize PCSize mobWidthLayout mobHeightLayout PCWidthLayout PCHeightLayout|from the screen
 
 example // flexible font
 ```
@@ -339,6 +332,18 @@ example // flexible font
 ```
 font-size: calc(10.4 + (100vw * 0.005));
 ```
+
+log finction
+| function name| input or type
+|:---|:---|:---
+| console-log  | console.log
+| console-error| console.error "red output"
+| console-dir  | console.dir
+
+| name params  | default params 
+|:---|:---
+| mobSizeLayout|320px 
+| PCSizeLayout |1920px
 
 ## Information
 
@@ -359,8 +364,8 @@ We strongly recommend not using this approach
 
 ```
 .mq(
-  xs,     .px(10px, sm, 20px),
-  sm,     .my(5px, md, 12px, lg, auto),
+  xs, .px(10px, sm, 20px),
+  sm, .my(5px, md, 12px, lg, auto),
 );
 ```
 
