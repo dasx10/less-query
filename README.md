@@ -325,6 +325,11 @@ flexible size function
 |fmax|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the maxScreen 
 |fd  |mobSize PCSize mobWidthLayout mobHeightLayout PCWidthLayout PCHeightLayout|from the screen
 
+| name params  | default params 
+|:---|:---
+| mobSizeLayout|320px 
+| PCSizeLayout |1920px
+
 example // flexible font
 ```
 .fz(fw(12,20));
@@ -335,15 +340,10 @@ font-size: calc(10.4 + (100vw * 0.005));
 
 log finction
 | function name| input or type
-|:---|:---|:---
+|:---|:---
 | console-log  | console.log
 | console-error| console.error "red output"
 | console-dir  | console.dir
-
-| name params  | default params 
-|:---|:---
-| mobSizeLayout|320px 
-| PCSizeLayout |1920px
 
 ## Information
 
