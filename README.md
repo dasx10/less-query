@@ -14,48 +14,48 @@ set the entry point to your file
 
 ## example 
 ```
-.class-grid{
+.grid{
     .row();
-    .class-col{
-        .col(12, xs , 6 , sm , 4);
+    &__col{
+        .col(s, 12, m, 6, l, 4, h);
     }
 }
 ```
 ## output 
 ```
-.class-grid {
+.grid {
   margin-left: -15px;
   margin-right: -15px;
   display: flex;
   flex-flow: row wrap;
 }
 
-@media (min-width: 540px) {
-  .class-grid .class-col {
-    word-wrap: break-word;
+@media (min-width: 720px) and (max-width: 1140px) {
+  .grid__col {
     box-sizing: border-box;
+    word-wrap: break-word;
   }
 }
 
-@media (min-width: 720px) {
-  .class-grid .class-col {
-    width: calc(33.333333333333336% - 30px);
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-}
-
-@media (max-width: 540px) {
-  .class-grid .class-col {
+@media (min-width: 720px) and (max-width: 960px) {
+  .grid__col {
     width: calc(100% - 30px);
     margin-left: 15px;
     margin-right: 15px;
   }
 }
 
-@media (min-width: 540px) and (max-width: 720px) {
-  .class-grid .class-col {
+@media (min-width: 960px) and (max-width: 1140px) {
+  .grid__col {
     width: calc(50% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+@media (min-width: 1140px) and (max-width: 1530px) {
+  .grid__col {
+    width: calc(33.333333333333336% - 30px);
     margin-left: 15px;
     margin-right: 15px;
   }
@@ -84,12 +84,12 @@ override the number of columns
 
 example grid 24
 ```
-.set-columns(24, 24, flex); // .set-columns(@set_size, @set_length, @set_row);
+.set-columns(24); // .set-columns(@set_size, @set_length, @set_row);
 ```
 
 ## wraper
 ```
-  .wrp(1200px); // padding max size
+.wrp(1200px); // padding max size
 ```
 
 ## container
@@ -147,15 +147,15 @@ margin-left: 2px;
 example grid system
 ```
 .class{
-    .px(xs, 1px);
+  .px(xs, 1px);
 }
 ```
 ```
 @media(min-width:540px){
-    .class{
-        padding-left: 1px;
-        padding-right: 1px;
-    }
+  .class{
+    padding-left: 1px;
+    padding-right: 1px;
+  }
 }
 ```
 
@@ -169,11 +169,10 @@ Short mixin (emmet type)
 | b                       | sh z              | box             | true
 | bg                      | a cl c i o p r z  | background      | true
 
-
 Content mixin
 | example name            | post prefix | output          | grid system
 |:---|:---|:---|:---
-| j                       | c s         | justify         | true
+| j                       | c s i       | justify         | true
 | a                       | c s i       | align           | true
 
 | post prefix | output 
@@ -181,7 +180,6 @@ Content mixin
 | c           | content
 | s           | self
 | i           | item 
-
 
 example
 ```
@@ -210,18 +208,20 @@ border-right-width: 2px;
 Standart mixin
 | name mixin              | input  or type                    | output          | grid system
 |:---|:---|:---|:---
-| d                       | display type                      | display         | true
-| ls                      | number                            | leter-spacyng   | true
-| lh                      | number                            | line-height     | true
-| rz                      | keyword                           | resize          | true
 | w                       | number                            | width           | true
 | h                       | number                            | height          | true
-| va                      | number                            | vertical-align  | true
-| fx                      | grow shrink basis                 | flex            | true
+| mw                      | number                            | max-width       | true
+| mh                      | number                            | max-height      | true
+| miw                     | number                            | min-width       | true
+| mih                     | number                            | min-height      | true
+| lh                      | number                            | line-height     | true
 | ls                      | number                            | letter-spacing  | true
+| d                       | keyword (block flex grid ...)     | display         | true
+| rz                      | keyword                           | resize          | true
+| va                      | keyword                           | vertical-align  | true
+| fx                      | keyword (grow shrink basis)       | flex            | true
 | cp                      | keyword                           | clip            | true
 | f                       | keyword                           | font            | true
-
 
 example
 ```
@@ -310,29 +310,31 @@ Pixel ratio example
   3, { background-image:url('3.webp') }
 );
 
+// 1x upload only 1.webp
 // retina 2x upload only 2.webp
 // retina 3x upload only 3.webp
-// 1x upload only 1.webp
 ```
 
-.reset(); - normalize css
-
+## any mixin
+```
+.reset(); // normilize
+```
 ## Function
+flexible size function
+|input| params | description
+|:---|:---|:---
+|fw  |mobSize PCSize mobWidthLayout PCWidthLayout                               |from the width 
+|fh  |mobSize PCSize mobHeightLayout PCHeightLayout                             |from the height 
+|fmin|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the minScreen 
+|fmax|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the maxScreen 
+|fd  |mobSize PCSize mobWidthLayout mobHeightLayout PCWidthLayout PCHeightLayout|from the screen
 
-Flexible size 
-
-| function name    | input or type                                                  | output      | description
-|:---|:---|:---|:---
-| fw               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the width 
-| fh               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the height 
-| fmin             | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the min screen 
-| fmax             | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the max screen 
-| fd               | mobile-size desctop-size mobile-size-lyout desctop-syze-layout | calc(...)   | flexible size from the screen 
-
-| name params            | default params 
+|params|default
 |:---|:---
-| mobile-size-layout     | 320px 
-| desctop-syze-layout    | 1920px
+| mobWidthLayout  |320px 
+| mobHeightLayout |240px 
+| PCWidthLayout   |1920px
+| PCHeightLayout  |1080px
 
 example // flexible font
 ```
@@ -342,36 +344,34 @@ example // flexible font
 font-size: calc(10.4 + (100vw * 0.005));
 ```
 
-Log
-
-| function name    | input or type                                                  | output      | description
-|:---|:---|:---|:---
-| console-log      | console.log                                                    | trminal log | log from the terminal 
-| console-error    | console.error "red output"                                     | trminal log | log from the terminal 
-| console-dir      | console.dir                                                    | trminal log | log from the terminal full params
-
+log function
+| function name| input or type
+|:---|:---
+| console-log  | console.log
+| console-error| console.error "red output"
+| console-dir  | console.dir
 
 ## Information
 
 if the property is still missing, then you can create your own mix and use it like this
 ```
-.my-mixin(@params){
-  color:@params;
+.myMix(@params){
+  .c(lighten(@params));
+  .bgc(darken(@params));
 }
 
 .mq(
-  xs,     .my-mixin(red),
-  sm,     .my-mixin(darkred),
-  1280px, .my-mixin(#000)
+  xs,     .myMix(red),
+  sm,     .myMix(darkred),
+  1280px, .myMix(#000)
 );
 ```
 
 We strongly recommend not using this approach
-
 ```
 .mq(
-  xs,     .px(10px, sm, 20px),
-  sm,     .my(5px, md, 12px, lg, auto),
+  xs, .px(10px, sm, 20px),
+  sm, .my(5px, md, 12px, lg, auto),
 );
 ```
 
@@ -395,7 +395,6 @@ or
 );
 
 ```
-
 or
 ```
 .mq(
@@ -410,4 +409,4 @@ or
 
 ```
 
-If you find a bug or have suggestions for improving the system, I will be glad to your feedback.
+If you find a bug or have suggestions for improving the system, i will be glad to your feedback.
