@@ -14,48 +14,54 @@ set the entry point to your file
 
 ## example 
 ```
+<<<<<<< HEAD
 .class-grid{
   .row();
   .class-col{
     .col(12, xs , 6 , sm , 4);
   }
+=======
+.grid{
+    .row();
+    &__col{
+        .col(s, 12, m, 6, l, 4, h);
+    }
+>>>>>>> c107653aefbcb671f6ce113e05ff406082b8367e
 }
 ```
 ## output 
 ```
-.class-grid {
+.grid {
   margin-left: -15px;
   margin-right: -15px;
   display: flex;
   flex-flow: row wrap;
 }
 
-@media (min-width: 540px) {
-  .class-grid .class-col {
-    word-wrap: break-word;
-    box-sizing: border-box;
-  }
+.grid__col {
+  word-wrap: break-word;
+  box-sizing: border-box;
 }
 
-@media (min-width: 720px) {
-  .class-grid .class-col {
-    width: calc(33.333333333333336% - 30px);
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-}
-
-@media (max-width: 540px) {
-  .class-grid .class-col {
+@media (min-width: 720px) and (max-width: 960px) {
+  .grid__col {
     width: calc(100% - 30px);
     margin-left: 15px;
     margin-right: 15px;
   }
 }
 
-@media (min-width: 540px) and (max-width: 720px) {
-  .class-grid .class-col {
+@media (min-width: 960px) and (max-width: 1140px) {
+  .grid__col {
     width: calc(50% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+@media (min-width: 1140px) and (max-width: 1530px) {
+  .grid__col {
+    width: calc(33.333333333333336% - 30px);
     margin-left: 15px;
     margin-right: 15px;
   }
@@ -65,13 +71,13 @@ set the entry point to your file
 | short name     | break point width | description
 |:---|:---|:---
 | xh             | 1680px            | extra huge                 
-| hu             | 1530px            | huge                 
+| h              | 1530px            | huge                 
 | xl             | 1320px            | extra large                 
-| lg             | 1140px            | large          
-| md             | 960px             | medium                
-| sm             | 720px             | small               
+| l              | 1140px            | large          
+| m              | 960px             | medium                
+| s              | 720px             | small               
 | xs             | 540px             | extra small                
-| ti             | 430px             | tiny          
+| t              | 430px             | tiny          
 | xt             | 320px             | extra tiny   
 
 you can override these parameters
@@ -226,7 +232,7 @@ Standart mixin
 example
 ```
 .class{
-  .d(block,sm,flex);
+  .d(block,s,flex);
 }
 ```
 ```
@@ -362,7 +368,11 @@ if the property is still missing, then you can create your own mix and use it li
 
 .mq(
   xs,     .myMix(red),
+<<<<<<< HEAD
   sm,     .myMix(darkred),
+=======
+  s,     .myMix(darkred),
+>>>>>>> c107653aefbcb671f6ce113e05ff406082b8367e
   1280px, .myMix(#000)
 );
 ```
@@ -370,28 +380,33 @@ if the property is still missing, then you can create your own mix and use it li
 We strongly recommend not using this approach
 ```
 .mq(
+<<<<<<< HEAD
   xs, .px(10px, sm, 20px),
   sm, .my(5px, md, 12px, lg, auto),
+=======
+  xs, .px(10px, s, 20px),
+  s, .my(5px, m, 12px, l, auto),
+>>>>>>> c107653aefbcb671f6ce113e05ff406082b8367e
 );
 ```
 
 Use so
 ```
-.px(xs, 10px, sm, 20px);
-.my(sm, 5px, md, 12px, lg, auto);
+.px(xs, 10px, s, 20px);
+.my(s, 5px, m, 12px, l, auto);
 
 ```
 or
 ```
 .mq(
   xs, .px(10px), 
-  sm, .px(20px)
+  s, .px(20px)
 );
 
 .mq(
-  sm, .my(5px),
-  md, .my(12px), 
-  lg, .my(auto)
+  s, .my(5px),
+  m, .my(12px), 
+  l, .my(auto)
 );
 
 ```
@@ -399,12 +414,12 @@ or
 ```
 .mq(
   xs, .px(10px), 
-  sm, {
+  s, {
     .px(20px);
     .my(12px);
   },
-  md, .my(12px), 
-  lg, .my(auto)
+  m, .my(12px), 
+  l, .my(auto)
 );
 
 ```

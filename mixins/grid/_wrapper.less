@@ -3,23 +3,18 @@
 }
 
 .container(@width:@widthWrap){
-    .max-w(@width);
-    box-sizing: border-box;
+    .mw(@width);
+    .bz(border-box);
     .mx(auto);
     .container-full();
 }
 
 .wrp(@width:@widthWrap){
-    box-sizing: border-box;
+    .bz(border-box);
     position: relative;
     @val: ((@width) / 2);
     @medW:@width + @offset;
     @off:- @offsetOneSide;
-    @media (max-width:@medW - @offset){
-        .px(@offsetOneSide);
-    }
-    @media (min-width:@medW - @offset){
-        @padding_wrap : @val - (@offsetOneSide);
-        .px(calc(50% - @padding_wrap));
-    }
+    @padding_wrap : @val - (@offsetOneSide);
+    .mq(.px(@offsetOneSide),@medW - @offset,.px(calc(50% - @padding_wrap)));
 }

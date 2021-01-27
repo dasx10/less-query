@@ -1,6 +1,6 @@
 {
   "name": "less-query",
-  "version": "1.3.4",
+  "version": "2.1.4",
   "description": "grid-system and flexible mixins for less",
   "main": "style.less",
   "scripts": {
