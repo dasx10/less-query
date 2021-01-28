@@ -213,6 +213,7 @@ Standart mixin
 | miw                     | number                            | min-width       | true
 | mih                     | number                            | min-height      | true
 | lh                      | number                            | line-height     | true
+| od                      | number                            | order           | true
 | ls                      | number                            | letter-spacing  | true
 | d                       | keyword (block flex grid ...)     | display         | true
 | rz                      | keyword                           | resize          | true
