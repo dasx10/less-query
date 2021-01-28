@@ -14,19 +14,11 @@ set the entry point to your file
 
 ## example 
 ```
-<<<<<<< HEAD
-.class-grid{
-  .row();
-  .class-col{
-    .col(12, xs , 6 , sm , 4);
-  }
-=======
 .grid{
     .row();
     &__col{
         .col(s, 12, m, 6, l, 4, h);
     }
->>>>>>> c107653aefbcb671f6ce113e05ff406082b8367e
 }
 ```
 ## output 
@@ -367,12 +359,7 @@ if the property is still missing, then you can create your own mix and use it li
 }
 
 .mq(
-  xs,     .myMix(red),
-<<<<<<< HEAD
-  sm,     .myMix(darkred),
-=======
-  s,     .myMix(darkred),
->>>>>>> c107653aefbcb671f6ce113e05ff406082b8367e
+  s,      .myMix(darkred),
   1280px, .myMix(#000)
 );
 ```
@@ -380,13 +367,8 @@ if the property is still missing, then you can create your own mix and use it li
 We strongly recommend not using this approach
 ```
 .mq(
-<<<<<<< HEAD
-  xs, .px(10px, sm, 20px),
-  sm, .my(5px, md, 12px, lg, auto),
-=======
   xs, .px(10px, s, 20px),
   s, .my(5px, m, 12px, l, auto),
->>>>>>> c107653aefbcb671f6ce113e05ff406082b8367e
 );
 ```
 
