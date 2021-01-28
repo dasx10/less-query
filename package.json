@@ -1,10 +1,10 @@
 {
   "name": "less-query",
-  "version": "2.1.5",
+  "version": "2.1.7",
   "description": "grid-system and flexible mixins for less",
   "main": "style.less",
   "scripts": {
-    "test": ""
+    "test": "jest"
   },
   "repository": {
     "type": "git",
