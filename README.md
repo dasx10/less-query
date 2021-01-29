@@ -72,10 +72,10 @@ set the entry point to your file
 | t              | 430px             | tiny          
 | xt             | 320px             | extra tiny   
 
-| default parameters     | break point width 
+| default                | parameters
 |:---|:---
 | columns                | 12                
-| columns                | 30px                
+| offset                 | 30px                
 | wraper                 | 1680px                
 
 override the number of columns
