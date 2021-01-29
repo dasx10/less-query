@@ -23,12 +23,7 @@ module.exports = {
             value.value[index.value - 1] ||
             value.value[index.value - 2] || 
             value.value[index.value - 3] || 0;
-            
             return result.value+(result.unit?.backupUnit || '');
-        });
-
-        functions.add('isDimension',function(value) {
-            return value.unit.backupUnit !== undefined ? '1' : '0';
         });
     }
 };
