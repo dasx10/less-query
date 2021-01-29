@@ -72,17 +72,34 @@ set the entry point to your file
 | t              | 430px             | tiny          
 | xt             | 320px             | extra tiny   
 
+default columns = 12
+default offset = 30px
+override the number of columns
+
+To change values or set your own
+
+example
+```
+@breaks:{
+  @xl : 1440px;
+  @lg : 1200px;
+  @md : 960px;
+  @sm : 720px;
+  @xs : 540px;
+}
+
+@offset : 20px;
+@default_columns: 24;
+```
+
+you can also change the number of columns for a layer
+```
+.set-columns(24); // .set-columns(@set_size, @set_length, @set_row);
+```
+
 you can override these parameters
 ```
 node_modules/less-mixin/mixins/grid/_data.less
-```
-
-default columns = 12
-override the number of columns
-
-example grid 24
-```
-.set-columns(24); // .set-columns(@set_size, @set_length, @set_row);
 ```
 
 ## wraper
