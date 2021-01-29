@@ -1,5 +1,5 @@
 const getConf = require('../plugin/src/function/getCof');
 
-test('adds 1 + 2 to equal 3', () => {
+test('get coficient cgange', () => {
     expect(getConf(2, 1, 2, 1)).toBe(1);  
 });
