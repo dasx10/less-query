@@ -90,7 +90,7 @@ example
 }
 
 @offset : 20px;
-@defaultСolumns: 24;
+@maxColumns: 24;
 @widthWrap : 1440px;
 
 ```
