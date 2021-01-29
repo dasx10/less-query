@@ -2,7 +2,7 @@ const getCof = require('./function/getCof');
 const getCorrect = require('./function/getCorrect');
 const intOrZero = require('./function/intOrZero');
 
-function getForm(met,m,d,sm,sd,name = 'fd'){
+function getForm( met , m, d , sm , sd , name = 'fd'){
     let cof = 0;
     let correct = 0;
     let type = m?.unit?.backupUnit||d?.unit?.backupUnit||'';

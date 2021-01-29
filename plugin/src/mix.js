@@ -28,7 +28,6 @@ module.exports = {
         });
 
         functions.add('isDimension',function(value) {
-            console.log()
             return value.unit.backupUnit !== undefined ? '1' : '0';
         });
     }
