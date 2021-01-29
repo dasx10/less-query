@@ -72,8 +72,12 @@ set the entry point to your file
 | t              | 430px             | tiny          
 | xt             | 320px             | extra tiny   
 
-default columns = 12
-default offset = 30px
+| default parameters     | break point width 
+|:---|:---
+| columns                | 12                
+| columns                | 30px                
+| wraper                 | 1680px                
+
 override the number of columns
 
 To change values or set your own
@@ -89,7 +93,9 @@ example
 }
 
 @offset : 20px;
-@default_columns: 24;
+@defaultСolumns: 24;
+@widthWrap : 1440px;
+
 ```
 
 you can also change the number of columns for a layer

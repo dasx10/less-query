@@ -55,7 +55,7 @@
                 & when not (@value_2-1 = @false){
                     & when not (@value_1-1 = @value_1-2){
                         .break( ._row(@value_1-1) , 0 , @breaks[@@value_2-1] );
-                        .set-columns(@default_columns, @default_columns, @value_1-1);
+                        .set-columns(@defaultСolumns, @defaultСolumns, @value_1-1);
                     }
                     & when not (@value_1-2 = @false) {
                         ._mixin-grid(
@@ -76,7 +76,7 @@
                 }
                 & when ( @value_2-1 = @false ) {
                     ._row( @value_1-1 );
-                    .set-columns(@default_columns, @default_columns, @value_1-1);
+                    .set-columns(@defaultСolumns, @defaultСolumns, @value_1-1);
                 }
             }
         
@@ -84,7 +84,7 @@
                 & when not(@value_1-2 = @false){
                     & when not (@value_2-1 = @value_2-2) {
                         .break( ._row(@value_2-1) , @breaks[@@value_1-1], @breaks[@@value_1-2] );
-                        .set-columns(@default_columns, @default_columns, @value_2-1);
+                        .set-columns(@defaultСolumns, @defaultСolumns, @value_2-1);
                     }
                     & when not (@value_2-2 = @false){
                         & when (@value_2-1 = @value_2-2) {
@@ -121,7 +121,7 @@
                 }
                 & when (@value_1-2 = @false){
                     .break( ._row(@value_2-1) , @breaks[@@value_1-1]);
-                    .set-columns(@default_columns, @default_columns, @value_2-1);
+                    .set-columns(@defaultСolumns, @defaultСolumns, @value_2-1);
                 }
             }
         }    

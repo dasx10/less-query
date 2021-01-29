@@ -14,7 +14,9 @@
 ){
     ._mixin(@n1 : @offsets){
         @this_ofset : @n1 * -1;
-        ._mx(@offsetOneSide * @this_ofset);
+        & when not(@offsetOneSide = 0){
+            ._mx(@offsetOneSide * @this_ofset);
+        }
     }
     
     ._mixin-grid(
@@ -123,16 +125,20 @@
     );
 }
 
-
-
 .col-gap(@offsets : 1){
-    .mx(@offsetOneSide * @offsets);
+    & when not(@offsetOneSide = 0) {
+        .mx(@offsetOneSide * @offsets);
+    }
 }
 
 .col-gap-r(@offsets : 1){
-    .mr(@offsetOneSide * @offsets);
+    & when not(@offsetOneSide = 0) {
+        .mr(@offsetOneSide * @offsets);
+    }
 }
 
 .col-gap-l(@offsets : 1){
-    .ml(@offsetOneSide * @offsets);
+    & when not(@offsetOneSide = 0) {
+        .ml(@offsetOneSide * @offsets);
+    }
 }
