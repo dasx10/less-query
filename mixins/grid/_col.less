@@ -1,9 +1,7 @@
-.set-columns(@set_size : @defaultСolumns, @set_length : @set_size, @set_row:flex){
-    
+.set-columns(@set_size : @maxColumns, @set_length : @set_size, @set_row : flex){
     @columns_set_size : @set_size;
     @columns_set_length : @set_length;
     @set_col : @set_row;
-
     .col(
         @value_1-1 : @false, @value_2-1 : @false,
         @value_1-2 : @false, @value_2-2 : @false,

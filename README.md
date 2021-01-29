@@ -17,7 +17,7 @@ set the entry point to your file
 .grid{
     .row();
     &__col{
-        .col(s, 12, m, 6, l, 4, h);
+        .col(12, s, 6, m, 4, l, 3);
     }
 }
 ```
@@ -29,33 +29,30 @@ set the entry point to your file
   display: flex;
   flex-flow: row wrap;
 }
-
 .grid__col {
   word-wrap: break-word;
   box-sizing: border-box;
+  margin-left: 15px;
+  margin-right: 15px;
 }
-
-@media (min-width: 720px) and (max-width: 960px) {
+@media (max-width: 720px) {
   .grid__col {
     width: calc(100% - 30px);
-    margin-left: 15px;
-    margin-right: 15px;
   }
 }
-
-@media (min-width: 960px) and (max-width: 1140px) {
+@media (min-width: 720px) and (max-width: 960px) {
   .grid__col {
     width: calc(50% - 30px);
-    margin-left: 15px;
-    margin-right: 15px;
   }
 }
-
-@media (min-width: 1140px) and (max-width: 1530px) {
+@media (min-width: 960px) and (max-width: 1140px) {
   .grid__col {
     width: calc(33.333333333333336% - 30px);
-    margin-left: 15px;
-    margin-right: 15px;
+  }
+}
+@media (min-width: 1140px) {
+  .grid__col {
+    width: calc(25% - 30px);
   }
 }
 ```
