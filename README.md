@@ -337,7 +337,25 @@ Pixel ratio example
 ## any mixin
 ```
 .reset(); // normilize
+
 ```
+
+| name                    | input  or type                    | output                | grid system
+|:---|:---|:---|:---
+| reset                   |                                   | normilize css         | false
+| box                     | number                            | width + height        | true
+| mbox                    | number                            | max width and height  | true
+| mibox                   | number                            | min width and height  | true
+| triangle-t              | number                            | triangle              | false
+| triangle-b              | number                            | triangle              | false
+| triangle-l              | number                            | triangle              | false
+| triangle-r              | number                            | triangle              | false
+| triangle-rt             | number                            | triangle              | false
+| triangle-rb             | number                            | triangle              | false
+| round                   | number                            | border-radius:50%     | false
+| circle                  | number                            | circle                | false
+| elipse                  | number                            | circle                | false
+
 ## Function
 flexible size function
 |input| params | description
