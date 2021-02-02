@@ -1,0 +1,29 @@
+.injects(
+    @props,
+    @value_1-1 : @false, @value_2-1 : @false,
+    @value_1-2 : @false, @value_2-2 : @false,
+    @value_1-3 : @false, @value_2-3 : @false,
+    @value_1-4 : @false, @value_2-4 : @false,
+    @value_1-5 : @false, @value_2-5 : @false,
+    @value_1-6 : @false, @value_2-6 : @false,
+    @value_1-7 : @false, @value_2-7 : @false,
+    @value_1-8 : @false, @value_2-8 : @false,
+    @value_1-9 : @false, @value_2-9 : @false,
+    @value_1-10: @false, @value_2-10: @false,
+    @value_1-11: @false, @value_2-11: @false,
+    @value_1-12: @false, @value_2-12: @false
+){
+    & when(includes(@breaks, @value_1-1) = 1){
+        @media(min-width: @breaks[@@value_1-1]){
+            @props();
+        }
+
+        // TODO LAST BP SET MAX WIDTH
+    }
+
+    & when(includes(@breaks, @value_2-1) = 1){
+        @props();
+
+        // TODO LAST BP SET MAX WIDTH
+    }
+}

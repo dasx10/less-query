@@ -15,7 +15,7 @@ set the entry point to your file
 ## example 
 ```
 .grid{
-    .row();
+    .row;
     &__col{
         .col(12, s, 6, m, 4, l, 3);
     }
@@ -165,14 +165,20 @@ margin-left: 2px;
 example grid system
 ```
 .class{
-  .px(xs, 1px);
+  .px(1px, xs, 2px);
 }
 ```
 ```
-@media(min-width:540px){
-  .class{
+@media (max-width: 540px) {
+  .class {
     padding-left: 1px;
     padding-right: 1px;
+  }
+}
+@media (min-width: 540px) {
+  .class {
+    padding-left: 2px;
+    padding-right: 2px;
   }
 }
 ```
