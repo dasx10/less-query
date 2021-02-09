@@ -397,17 +397,18 @@ converter function
 |toH    | px default_layout | conver pixel to viewport height
 |toM    | px default_layout | conver pixel to viewport max size
 |toMi   | px default_layout | conver pixel to viewport min size
-|pToPx  | % px              | conver procent to pixel
-|emToPx | em(rem) px        | conver em or rem to pixel
+|toPx   | value px          | conver procent to pixel
 
 ```
 toEm(16);
 toP(20px, 1920px);
+toPx(10%,1920px);
 ```
 
 ```
 1em;
 1.0416666666666665%;
+192px;
 ```
 
 

@@ -30,12 +30,18 @@ module.exports = {
             return (val.value / def.value) * 100 + "vmax";
         });
 
-        functions.add('emToPx',function(val, def) {
-            return val.value * def.value + "px";
-        });
-
-        functions.add('pToPx',function(val, def) {
-            return (val.value / 100) * def.value + "px";
+        functions.add('toPx',function(val, def) {
+            let numerator = val.unit.numerator && val.unit.numerator[0];
+            switch(numerator){
+                case '%','vh','vw','vmax','vmin':
+                def.value = (def & def.value) || 1920;
+                return (val.value / 100) * def.value + "px";
+                case 'em','rem':
+                def.value = (def & def.value) || 16;
+                return val.value * def.value + "px";
+                default:
+                return val;
+            }
         });
     }
 };
