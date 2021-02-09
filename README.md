@@ -374,10 +374,10 @@ flexible size function
 
 |params|default
 |:---|:---
-| mobWidthLayout  |320px 
-| mobHeightLayout |240px 
-| PCWidthLayout   |1920px
-| PCHeightLayout  |1080px
+| mobWidthLayout  | 320px 
+| mobHeightLayout | 240px 
+| PCWidthLayout   | 1920px
+| PCHeightLayout  | 1080px
 
 example // flexible font
 ```

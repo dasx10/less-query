@@ -90,7 +90,12 @@
             }
             & when not (@set_col = grid) {
                 @width_without_offset: 100% / @columns_set_length * @column_size;
-                width:~"calc(@{width_without_offset} - @{offset})";
+                & when (ispercentage(@offset)){
+                    width:@width_without_offset - @offset;
+                }
+                & when not (ispercentage(@offset)){
+                    width:~"calc(@{width_without_offset} - @{offset})";
+                }
             }
         }
         ._mixin-col(
