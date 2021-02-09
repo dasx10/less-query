@@ -30,14 +30,15 @@ module.exports = {
             return (val.value / def.value) * 100 + "vmax";
         });
 
-        functions.add('toPx',function(val, def) {
+        functions.add('toPx',function(val, def = {}) {
             let numerator = val.unit.numerator && val.unit.numerator[0];
             switch(numerator){
                 case '%','vh','vw','vmax','vmin':
-                def.value = (def & def.value) || 1920;
+                def.value = (def && def.value) || 1920;
                 return (val.value / 100) * def.value + "px";
                 case 'em','rem':
-                def.value = (def & def.value) || 16;
+                def.value = (def && def.value) || 16;
+                console.log(def);
                 return val.value * def.value + "px";
                 default:
                 return val;
