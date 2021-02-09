@@ -388,25 +388,35 @@ font-size: calc(10.4 + (100vw * 0.005));
 ```
 
 converter function
-|input  | params | description
+|input  | params            | description
 |:---|:---|:---
-|toEm   | px default_em     |from the width 
-|toRem  | px default_rem    |from the height 
-|toP    | px default_layout |from the minScreen 
-|toW    | px default_layout |from the maxScreen 
-|toH    | px default_layout |from the screen
-|toM    | px default_layout |from the screen
-|toMi   | px default_layout |from the screen
-|pToPx  | % px              |from the screen
-|emToPX | em(rem) px        |from the screen
+|toEm   | px default_em     | conver pixel to em
+|toRem  | px default_rem    | conver pixel to rem 
+|toP    | px default_layout | conver pixel to procent 
+|toW    | px default_layout | conver pixel to viewport width 
+|toH    | px default_layout | conver pixel to viewport height
+|toM    | px default_layout | conver pixel to viewport max size
+|toMi   | px default_layout | conver pixel to viewport min size
+|pToPx  | % px              | conver procent to pixel
+|emToPX | em(rem) px        | conver em or rem to pixel
+
+```
+toEm(16);
+toP(20px, 1920px);
+```
+
+```
+1em;
+1.0416666666666665%;
+```
 
 
 log function
-| function name| input or type
+| function name | input or type
 |:---|:---
-| console-log  | console.log
-| console-error| console.error "red output"
-| console-dir  | console.dir
+| console-log   | console.log
+| console-error | console.error "red output"
+| console-dir   | console.dir
 
 ## Information
 
