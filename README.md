@@ -398,7 +398,7 @@ converter function
 |toM    | px default_layout | conver pixel to viewport max size
 |toMi   | px default_layout | conver pixel to viewport min size
 |pToPx  | % px              | conver procent to pixel
-|emToPX | em(rem) px        | conver em or rem to pixel
+|emToPx | em(rem) px        | conver em or rem to pixel
 
 ```
 toEm(16);
