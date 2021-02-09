@@ -32,13 +32,18 @@ module.exports = {
 
         functions.add('toPx',function(val, def = {}) {
             let numerator = val.unit.numerator && val.unit.numerator[0];
+            console.log(numerator === '%')
             switch(numerator){
-                case '%','vh','vw','vmax','vmin':
+                case '%':
+                case 'vh':
+                case 'vw':
+                case 'vmax':
+                case 'vmin':
                 def.value = (def && def.value) || 1920;
                 return (val.value / 100) * def.value + "px";
-                case 'em','rem':
+                case 'em':
+                case 'rem':
                 def.value = (def && def.value) || 16;
-                console.log(def);
                 return val.value * def.value + "px";
                 default:
                 return val;
