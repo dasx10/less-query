@@ -2,12 +2,12 @@ module.exports = {
     install: function(less, pluginManager, functions) {
         functions.add('toEm',function(val, def) {
             if(def && def.value) return def.value / val.value + "em";
-            return 16 / val.value + "em";
+            return val.value / 16 + "em";
         });
 
         functions.add('toRem',function(val, def) {
             if(def && def.value) return def.value / def.value + "rem";
-            return 16 / val.value + "rem";
+            return val.value / 16 + "rem";
         });
 
         functions.add('toP',function(val, def) {
