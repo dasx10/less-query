@@ -251,7 +251,7 @@ Standart mixin
 example
 ```
 .class{
-  .d(block,s,flex);
+  .d(block,sm,flex);
 }
 ```
 ```
@@ -381,7 +381,7 @@ flexible size function
 
 example // flexible font
 ```
-.fz(fw(12,20));
+.fz(fw(12px,20px));
 ```
 ```
 font-size: calc(10.4 + (100vw * 0.005));
