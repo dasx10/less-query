@@ -35,7 +35,6 @@ test('return vh set > default params to bigger', () => {
     expect(toH({value:1920 * 8},{value:1920 * 2})).toBe("400vh");
 });
 
-
 test('return vh set < default params to smaller', () => {
     expect(toH({value:32},{value:320})).toBe("10vh");
     expect(toH({value:160},{value:320})).toBe("50vh");
@@ -49,7 +48,6 @@ test('return vh set > default params to smaller', () => {
     expect(toH({value:1280},{value:320})).toBe("400vh");
     expect(toH({value:2560},{value:320})).toBe("800vh");
 });
-
 
 test('return vh set < default params to bigger', () => {
     expect(toH({value:192},{value:1920 * 2})).toBe("5vh");
@@ -65,4 +63,4 @@ test('zero return', () => {
     expect(toH({value:0},{value:16})).toBe("0");
     expect(toH({value:0},{value:32})).toBe("0");
     expect(toH()).toBe("0");
-})
+});

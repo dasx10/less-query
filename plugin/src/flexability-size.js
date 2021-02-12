@@ -5,7 +5,7 @@ const intOrZero = require('./function/intOrZero');
 function getForm( met , m, d , sm , sd , name = 'fd'){
     let cof = 0;
     let correct = 0;
-    let type = m?.unit?.backupUnit||d?.unit?.backupUnit||'';
+    let type = m?.unit?.backupUnit|| d?.unit?.backupUnit||'';
     if((type !== d?.unit?.backupUnit) && (d?.unit?.backupUnit !== undefined)){
         console.log("\x1b[31m",
         `invalid unit ${d?.unit?.backupUnit}, in ${name}(${m.value}${m?.unit?.backupUnit||''},${d.value}${d?.unit?.backupUnit||''})`,

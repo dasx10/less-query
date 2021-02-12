@@ -1,6 +1,6 @@
 const intOrZero = require('./intOrZero');
-const getCof = require('./getCof')
-const getCorrect = require('./getCorrect')
+const getCof = require('./getCof');
+const getCorrect = require('./getCorrect');
 module.exports = ( met , m, d , sm , sd , name = 'fd') => {
     let cof = 0;
     let correct = 0;
@@ -17,6 +17,5 @@ module.exports = ( met , m, d , sm , sd , name = 'fd') => {
 
     cof = getCof(m.value,d.value,sm.value,sd.value);
     correct = getCorrect(cof,m.value,sm.value);
-
     return `${correct}${type} + (100${met} * ${cof})`;
 }
