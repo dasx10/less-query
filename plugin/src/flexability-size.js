@@ -1,6 +1,6 @@
-const getCof = require('./function/getCof');
-const getCorrect = require('./function/getCorrect');
-const intOrZero = require('./function/intOrZero');
+const getCof = require('./function/src/getCof');
+const getCorrect = require('./function/src/getCorrect');
+const intOrZero = require('./function/src/intOrZero');
 
 function getForm( met , m, d , sm , sd , name = 'fd'){
     let cof = 0;
@@ -18,8 +18,8 @@ function getForm( met , m, d , sm , sd , name = 'fd'){
 
     cof = getCof(m.value,d.value,sm.value,sd.value);
     correct = getCorrect(cof,m.value,sm.value);
-
-    return `${correct}${type} + (100${met} * ${cof})`;
+    let vw = 100 * cof;
+    return `${correct}${type} + ${vw}${met}`;
 }
 
 function getCalc(met,m,d,sm,sd){

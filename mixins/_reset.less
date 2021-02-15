@@ -1,76 +1,88 @@
 .reset(){
     html,body{
-        .lh(1.15rem);
+        line-height: 1.15;
         overflow-x:hidden;
-        .mih(100vh);
+        min-height:100vh;
         -webkit-text-size-adjust:100%;
     }
     body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{
-        .m(0);
-        .p(0);
+        padding: 0;
+        margin: 0;
     }
     a{
-        .td(none);
-        .c(inherit);
-        .bgc(transparent);
+        text-decoration:none;
+        color:inherit;
+        background-color:transparent;
     }
     b,strong{
-        .fw(bolder);
+        font-weight: bolder;
     }
     fieldset,img,abbr{
-        .bd(none);
+        border: none;
     }
     table{
         border-collapse:collapse;
         border-spacing:0;
     }
     ul li{
-        .ls(none);
+        list-style: none;
     }
     h1,h2,h3,h4,h5,h6{
-        .fz(100%);
-        .fw(normal);
+        font-size: 100%;
+        font-weight: normal;
     }
     input,textarea,select,optgroup,button{
-        .ff(inherit);
-        .fz(inherit);
-        .fw(inherit);
-        .tt(none);
-        .lh(inherit);
-        .m(0);
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        text-transform: none;
+        margin: 0;
     }
-    article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,main{
-        .d(block);
+    div,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,main{
+        display: block;
     }
     img,video,iframe,svg{
-        .mw(100%);
-        .h(auto);
-        .bds(none);
+        max-width: 100%;
+        max-height: 100vh;
+        height: auto;
+        border:none;
     }
     small{
-        .fz(80%);
+        font-size: 0.8em;
     }
-    sup{
-        .va(text-top);
+    sub {
+        bottom: -0.25em;
     }
-    sub{
-        .va(text-bottom);
+    sup {
+        top: -0.5em;
     }
     legend{
-        .c(inherit);
-        .mw(100%);
+        color: inherit;
+        min-width: 100%;
     }
     progress{
-        .va(baseline);
+        vertical-align: baseline;
     }
     caption,th{
-        .ta(left);
+        text-align:left;
     }
     hr{
-        .bz(content-box);
-        .h(0);
+        box-sizing: content-box;
+        height:0;
     }
     template,[type="hidden"],[hidden]{
-        .d(none);
+        display:none;
+    }
+    header{
+        margin-top:0;
+        top:0;
+        order:-1;
+    }
+    footer{
+        margin-top:auto;
+        margin-bottom:0;
+        bottom:0;
+        order:1;
     }
 }

@@ -384,7 +384,7 @@ example // flexible font
 .fz(fw(12px,20px));
 ```
 ```
-font-size: calc(10.4 + (100vw * 0.005));
+font-size: calc(10.4px + 0.5vw);
 ```
 
 converter function
