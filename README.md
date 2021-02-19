@@ -15,10 +15,10 @@ set the entry point to your file
 ## example 
 ```
 .grid{
-    .row;
-    &__col{
-        .col(12, sm, 6, md, 4, lg, 3);
-    }
+  .row;
+  &__col{
+    .col(12, sm, 6, md, 4, lg, 3);
+  }
 }
 ```
 ## output 
@@ -429,7 +429,7 @@ if the property is still missing, then you can create your own mix and use it li
 }
 
 .mq(
-  sm,      .myMix(darkred),
+  sm,     .myMix(darkred),
   1280px, .myMix(#000)
 );
 ```
@@ -438,7 +438,7 @@ We strongly recommend not using this approach
 ```
 .mq(
   xs, .px(10px, sm, 20px),
-  s, .my(5px, md, 12px, lg, auto),
+  s,  .my(5px, md, 12px, lg, auto),
 );
 ```
 
