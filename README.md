@@ -1,5 +1,5 @@
 # LESS QUERY
-[![Build Status](https://travis-ci.com/dasx10/less-mixin.svg?branch=master)](https://travis-ci.com/dasx10/less-mixin)
+[![Build Status](https://travis-ci.com/dasx10/less-query.svg?branch=master)](https://travis-ci.com/dasx10/less-query)
 ----
 Modified approach to responsive layout
 
