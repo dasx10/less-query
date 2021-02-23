@@ -1,0 +1,169 @@
+html,
+body {
+  line-height: 1.15;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-text-size-adjust: 100%;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+}
+b,
+strong {
+  font-weight: bolder;
+}
+fieldset,
+img,
+abbr {
+  border: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+ul li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+input,
+textarea,
+select,
+optgroup,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-transform: none;
+  margin: 0;
+}
+div,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+  display: block;
+}
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
+small {
+  font-size: 0.8em;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+legend {
+  color: inherit;
+  min-width: 100%;
+}
+progress {
+  vertical-align: baseline;
+}
+caption,
+th {
+  text-align: left;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+template,
+[type="hidden"],
+[hidden] {
+  display: none;
+}
+header {
+  margin-top: 0;
+  top: 0;
+  order: -1;
+}
+footer {
+  margin-top: auto;
+  margin-bottom: 0;
+  bottom: 0;
+  order: 1;
+}
+.grid {
+  margin-left: -0.9375em;
+  margin-right: -0.9375em;
+  display: flex;
+  flex-flow: row wrap;
+}
+.grid_col {
+  word-wrap: break-word;
+  box-sizing: border-box;
+  margin-left: 0.9375em;
+  margin-right: 0.9375em;
+}
+@media (max-width: 45em) {
+  .grid_col {
+    width: calc(100% - 1.875em);
+  }
+}
+@media (min-width: 45em) and (max-width: 60em) {
+  .grid_col {
+    width: calc(50% - 1.875em);
+  }
+}
+@media (min-width: 60em) and (max-width: 71.25em) {
+  .grid_col {
+    width: calc(33.333333333333336% - 1.875em);
+  }
+}
+@media (min-width: 71.25em) {
+  .grid_col {
+    width: calc(25% - 1.875em);
+  }
+}

@@ -1,11 +1,13 @@
 {
   "name": "less-query",
-  "version": "2.6.4",
+  "version": "2.6.5",
   "description": "grid-system and flexible mixins for less",
   "main": "style.less",
   "scripts": {
     "test": "jest",
-    "build": "babel ./plugin/src/flexability-size.js -d ./"
+    "build": "babel ./plugin/src/flexability-size.js -d ./",
+	"css": "gulp css",
+	"css:watch": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -40,6 +42,8 @@
     "@babel/core": "^7.12.10",
     "@babel/node": "^7.12.16",
     "@babel/preset-env": "^7.12.16",
+    "gulp": "^4.0.2",
+    "gulp-less": "^4.0.1",
     "jest": "^26.6.3"
   }
 }
