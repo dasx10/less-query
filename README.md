@@ -59,7 +59,7 @@ set the entry point to your file
   }
 }
 ```
-## Standart grid system
+## Standard grid system
 | short name     | break point width | description
 |:---|:---|:---
 | xh             | 1680px            | extra huge
@@ -76,7 +76,7 @@ set the entry point to your file
 |:---|:---
 | columns                | 12
 | offset                 | 30px
-| wraper                 | 1680px
+| wrapper                | 1680px
 
 override the number of columns
 
@@ -108,7 +108,7 @@ you can override these parameters
 node_modules/less-mixin/mixins/grid/_data.less
 ```
 
-## wraper
+## wrapper
 ```
 .wrp(1200px); // padding max size
 ```
@@ -125,10 +125,23 @@ Grid system
 |:---|:---|:---|:---
 | row                     | row row-reverse grid left right inline-block inline-flex inline-grid    | true        |
 | col                     | number                                                                  | true        |
+| col-count               | number                                                                  | false       | overrides the default column count
+| col-offset(-position)   | number                                                                  | false       | change default column margin
+| row-offset(-position)   | number                                                                  | false       | change default rows margin
 | mq                      | mixin                                                                   | true        | media width builder
 | to                      | mixin                                                                   | true        | media max width only
 | from                    | mixin                                                                   | true        | media min width only
 | mqh                     | mixin                                                                   | true        | media height builder
+
+Position
+| name mixin  | input  or type  | output
+|:---|:---|:---|:---
+| r           | number          | right
+| l           | number          | left
+| t           | number          | top
+| b           | number          | bottom
+| x           | number          | left + right
+| y           | number          | bottom + top
 
 example
 ```
@@ -232,7 +245,7 @@ border-left-width: 2px;
 border-right-width: 2px;
 ```
 
-Standart mixin
+Standard mixin
 | name mixin | input  or type                    | output          | grid system
 |:---|:---|:---|:---
 | w          | number                            | width           | true
@@ -316,11 +329,11 @@ post prefix name
 | prefix name | input  or type | output
 |:---|:---|:---
 | a           | keyword        | align
-| d           | keyword        | dicoration
+| d           | keyword        | decoration
 | i           | number         | indent
 | s           | keyword        | style
 | t           | keyword        | transform
-| v           | number         | overflov
+| v           | number         | overflow
 
 example
 ```
@@ -345,7 +358,7 @@ Pixel ratio example
 
 ## any mixin
 ```
-.reset(); // normilize
+.reset(); // normalize
 
 ```
 
@@ -393,14 +406,14 @@ font-size: calc(10.4px + 0.5vw);
 converter function
 |input  | params            | description
 |:---|:---|:---
-|toEm   | px default_em     | conver pixel to em
-|toRem  | px default_rem    | conver pixel to rem
-|toP    | px default_layout | conver pixel to procent
-|toW    | px default_layout | conver pixel to viewport width
-|toH    | px default_layout | conver pixel to viewport height
-|toM    | px default_layout | conver pixel to viewport max size
-|toMi   | px default_layout | conver pixel to viewport min size
-|toPx   | value px          | conver procent to pixel
+|toEm   | px default_em     | convert pixel to em
+|toRem  | px default_rem    | convert pixel to rem
+|toP    | px default_layout | convert pixel to percent
+|toW    | px default_layout | convert pixel to viewport width
+|toH    | px default_layout | convert pixel to viewport height
+|toM    | px default_layout | convert pixel to viewport max size
+|toMi   | px default_layout | convert pixel to viewport min size
+|toPx   | value px          | convert percent to pixel
 
 ```
 toEm(16);
