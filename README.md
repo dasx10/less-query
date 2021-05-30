@@ -10,11 +10,12 @@ npm install -D less-query
 
 ## use
 set the entry point to your file
+
 ```
 @import './node_modules/less-query/style.less';
 ```
 
-## example 
+## example
 ```
 .grid{
   .row;
@@ -23,7 +24,7 @@ set the entry point to your file
   }
 }
 ```
-## output 
+## output
 ```
 .grid {
   margin-left: -15px;
@@ -61,21 +62,21 @@ set the entry point to your file
 ## Standart grid system
 | short name     | break point width | description
 |:---|:---|:---
-| xh             | 1680px            | extra huge                 
-| hu             | 1530px            | huge                 
-| xl             | 1320px            | extra large                 
-| lg             | 1140px            | large          
-| md             | 960px             | medium                
-| sm             | 720px             | small               
-| xs             | 540px             | extra small                
-| ti             | 430px             | tiny          
-| xt             | 320px             | extra tiny   
+| xh             | 1680px            | extra huge
+| hu             | 1530px            | huge
+| xl             | 1320px            | extra large
+| lg             | 1140px            | large
+| md             | 960px             | medium
+| sm             | 720px             | small
+| xs             | 540px             | extra small
+| ti             | 430px             | tiny
+| xt             | 320px             | extra tiny
 
 | default                | parameters
 |:---|:---
-| columns                | 12                
-| offset                 | 30px                
-| wraper                 | 1680px                
+| columns                | 12
+| offset                 | 30px
+| wraper                 | 1680px
 
 override the number of columns
 
@@ -92,14 +93,14 @@ example
 }
 
 @offset : 20px;
-@maxColumns: 24;
-@widthWrap : 1440px;
+@number-of-columns: 24;
+@width-wrapper : 1440px;
 
 ```
 
 you can also change the number of columns for a layer
 ```
-.set-columns(24); // .set-columns(@set_size, @set_length, @set_row);
+.col-count(24); // .col-count(@set_size, @col-count, @row-type);
 ```
 
 you can override these parameters
@@ -117,13 +118,13 @@ node_modules/less-mixin/mixins/grid/_data.less
 .container(1200px); // max size container
 ```
 
-## Mixin 
+## Mixin
 
 Grid system
 | name mixin              | input  or type                                                          | grid system | decription
 |:---|:---|:---|:---
-| row                     | row row-reverse grid left right inline-block inline-flex inline-grid    | true        | 
-| col                     | number                                                                  | true        | 
+| row                     | row row-reverse grid left right inline-block inline-flex inline-grid    | true        |
+| col                     | number                                                                  | true        |
 | mq                      | mixin                                                                   | true        | media width builder
 | to                      | mixin                                                                   | true        | media max width only
 | from                    | mixin                                                                   | true        | media min width only
@@ -149,19 +150,19 @@ example
 ```
 
 Shift mixin
-| name mixin              | input  or type                    | prefix      | output                | grid system
-|:---|:---|:---|:---|:---
-| m                       | number                            | r l t b x y | margin                | true
-| p                       | number                            | r l t b x y | padding               | true
-| mp                      | number                            | r l t b x y | margin and padding    | true
-
+| name mixin              | input  or type                    | prefix      | output                | grid system | description
+|:---|:---|:---|:---|:---|:---
+| m                       | number                            | r l t b x y | margin                | true		  |
+| p                       | number                            | r l t b x y | padding               | true		  |
+| shift (margin + padding)| number                            | r l t b x y | margin and padding    | true		  | Divides space evenly
+| out (-margin + padding) | number                            | r l t b x y | margin and padding    | true		  | Creates a tension effect
 
 example
 ```
 .mx(1px 2px);
 ```
 ```
-margin-right: 1px; 
+margin-right: 1px;
 margin-left: 2px;
 ```
 example grid system
@@ -201,11 +202,11 @@ Content mixin
 | j                       | c s i       | justify         | true
 | a                       | c s i       | align           | true
 
-| post prefix | output 
+| post prefix | output
 |:---|:---
 | c           | content
 | s           | self
-| i           | item 
+| i           | item
 
 example
 ```
@@ -218,9 +219,9 @@ align-items:center;
 ```
 
 Border
-| name mixin              | input  or type                    | prefix      | post prefix | output          | grid system
+| name mixin | input  or type       | prefix      | post prefix | output | grid system
 |:---|:---|:---|:---|:---|:---
-| bd                      | number style color                | r l t b x y | w s c       | border          | true
+| bd         | number style color   | r l t b x y | w s c       | border | true
 
 example
 ```
@@ -232,23 +233,23 @@ border-right-width: 2px;
 ```
 
 Standart mixin
-| name mixin              | input  or type                    | output          | grid system
+| name mixin | input  or type                    | output          | grid system
 |:---|:---|:---|:---
-| w                       | number                            | width           | true
-| h                       | number                            | height          | true
-| mw                      | number                            | max-width       | true
-| mh                      | number                            | max-height      | true
-| miw                     | number                            | min-width       | true
-| mih                     | number                            | min-height      | true
-| lh                      | number                            | line-height     | true
-| od                      | number                            | order           | true
-| ls                      | number                            | letter-spacing  | true
-| d                       | keyword (block flex grid ...)     | display         | true
-| rz                      | keyword                           | resize          | true
-| va                      | keyword                           | vertical-align  | true
-| fx                      | keyword (grow shrink basis)       | flex            | true
-| cp                      | keyword                           | clip            | true
-| f                       | keyword                           | font            | true
+| w          | number                            | width           | true
+| h          | number                            | height          | true
+| mw         | number                            | max-width       | true
+| mh         | number                            | max-height      | true
+| miw        | number                            | min-width       | true
+| mih        | number                            | min-height      | true
+| lh         | number                            | line-height     | true
+| od         | number                            | order           | true
+| ls         | number                            | letter-spacing  | true
+| d          | keyword (block flex grid ...)     | display         | true
+| rz         | keyword                           | resize          | true
+| va         | keyword                           | vertical-align  | true
+| fx         | keyword (grow shrink basis)       | flex            | true
+| cp         | keyword                           | clip            | true
+| f          | keyword                           | font            | true
 
 example
 ```
@@ -271,13 +272,13 @@ example
 ```
 
 Position
-| name mixin              | input  or type                    | output          | grid system
+| name mixin  | input  or type  | output        | grid system
 |:---|:---|:---|:---
-| a                       | number                            | all position    | true
-| r                       | number                            | right           | true
-| l                       | number                            | left            | true
-| t                       | number                            | top             | true
-| b                       | number                            | bottom          | true
+| a           | number          | all position  | true
+| r           | number          | right         | true
+| l           | number          | left          | true
+| t           | number          | top           | true
+| b           | number          | bottom        | true
 
 example
 ```
@@ -291,14 +292,14 @@ right: 10px;
 ```
 
 prefix name
-| prefix name             | output     
+| prefix name | output
 |:---|:---
-| l                       | left      
-| r                       | right 
-| t                       | top     
-| b                       | bottom      
-| x                       | left right  
-| y                       | top bottom  
+| l           | left
+| r           | right
+| t           | top
+| b           | bottom
+| x           | left right
+| y           | top bottom
 
 example
 ```
@@ -312,14 +313,14 @@ margin-bottom: 10px;
 ```
 
 post prefix name
-| prefix name             | input  or type                    | output     
+| prefix name | input  or type | output
 |:---|:---|:---
-| a                       | keyword                           | align      
-| d                       | keyword                           | dicoration 
-| i                       | number                            | indent     
-| s                       | keyword                           | style      
-| t                       | keyword                           | transform  
-| v                       | number                            | overflov   
+| a           | keyword        | align
+| d           | keyword        | dicoration
+| i           | number         | indent
+| s           | keyword        | style
+| t           | keyword        | transform
+| v           | number         | overflov
 
 example
 ```
@@ -368,16 +369,16 @@ Pixel ratio example
 flexible size function
 |input| params | description
 |:---|:---|:---
-|fw  |mobSize PCSize mobWidthLayout PCWidthLayout                               |from the width 
-|fh  |mobSize PCSize mobHeightLayout PCHeightLayout                             |from the height 
-|fmin|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the minScreen 
-|fmax|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the maxScreen 
+|fw  |mobSize PCSize mobWidthLayout PCWidthLayout                               |from the width
+|fh  |mobSize PCSize mobHeightLayout PCHeightLayout                             |from the height
+|fmin|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the minScreen
+|fmax|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the maxScreen
 |fd  |mobSize PCSize mobWidthLayout mobHeightLayout PCWidthLayout PCHeightLayout|from the screen
 
 |params|default
 |:---|:---
-| mobWidthLayout  | 320px 
-| mobHeightLayout | 240px 
+| mobWidthLayout  | 320px
+| mobHeightLayout | 240px
 | PCWidthLayout   | 1920px
 | PCHeightLayout  | 1080px
 
@@ -393,9 +394,9 @@ converter function
 |input  | params            | description
 |:---|:---|:---
 |toEm   | px default_em     | conver pixel to em
-|toRem  | px default_rem    | conver pixel to rem 
-|toP    | px default_layout | conver pixel to procent 
-|toW    | px default_layout | conver pixel to viewport width 
+|toRem  | px default_rem    | conver pixel to rem
+|toP    | px default_layout | conver pixel to procent
+|toW    | px default_layout | conver pixel to viewport width
 |toH    | px default_layout | conver pixel to viewport height
 |toM    | px default_layout | conver pixel to viewport max size
 |toMi   | px default_layout | conver pixel to viewport min size
@@ -453,13 +454,13 @@ Use so
 or
 ```
 .mq(
-  xs, .px(10px), 
+  xs, .px(10px),
   sm, .px(20px)
 );
 
 .mq(
   sm, .my(5px),
-  md, .my(12px), 
+  md, .my(12px),
   lg, .my(auto)
 );
 
@@ -467,15 +468,37 @@ or
 or
 ```
 .mq(
-  xs, .px(10px), 
+  xs, .px(10px),
   sm, {
     .px(20px);
     .my(12px);
   },
-  md, .my(12px), 
+  md, .my(12px),
   lg, .my(auto)
 );
 
 ```
 
 If you find a bug or have suggestions for improving the system, i will be glad to your feedback.
+
+
+## example data file
+These settings are optional, but you can change the default mixin behavior.
+
+example main file
+
+```
+@import './node_modules/less-query/style.less';
+@import './data.less';
+```
+
+example data file
+
+```
+@offset-y: 0;
+@offset-x: 1em;
+
+@default-margin: auto;
+@default-padding: auto;
+
+```

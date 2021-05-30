@@ -1,3 +1,12 @@
+.clearfix(){
+    &::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+
 @import './background/_all.less';
 @import './border/_all.less';
 @import './box-shadow/_all.less';
