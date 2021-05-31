@@ -4,7 +4,7 @@
 **Modified approach to responsive layout**
 ----
 
-<nav>
+<nav id="nav">
 	<ul>
 		<li>
 			<a href="#install">Install</a>
@@ -13,73 +13,89 @@
 			<a href="#use">Use</a>
 		</li>
 		<li>
+			<a href="#example">Example</a>
+		</li>
+		<li>
+			<a href="#standard-grid-system">Standard grid system</a>
+		</li>
+		<li>
 			<a href="#overriding-standard-variables">Overriding standard variables</a>
 		</li>
 	</ul>
 </nav>
 
-## install
+---
+## Install
 ```
 npm install -D less-query
 ```
 
-## use
+## Use
 set the entry point to your file
 
 ```
 @import './node_modules/less-query/style.less';
 ```
 
-## example
-```
-.grid{
-  .row;
-  &__col{
-    .col(12, sm, 6, md, 4, lg, 3);
-  }
-}
-```
-## output
-```
-.grid {
-  margin-left: -15px;
-  margin-right: -15px;
-  display: flex;
-  flex-flow: row wrap;
-}
+---
 
-.grid__col {
-  word-wrap: break-word;
-  box-sizing: border-box;
-  margin-left: 15px;
-  margin-right: 15px;
-}
+## Example
 
-@media (max-width: 720px) {
-  .grid__col {
-    width: calc(100% - 30px);
-  }
-}
+<details>
+	<summary>Input</summary>
 
-@media (min-width: 720px) and (max-width: 960px) {
-  .grid__col {
-    width: calc(50% - 30px);
-  }
-}
+	.grid{
+		.row;
+		&__col{
+			.col(12, sm, 6, md, 4, lg, 3);
+		}
+	}
+</details>
 
-@media (min-width: 960px) and (max-width: 1140px) {
-  .grid__col {
-    width: calc(33.333333333333336% - 30px);
-  }
-}
+<details>
+	<summary>Output</summary>
 
-@media (min-width: 1140px) {
-  .grid__col {
-    width: calc(25% - 30px);
-  }
-}
+	.grid {
+		margin-left: -15px;
+		margin-right: -15px;
+		display: flex;
+		flex-flow: row wrap;
+	}
 
-```
+	.grid__col {
+		word-wrap: break-word;
+		box-sizing: border-box;
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+
+	@media (max-width: 720px) {
+		.grid__col {
+			width: calc(100% - 30px);
+		}
+	}
+
+	@media (min-width: 720px) and (max-width: 960px) {
+		.grid__col {
+			width: calc(50% - 30px);
+		}
+	}
+
+	@media (min-width: 960px) and (max-width: 1140px) {
+		.grid__col {
+			width: calc(33.333333333333336% - 30px);
+		}
+	}
+
+	@media (min-width: 1140px) {
+		.grid__col {
+			width: calc(25% - 30px);
+		}
+	}
+</details>
+
+---
+
 ## Standard grid system
 | short name | break point | description
 |:---|:---|:---
@@ -93,94 +109,48 @@ set the entry point to your file
 | ti         | 430px       | tiny
 | xt         | 320px       | extra tiny
 
-| default                | parameters
-|:---|:---
-| columns                | 12
-| offset                 | 30px
-| wrapper                | 1680px
+| columns                | offset 	  | container
+|:---|:---|:---
+| 12                	 | 2em (32px) | 1680px
 
-override the number of columns
+<a href="#overriding-standard-variables">Overriding this variables</a>
 
-To change values or set your own
+### Grid system mixin
 
-example
-```
-@breaks:{
-  @xl : 1440px;
-  @lg : 1200px;
-  @md : 960px;
-  @sm : 720px;
-  @xs : 540px;
-}
+| name mixin |<a href="#position">position</a>| input   | grid  | decription
+|:---|:---|:---|:---|:---
+| row        |			   					  | keyword | true  |
+| col        |			   					  | number  | true  |
+| col-count  |			   					  | number  | false | overrides the default column count
+| col-offset | r l t b x y 					  | number  | false | change default column margin
+| row-offset | r l t b x y 					  | number  | false | change default rows margin
+| mq         |			   					  | mixin   | true  | media width builder
+| to         |			   					  | mixin   | true  | media max width only
+| from       |			   					  | mixin   | true  | media min width only
+| mqh        |			   					  | mixin   | true  | media height builder
+| container  |			   					  | number  | true  | max size (container)
+| wrp        |			   					  | number  | true  | padding max size (container)
 
-@offset : 20px;
-@number-of-columns: 24;
-@width-wrapper : 1440px;
+<details id="grid-s-mix">
+	<summary>Example grid system mixin</summary>
 
-```
+	.mq(xs, { .p(1px); color:red }, 1200px, .m(2px));
 
-you can also change the number of columns for a layer
-```
-.col-count(24); // .col-count(@set_size, @col-count, @row-type);
-```
+	/*
+		@media (min-width: 540px) and (max-width: 1200px) {
+			.class-grid {
+				padding: 1px;
+				color: red;
+			}
+		}
 
-you can override these parameters
-```
-node_modules/less-mixin/mixins/grid/_data.less
-```
-
-## wrapper
-```
-.wrp(1200px); // padding max size
-```
-
-## container
-```
-.container(1200px); // max size container
-```
-
-## Mixin
-
-Grid system
-| name mixin | post prefix | input   | grid  | decription
-|:---|:---|:---|:---
-| row        |			   | keyword | true  |
-| col        |			   | number  | true  |
-| col-count  |			   | number  | false | overrides the default column count
-| col-offset | r l t b x y | number  | false | change default column margin
-| row-offset | r l t b x y | number  | false | change default rows margin
-| mq         |			   | mixin   | true  | media width builder
-| to         |			   | mixin   | true  | media max width only
-| from       |			   | mixin   | true  | media min width only
-| mqh        |			   | mixin   | true  | media height builder
-
-| post prefix | output
-|:---|:---
-| r           | right
-| l           | left
-| t           | top
-| b           | bottom
-| x           | left + right
-| y           | bottom + top
-
-example
-```
-.mq(xs, { .p(1px); color:red }, 1200px, .m(2px));
-```
-```
-@media (min-width: 540px) and (max-width: 1200px) {
-  .class-grid {
-    padding: 1px;
-    color: red;
-  }
-}
-
-@media (min-width: 1200px) {
-  .class-grid {
-    margin: 2px;
-  }
-}
-```
+		@media (min-width: 1200px) {
+			.class-grid {
+				margin: 2px;
+			}
+		}
+	*/
+</details>
 
 Shift mixin
 | mixin | input  |<a href="#position">position</a>| output | grid | description
@@ -190,39 +160,60 @@ Shift mixin
 | shift	| number | r l t b x y | margin and padding | true | Divides space evenly
 | out 	| number | r l t b x y | margin and padding | true | Creates a tension effect
 
-example
-```
-.mx(1px 2px);
-```
-```
-margin-right: 1px;
-margin-left: 2px;
-```
+<details id="ex-shift">
+	<summary>Example mixin shift mixin</summary>
 
-example grid system
+	.m(2px); // margin: 2px;
+	.p(8px); // padding: 8px;
 
-```
-.class{
-  .px(1px, xs, 2px);
-}
-```
+	.shift(2px); // margin: 2px; padding: 2px;
 
-```
-@media (max-width: 540px) {
-  .class {
-    padding-left: 1px;
-    padding-right: 1px;
-  }
-}
-@media (min-width: 540px) {
-  .class {
-    padding-left: 2px;
-    padding-right: 2px;
-  }
-}
-```
+	.out(10px); // margin: -10px; padding: 10px;
+</details>
 
-Short mixin (emmet type)
+<details>
+	<summary>Example mixin with prefix</summary>
+
+	.pt(10px); // padding-top: 10px;
+	.pb(10px); // padding-bottom: 10px;
+	.pl(10px); // padding-left: 10px;
+	.pr(10px); // padding-right: 10px;
+</details>
+
+<details>
+	<summary>Example mixin with grid</summary>
+
+	.class{
+		.px(1px, xs, 2px, sm, 3px);
+	}
+
+	/*
+		@media (max-width: 540px) {
+			.class {
+				padding-left: 1px;
+				padding-right: 1px;
+			}
+		}
+
+		@media (min-width: 540px) and (max-width: 720px) {
+			.class {
+				padding-left: 2px;
+				padding-right: 2px;
+			}
+		}
+
+		@media (min-width: 720px) {
+			.class {
+				padding-left: 3px;
+				padding-right: 3px;
+			}
+		}
+	*/
+</details>
+
+### Short mixin
+<abbr>(emmet type)</abbr>
+
 | example name | post prefix      | output     | grid
 |:---|:---|:---|:---
 | t            | a d i s t v      | text       | true
@@ -255,20 +246,33 @@ align-items:center;
 ```
 
 Border
-| mixin | input 			 |<a href="#position">position</a>| post prefix | output | grid system
+| mixin | input 			 |<a href="#position">position</a>| post prefix | output | grid
 |:---|:---|:---|:---|:---|:---
 | bd    | number style color | r l t b x y 					  | w s c       | border | true
 
-example
-```
-.bdxw(2px);
-```
-```
-border-left-width: 2px;
-border-right-width: 2px;
-```
+<details>
+	<summary>Example</summary>
 
-Standard mixin
+	.bd(1px solid black); // border: 1px solid black;
+
+	.bdxw(2px);
+
+	/*
+		border-left-width: 2px;
+		border-right-width: 2px;
+	*/
+
+	.bdyc(red);
+
+	/*
+		border-top-color: red;
+		border-bottom-color: red;
+	*/
+
+</details>
+
+
+### Standard mixin
 | mixin | input   | output         | grid
 |:---|:---|:---|:---
 | w     | number  | width          | true
@@ -307,7 +311,7 @@ example
 }
 ```
 
-Position
+### Position
 | mixin  | input  | output       | grid
 |:---|:---|:---|:---
 | a		 | number | all position | true
@@ -331,7 +335,15 @@ Position
 
 	// left: 5px;
 	// right: 5px;
+
+	.r(1%);  // right: 1%;
+	.l(2px); // left: 2px;
+	.t(1vw); // top: 1vw;
+	.b(1em); // bottom: 1em;
 </details>
+
+---
+## Prefix
 
 ### position
 
@@ -344,49 +356,46 @@ Position
 | x      | left right
 | y      | top bottom
 
-example
-```
-.pt(10px);
-.my(5px 10px);
-```
-```
-padding-top: 10px;
-margin-top: 5px;
-margin-bottom: 10px;
-```
+<details>
+	<summary>Example</summary>
 
-post prefix name
-| prefix name | input   | output
+	// no prefix
+	.p(10px);  // padding: 10px;
+	.m(auth);  // margin: auto;
+
+	// with prefix
+	.pt(10px); // padding-top: 10px;
+	.pb(10px); // padding-bottom: 10px;
+	.pl(10px); // padding-left: 10px;
+	.pr(10px); // padding-right: 10px;
+
+	.mx(auto); // margin-left: auto; margin-right: auto;
+	.my(auto); // margin-top: auto; margin-bottom: auto;
+
+</details>
+
+### post prefix
+| prefix | input   | output
 |:---|:---|:---
-| a           | keyword | align
-| d           | keyword | decoration
-| i           | number  | indent
-| s           | keyword | style
-| t           | keyword | transform
-| v           | number  | overflow
+| a      | keyword | align
+| d      | keyword | decoration
+| i      | number  | indent
+| s      | keyword | style
+| t      | keyword | transform
+| v      | number  | overflow
 
-example
-```
-.ta(center);
-```
-```
-text-align: center;
-```
+<details>
+	<summary>Example</summary>
 
-Pixel ratio example
-```
-.pxrt(
-  1, { background-image:url('1.webp') },
-  2, { background-image:url('2.webp') },
-  3, { background-image:url('3.webp') }
-);
+	.td(none); 	 	 // text-decoration: none;
+	.ta(center); 	 // text-align: center;
+	.tt(lower-case); // text-transform: lower-case;
+</details>
 
-// 1x upload only 1.webp
-// retina 2x upload only 2.webp
-// retina 3x upload only 3.webp
-```
-
+---
 ## any mixin
+
+
 ```
 .reset(); // normalize
 
@@ -394,6 +403,7 @@ Pixel ratio example
 
 | name                    | input  or type                    | output                | grid system
 |:---|:---|:---|:---
+| pxrt                    |                                   | <a href="#pxrt">Pixel ratio</a>| false
 | reset                   |                                   | normilize css         | false
 | box                     | number                            | width + height        | true
 | mbox                    | number                            | max width and height  | true
@@ -408,8 +418,68 @@ Pixel ratio example
 | circle                  | number                            | circle                | false
 | elipse                  | number                            | circle                | false
 
-## Function
-flexible size function
+
+<details id="pxrt">
+	<summary><strong><big>Pixel Ratio Example</big></strong></summary>
+
+	.pxrt(
+		1, { background-image:url('1.webp') },
+		2, { background-image:url('2.webp') },
+		3, { background-image:url('3.webp') }
+	);
+
+	// 1x upload only 1.webp
+	// retina 2x upload only 2.webp
+	// retina 3x upload only 3.webp
+</details>
+
+<details>
+	<summary><strong>Reset example</strong></summary>
+
+	.reset();
+
+	/*
+		html,body{
+    	    line-height: 1.15;
+    	    overflow-x:hidden;
+    	    min-height:100vh;
+    	    -webkit-text-size-adjust:100%;
+    	}
+    	body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{
+    	    padding: 0;
+    	    margin: 0;
+    	}
+    	a{
+    	    text-decoration:none;
+    	    color:inherit;
+    	    background-color:transparent;
+    ...
+</details>
+
+<details>
+	<summary>box example</summary>
+
+	.box(10px);
+
+	// width: 10px;
+	// height: 10px;
+</details>
+
+<details>
+	<summary>circle example</summary>
+
+	.circle(10px);
+
+	//border-radius: 50%;
+	// width: 10px;
+	// height: 10px;
+</details>
+
+---
+## Functions
+
+### Flexible size function
+
 |input| params | description
 |:---|:---|:---
 |fw  |mobSize PCSize mobWidthLayout PCWidthLayout                               |from the width
@@ -432,8 +502,7 @@ flexible size function
 | PCWidthLayout   | 1920px
 | PCHeightLayout  | 1080px
 
-
-## converter function
+### Converter functions
 
 |input  | params            | description
 |:---|:---|:---
@@ -451,12 +520,15 @@ flexible size function
 		example
 	</summary>
 
-	toEm(16); // 1em;
+	toEm(16); 		   // 1em;
+	toPx(10%,1920px);  // 192px;
 	toP(20px, 1920px); // 1.0416666666666665%;
-	toPx(10%,1920px); // 192px;
+
+
+	.pt(toEm(16)); 	   // padding-top: 1em;
 </details>
 
-## log function
+### Console functions
 
 | function name | input or type
 |:---|:---
@@ -464,6 +536,7 @@ flexible size function
 | console-error | console.error "red output"
 | console-dir   | console.dir
 
+---
 ## Recommendation
 
 <details>
@@ -542,13 +615,24 @@ flexible size function
 <details>
 	<summary>Reassigning Variables (example data file)</summary>
 
+	@breaks:{
+		@xl : 1440px;
+		@lg : 1200px;
+		@md : 960px;
+		@sm : 720px;
+		@xs : 540px;
+	}
+
+	@offset : 20px;
+	@number-of-columns: 24;
+	@width-wrapper : 1440px;
+
 	@offset-y: 0;
 	@offset-x: 1em;
 
 	@default-margin: auto;
 	@default-padding: auto;
 </details>
-
 
 ---
 
