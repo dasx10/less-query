@@ -1,6 +1,6 @@
 {
   "name": "less-query",
-  "version": "2.7.6",
+  "version": "2.7.8",
   "description": "grid-system and flexible mixins for less",
   "main": "style.less",
   "scripts": {
@@ -25,10 +25,10 @@
     "grid-system",
     "query",
     "mq",
-    "optimisation",
+    "optimization",
     "retina",
     "mobile",
-    "desctop",
+    "desktop",
     "framework"
   ],
   "author": "Yevhenii Kleshchev <dasx10@gmail.com>",

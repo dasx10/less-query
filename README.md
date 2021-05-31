@@ -291,27 +291,29 @@ Border
 | cp    | keyword | clip           | true
 | f     | keyword | font           | true
 
-example
-```
-.class{
-  .d(block, sm, flex);
-}
-```
-```
-@media (min-width: 720px) {
-  .class {
-    display: flex;
-  }
-}
 
-@media (max-width: 720px) {
-  .class {
-    display: block;
-  }
-}
-```
+<details>
+	<summary>Example standard mixin</summary>
 
-### Position
+	.class{
+		.d(block, sm, flex);
+	}
+	/*
+	@media (min-width: 720px) {
+		.class {
+			display: flex;
+		}
+	}
+
+	@media (max-width: 720px) {
+		.class {
+			display: block;
+		}
+	}
+	*/
+</details>
+
+### Position mixin
 | mixin  | input  | output       | grid
 |:---|:---|:---|:---
 | a		 | number | all position | true
@@ -393,13 +395,7 @@ example
 </details>
 
 ---
-## any mixin
-
-
-```
-.reset(); // normalize
-
-```
+### any mixin
 
 | name                    | input  or type                    | output                | grid system
 |:---|:---|:---|:---
