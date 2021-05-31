@@ -1,13 +1,13 @@
 {
   "name": "less-query",
-  "version": "2.7.8",
+  "version": "2.7.9",
   "description": "grid-system and flexible mixins for less",
   "main": "style.less",
   "scripts": {
     "test": "jest",
     "build": "babel ./plugin/src/flexability-size.js -d ./",
-	"css": "gulp css",
-	"css:watch": "gulp watch"
+    "css": "gulp css",
+    "css:watch": "gulp watch"
   },
   "repository": {
     "type": "git",

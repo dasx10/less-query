@@ -572,10 +572,6 @@ Border
 		xs, .px(10px),
 		sm, .px(20px)
 	);
-</details>
-
-<details>
-	<summary>How to use it correctly <strong>(example #3)</strong></summary>
 
 	.mq(
 		sm, .my(5px),
@@ -585,7 +581,7 @@ Border
 </details>
 
 <details>
-	<summary>How to use it correctly <strong>(example #4)</strong></summary>
+	<summary>How to use it correctly <strong>(example #3)</strong></summary>
 
 	.mq(
 		xs, .px(10px),
@@ -602,14 +598,18 @@ Border
 **These settings are optional, but you can change the default mixin behavior.**
 
 <details>
-	<summary>Example of installation in the main file</summary>
+	<summary><strong>Example of installation in the main file</strong></summary>
+	<em>Create a file for variables. For example, at the root of the data.less directory. And register the file after registering the library.</em>
 
 	@import './node_modules/less-query/style.less';
 	@import './data.less';
 </details>
 
 <details>
-	<summary>Reassigning Variables (example data file)</summary>
+	<summary><strong>Reassigning Variables <em>(example data.less file)</em></strong></summary>
+	<em>Use parameters in your data.less file</em>
+
+	// BREAK POINTS
 
 	@breaks:{
 		@xl : 1440px;
@@ -619,15 +619,61 @@ Border
 		@xs : 540px;
 	}
 
-	@offset : 20px;
+
+	// ANY GRID
+
 	@number-of-columns: 24;
 	@width-wrapper : 1440px;
 
-	@offset-y: 0;
-	@offset-x: 1em;
 
-	@default-margin: auto;
-	@default-padding: auto;
+	// OFFSET
+
+	@offset: 1em;
+	@offset-one-side: @offset / 2;
+	@offset-one-deny: @offset-one-side * -1;
+
+	@offset-x: @offset;
+	@offset-one-side-x:  @offset-x / 2;
+	@offset-one-deny-x:  @offset-one-side-x * -1;
+
+	@offset-left: @offset-x;
+	@offset-one-side-left: @offset-left / 2;
+	@offset-one-deny-left: @offset-one-side-left * -1;
+
+	@offset-right: @offset-x;
+	@offset-one-side-right: @offset-right / 2;
+	@offset-one-deny-right: @offset-one-side-right * -1;
+
+	@offset-y: @offset;
+	@offset-one-side-y:  @offset-y / 2;
+	@offset-one-deny-y:  @offset-one-side-y * -1;
+
+	@offset-top: @offset-y;
+	@offset-one-side-top: @offset-top / 2;
+	@offset-one-deny-top: @offset-one-side-top * -1;
+
+	@offset-bottom: @offset-y;
+	@offset-one-side-bottom: @offset-bottom / 2;
+	@offset-one-deny-bottom: @offset-one-side-bottom * -1;
+
+
+	// SHIFT
+
+	@default-margin: 		auto;
+	@default-margin-x: 		@default-margin;
+	@default-margin-left: 	@default-margin-x;
+	@default-margin-right:  @default-margin-x;
+	@default-margin-y: 		@default-margin;
+	@default-margin-top: 	@default-margin-y;
+	@default-margin-bottom: @default-margin-y;
+
+	@default-padding: 		 auto;
+	@default-padding-x: 	 @default-padding;
+	@default-padding-left: 	 @default-padding-x;
+	@default-padding-right:  @default-padding-x;
+	@default-padding-y: 	 @default-padding;
+	@default-padding-top: 	 @default-padding-y;
+	@default-padding-bottom: @default-padding-y;
 </details>
 
 ---
