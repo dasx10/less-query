@@ -32,32 +32,38 @@ set the entry point to your file
   display: flex;
   flex-flow: row wrap;
 }
+
 .grid__col {
   word-wrap: break-word;
   box-sizing: border-box;
   margin-left: 15px;
   margin-right: 15px;
 }
+
 @media (max-width: 720px) {
   .grid__col {
     width: calc(100% - 30px);
   }
 }
+
 @media (min-width: 720px) and (max-width: 960px) {
   .grid__col {
     width: calc(50% - 30px);
   }
 }
+
 @media (min-width: 960px) and (max-width: 1140px) {
   .grid__col {
     width: calc(33.333333333333336% - 30px);
   }
 }
+
 @media (min-width: 1140px) {
   .grid__col {
     width: calc(25% - 30px);
   }
 }
+
 ```
 ## Standard grid system
 | short name     | break point width | description
@@ -121,27 +127,26 @@ node_modules/less-mixin/mixins/grid/_data.less
 ## Mixin
 
 Grid system
-| name mixin              | input  or type                                                          | grid system | decription
+| name mixin | post prefix | input  or type                                                       | grid  | decription
 |:---|:---|:---|:---
-| row                     | row row-reverse grid left right inline-block inline-flex inline-grid    | true        |
-| col                     | number                                                                  | true        |
-| col-count               | number                                                                  | false       | overrides the default column count
-| col-offset(-position)   | number                                                                  | false       | change default column margin
-| row-offset(-position)   | number                                                                  | false       | change default rows margin
-| mq                      | mixin                                                                   | true        | media width builder
-| to                      | mixin                                                                   | true        | media max width only
-| from                    | mixin                                                                   | true        | media min width only
-| mqh                     | mixin                                                                   | true        | media height builder
+| row        |			   | row row-reverse grid left right inline-block inline-flex inline-grid | true  |
+| col        |			   | number                                                               | true  |
+| col-count  |			   | number                                                               | false | overrides the default column count
+| col-offset | r l t b x y | number                                                               | false | change default column margin
+| row-offset | r l t b x y | number                                                               | false | change default rows margin
+| mq         |			   | mixin                                                                | true  | media width builder
+| to         |			   | mixin                                                                | true  | media max width only
+| from       |			   | mixin                                                                | true  | media min width only
+| mqh        |			   | mixin                                                                | true  | media height builder
 
-Position
-| name mixin  | input  or type  | output
-|:---|:---|:---|:---
-| r           | number          | right
-| l           | number          | left
-| t           | number          | top
-| b           | number          | bottom
-| x           | number          | left + right
-| y           | number          | bottom + top
+| post prefix | output
+|:---|:---
+| r           | right
+| l           | left
+| t           | top
+| b           | bottom
+| x           | left + right
+| y           | bottom + top
 
 example
 ```
@@ -163,12 +168,12 @@ example
 ```
 
 Shift mixin
-| name mixin              | input  or type                    | prefix      | output                | grid system | description
+| mixin     | input  | prefix      | output             | grid | description
 |:---|:---|:---|:---|:---|:---
-| m                       | number                            | r l t b x y | margin                | true		  |
-| p                       | number                            | r l t b x y | padding               | true		  |
-| shift (margin + padding)| number                            | r l t b x y | margin and padding    | true		  | Divides space evenly
-| out (-margin + padding) | number                            | r l t b x y | margin and padding    | true		  | Creates a tension effect
+| m     	| number | r l t b x y | margin             | true |
+| p     	| number | r l t b x y | padding            | true |
+| shift		| number | r l t b x y | margin and padding | true | Divides space evenly
+| out 		| number | r l t b x y | margin and padding | true | Creates a tension effect
 
 example
 ```
@@ -178,12 +183,15 @@ example
 margin-right: 1px;
 margin-left: 2px;
 ```
+
 example grid system
+
 ```
 .class{
   .px(1px, xs, 2px);
 }
 ```
+
 ```
 @media (max-width: 540px) {
   .class {
@@ -200,20 +208,20 @@ example grid system
 ```
 
 Short mixin (emmet type)
-| example name            | post prefix       | output          | grid system
+| example name | post prefix      | output     | grid
 |:---|:---|:---|:---
-| t                       | a d i s t v       | text            | true
-| f                       | s z w f           | font            | true
-| w                       | b s w             | word            | true
-| fx                      | b d f g s w       | flex            | true
-| b                       | sh z              | box             | true
-| bg                      | a cl c i o p r z  | background      | true
+| t            | a d i s t v      | text       | true
+| f            | s z w f          | font       | true
+| w            | b s w            | word       | true
+| fx           | b d f g s w      | flex       | true
+| b            | sh z             | box        | true
+| bg           | a cl c i o p r z | background | true
 
 Content mixin
-| example name            | post prefix | output          | grid system
+| example name | post prefix | output  | grid
 |:---|:---|:---|:---
-| j                       | c s i       | justify         | true
-| a                       | c s i       | align           | true
+| j            | c s i       | justify | true
+| a            | c s i       | align   | true
 
 | post prefix | output
 |:---|:---
@@ -232,9 +240,9 @@ align-items:center;
 ```
 
 Border
-| name mixin | input  or type       | prefix      | post prefix | output | grid system
+| name mixin | input  or type     | prefix      | post prefix | output | grid system
 |:---|:---|:---|:---|:---|:---
-| bd         | number style color   | r l t b x y | w s c       | border | true
+| bd         | number style color | r l t b x y | w s c       | border | true
 
 example
 ```
@@ -246,28 +254,28 @@ border-right-width: 2px;
 ```
 
 Standard mixin
-| name mixin | input  or type                    | output          | grid system
+| mixin | input   | output         | grid
 |:---|:---|:---|:---
-| w          | number                            | width           | true
-| h          | number                            | height          | true
-| mw         | number                            | max-width       | true
-| mh         | number                            | max-height      | true
-| miw        | number                            | min-width       | true
-| mih        | number                            | min-height      | true
-| lh         | number                            | line-height     | true
-| od         | number                            | order           | true
-| ls         | number                            | letter-spacing  | true
-| d          | keyword (block flex grid ...)     | display         | true
-| rz         | keyword                           | resize          | true
-| va         | keyword                           | vertical-align  | true
-| fx         | keyword (grow shrink basis)       | flex            | true
-| cp         | keyword                           | clip            | true
-| f          | keyword                           | font            | true
+| w     | number  | width          | true
+| h     | number  | height         | true
+| mw    | number  | max-width      | true
+| mh    | number  | max-height     | true
+| miw   | number  | min-width      | true
+| mih   | number  | min-height     | true
+| lh    | number  | line-height    | true
+| od    | number  | order          | true
+| ls    | number  | letter-spacing | true
+| d     | keyword | display        | true
+| rz    | keyword | resize         | true
+| va    | keyword | vertical-align | true
+| fx    | keyword | flex           | true
+| cp    | keyword | clip           | true
+| f     | keyword | font           | true
 
 example
 ```
 .class{
-  .d(block,sm,flex);
+  .d(block, sm, flex);
 }
 ```
 ```
@@ -285,13 +293,13 @@ example
 ```
 
 Position
-| name mixin  | input  or type  | output        | grid system
+| mixin  | input  | output       | grid
 |:---|:---|:---|:---
-| a           | number          | all position  | true
-| r           | number          | right         | true
-| l           | number          | left          | true
-| t           | number          | top           | true
-| b           | number          | bottom        | true
+| a		 | number | all position | true
+| r		 | number | right        | true
+| l		 | number | left         | true
+| t		 | number | top          | true
+| b		 | number | bottom       | true
 
 example
 ```
@@ -305,14 +313,14 @@ right: 10px;
 ```
 
 prefix name
-| prefix name | output
+| prefix | output
 |:---|:---
-| l           | left
-| r           | right
-| t           | top
-| b           | bottom
-| x           | left right
-| y           | top bottom
+| l      | left
+| r      | right
+| t      | top
+| b      | bottom
+| x      | left right
+| y      | top bottom
 
 example
 ```
