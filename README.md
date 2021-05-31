@@ -1,7 +1,22 @@
 # LESS QUERY
 [![Build Status](https://travis-ci.com/dasx10/less-query.svg?branch=master)](https://travis-ci.com/dasx10/less-query)
 ----
-Modified approach to responsive layout
+**Modified approach to responsive layout**
+----
+
+<nav>
+	<ul>
+		<li>
+			<a href="#install">Install</a>
+		</li>
+		<li>
+			<a href="#use">Use</a>
+		</li>
+		<li>
+			<a href="#overriding-standard-variables">Overriding standard variables</a>
+		</li>
+	</ul>
+</nav>
 
 ## install
 ```
@@ -66,17 +81,17 @@ set the entry point to your file
 
 ```
 ## Standard grid system
-| short name     | break point width | description
+| short name | break point | description
 |:---|:---|:---
-| xh             | 1680px            | extra huge
-| hu             | 1530px            | huge
-| xl             | 1320px            | extra large
-| lg             | 1140px            | large
-| md             | 960px             | medium
-| sm             | 720px             | small
-| xs             | 540px             | extra small
-| ti             | 430px             | tiny
-| xt             | 320px             | extra tiny
+| xh         | 1680px      | extra huge
+| hu         | 1530px      | huge
+| xl         | 1320px      | extra large
+| lg         | 1140px      | large
+| md         | 960px       | medium
+| sm         | 720px       | small
+| xs         | 540px       | extra small
+| ti         | 430px       | tiny
+| xt         | 320px       | extra tiny
 
 | default                | parameters
 |:---|:---
@@ -127,17 +142,17 @@ node_modules/less-mixin/mixins/grid/_data.less
 ## Mixin
 
 Grid system
-| name mixin | post prefix | input  or type                                                       | grid  | decription
+| name mixin | post prefix | input   | grid  | decription
 |:---|:---|:---|:---
-| row        |			   | row row-reverse grid left right inline-block inline-flex inline-grid | true  |
-| col        |			   | number                                                               | true  |
-| col-count  |			   | number                                                               | false | overrides the default column count
-| col-offset | r l t b x y | number                                                               | false | change default column margin
-| row-offset | r l t b x y | number                                                               | false | change default rows margin
-| mq         |			   | mixin                                                                | true  | media width builder
-| to         |			   | mixin                                                                | true  | media max width only
-| from       |			   | mixin                                                                | true  | media min width only
-| mqh        |			   | mixin                                                                | true  | media height builder
+| row        |			   | keyword | true  |
+| col        |			   | number  | true  |
+| col-count  |			   | number  | false | overrides the default column count
+| col-offset | r l t b x y | number  | false | change default column margin
+| row-offset | r l t b x y | number  | false | change default rows margin
+| mq         |			   | mixin   | true  | media width builder
+| to         |			   | mixin   | true  | media max width only
+| from       |			   | mixin   | true  | media min width only
+| mqh        |			   | mixin   | true  | media height builder
 
 | post prefix | output
 |:---|:---
@@ -168,12 +183,12 @@ example
 ```
 
 Shift mixin
-| mixin     | input  | prefix      | output             | grid | description
+| mixin | input  |<a href="#position">position</a>| output | grid | description
 |:---|:---|:---|:---|:---|:---
-| m     	| number | r l t b x y | margin             | true |
-| p     	| number | r l t b x y | padding            | true |
-| shift		| number | r l t b x y | margin and padding | true | Divides space evenly
-| out 		| number | r l t b x y | margin and padding | true | Creates a tension effect
+| m     | number | r l t b x y | margin             | true |
+| p     | number | r l t b x y | padding            | true |
+| shift	| number | r l t b x y | margin and padding | true | Divides space evenly
+| out 	| number | r l t b x y | margin and padding | true | Creates a tension effect
 
 example
 ```
@@ -240,9 +255,9 @@ align-items:center;
 ```
 
 Border
-| name mixin | input  or type     | prefix      | post prefix | output | grid system
+| mixin | input 			 |<a href="#position">position</a>| post prefix | output | grid system
 |:---|:---|:---|:---|:---|:---
-| bd         | number style color | r l t b x y | w s c       | border | true
+| bd    | number style color | r l t b x y 					  | w s c       | border | true
 
 example
 ```
@@ -301,18 +316,25 @@ Position
 | t		 | number | top          | true
 | b		 | number | bottom       | true
 
-example
-```
-.a(10px);
-```
-```
-top: 10px;
-bottom: 10px;
-left: 10px;
-right: 10px;
-```
+<details>
+	<summary>Example</summary>
 
-prefix name
+	.a(10px);
+
+	// top: 10px;
+	// bottom: 10px;
+	// left: 10px;
+	// right: 10px;
+
+
+	.x(5px);
+
+	// left: 5px;
+	// right: 5px;
+</details>
+
+### position
+
 | prefix | output
 |:---|:---
 | l      | left
@@ -334,14 +356,14 @@ margin-bottom: 10px;
 ```
 
 post prefix name
-| prefix name | input  or type | output
+| prefix name | input   | output
 |:---|:---|:---
-| a           | keyword        | align
-| d           | keyword        | decoration
-| i           | number         | indent
-| s           | keyword        | style
-| t           | keyword        | transform
-| v           | number         | overflow
+| a           | keyword | align
+| d           | keyword | decoration
+| i           | number  | indent
+| s           | keyword | style
+| t           | keyword | transform
+| v           | number  | overflow
 
 example
 ```
@@ -396,6 +418,13 @@ flexible size function
 |fmax|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the maxScreen
 |fd  |mobSize PCSize mobWidthLayout mobHeightLayout PCWidthLayout PCHeightLayout|from the screen
 
+<details>
+	<summary>Example</summary>
+
+	// flexible font
+	.fz(fw(12px, 20px)); // -> font-size: calc(10.4px + 0.5vw);
+</details>
+
 |params|default
 |:---|:---
 | mobWidthLayout  | 320px
@@ -403,15 +432,9 @@ flexible size function
 | PCWidthLayout   | 1920px
 | PCHeightLayout  | 1080px
 
-example // flexible font
-```
-.fz(fw(12px,20px));
-```
-```
-font-size: calc(10.4px + 0.5vw);
-```
 
-converter function
+## converter function
+
 |input  | params            | description
 |:---|:---|:---
 |toEm   | px default_em     | convert pixel to em
@@ -423,103 +446,110 @@ converter function
 |toMi   | px default_layout | convert pixel to viewport min size
 |toPx   | value px          | convert percent to pixel
 
-```
-toEm(16);
-toP(20px, 1920px);
-toPx(10%,1920px);
-```
+<details>
+	<summary>
+		example
+	</summary>
 
-```
-1em;
-1.0416666666666665%;
-192px;
-```
+	toEm(16); // 1em;
+	toP(20px, 1920px); // 1.0416666666666665%;
+	toPx(10%,1920px); // 192px;
+</details>
 
+## log function
 
-log function
 | function name | input or type
 |:---|:---
 | console-log   | console.log
 | console-error | console.error "red output"
 | console-dir   | console.dir
 
-## Information
+## Recommendation
 
-if the property is still missing, then you can create your own mix and use it like this
-```
-.myMix(@params){
-  .c(lighten(@params));
-  .bgc(darken(@params));
-}
+<details>
+	<summary>if the property is still missing, then you can create your own mix and use it like this</summary>
 
-.mq(
-  sm,     .myMix(darkred),
-  1280px, .myMix(#000)
-);
-```
+	.myMix(@params){
+		.c(lighten(@params));
+		.bgc(darken(@params));
+	}
 
-We strongly recommend not using this approach
-```
-.mq(
-  xs, .px(10px, sm, 20px),
-  s,  .my(5px, md, 12px, lg, auto),
-);
-```
+	.mq(
+		sm,     .myMix(darkred),
+		1280px, .myMix(#000)
+	);
+</details>
 
-Use so
-```
-.px(xs, 10px, sm, 20px);
-.my(sm, 5px, md, 12px, lg, auto);
+<details>
+	<summary>How not recommended to use</summary>
 
-```
-or
-```
-.mq(
-  xs, .px(10px),
-  sm, .px(20px)
-);
+	.mq(
+		xs, .px(10px, sm, 20px),
+		s,  .my(5px, md, 12px, lg, auto),
+	);
+</details>
 
-.mq(
-  sm, .my(5px),
-  md, .my(12px),
-  lg, .my(auto)
-);
+<details>
+	<summary>How to use it correctly <strong>(example #1)</strong></summary>
 
-```
-or
-```
-.mq(
-  xs, .px(10px),
-  sm, {
-    .px(20px);
-    .my(12px);
-  },
-  md, .my(12px),
-  lg, .my(auto)
-);
+	.px(xs, 10px, sm, 20px);
+	.my(sm, 5px, md, 12px, lg, auto);
+</details>
 
-```
+<details>
+	<summary>How to use it correctly <strong>(example #2)</strong></summary>
 
-If you find a bug or have suggestions for improving the system, i will be glad to your feedback.
+	.mq(
+		xs, .px(10px),
+		sm, .px(20px)
+	);
+</details>
+
+<details>
+	<summary>How to use it correctly <strong>(example #3)</strong></summary>
+
+	.mq(
+		sm, .my(5px),
+		md, .my(12px),
+		lg, .my(auto)
+	);
+</details>
+
+<details>
+	<summary>How to use it correctly <strong>(example #4)</strong></summary>
+
+	.mq(
+		xs, .px(10px),
+		sm, {
+			.px(20px);
+			.my(12px);
+		},
+		md, .my(12px),
+		lg, .my(auto)
+	);
+</details>
+
+## Overriding standard variables
+**These settings are optional, but you can change the default mixin behavior.**
+
+<details>
+	<summary>Example of installation in the main file</summary>
+
+	@import './node_modules/less-query/style.less';
+	@import './data.less';
+</details>
+
+<details>
+	<summary>Reassigning Variables (example data file)</summary>
+
+	@offset-y: 0;
+	@offset-x: 1em;
+
+	@default-margin: auto;
+	@default-padding: auto;
+</details>
 
 
-## example data file
-These settings are optional, but you can change the default mixin behavior.
+---
 
-example main file
-
-```
-@import './node_modules/less-query/style.less';
-@import './data.less';
-```
-
-example data file
-
-```
-@offset-y: 0;
-@offset-x: 1em;
-
-@default-margin: auto;
-@default-padding: auto;
-
-```
+***If you find a bug or have suggestions for improving the system, i will be glad to your feedback.***
