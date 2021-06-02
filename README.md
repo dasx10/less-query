@@ -347,14 +347,10 @@ Border
 
 ### position
 
-| prefix | output
-|:---|:---
-| l      | left
-| r      | right
-| t      | top
-| b      | bottom
-| x      | left right
-| y      | top bottom
+| l	 | r  |	t  | b	| x	 | y
+|:---|:---|:---|:---|:---|:---
+| left | right | top | bottom | left + right | top + bottom
+
 
 <details>
 	<summary>Example</summary>
@@ -418,20 +414,6 @@ Border
 | shift	| number | r l t b x y | margin and padding | true | Divides space evenly
 | out 	| number | r l t b x y | margin and padding | true | Creates a tension effect
 
-<details>
-	<summary>Example shift</summary>
-
-	.shift(5px);
-	// padding: 5px; margin: 5px;
-
-	.shift-t
-	// padding-top: 5px; margin-top: 5px;
-
-	.shift-b
-	// padding-bottom: 5px; margin-bottom: 5px;
-<details>
-
-
 <details id="pxrt">
 	<summary><strong><big>Pixel Ratio Example</big></strong></summary>
 
@@ -440,52 +422,28 @@ Border
 		2, { background-image:url('2.webp') },
 		3, { background-image:url('3.webp') }
 	);
-
 	// 1x upload only 1.webp
 	// retina 2x upload only 2.webp
 	// retina 3x upload only 3.webp
 </details>
 
 <details>
-	<summary><strong>Reset example</strong></summary>
-
-	.reset();
-
-	/*
-		html,body{
-    	    line-height: 1.15;
-    	    overflow-x:hidden;
-    	    min-height:100vh;
-    	    -webkit-text-size-adjust:100%;
-    	}
-    	body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{
-    	    padding: 0;
-    	    margin: 0;
-    	}
-    	a{
-    	    text-decoration:none;
-    	    color:inherit;
-    	    background-color:transparent;
-    ...
-</details>
-
-<details>
 	<summary>box example</summary>
 
-	.box(10px);
-
-	// width: 10px;
-	// height: 10px;
+	.box(10px); // width: 10px; height: 10px;
 </details>
 
 <details>
 	<summary>circle example</summary>
 
-	.circle(10px);
+	.circle(10px); //border-radius: 50%; width: 10px; height: 10px;
+</details>
 
-	//border-radius: 50%;
-	// width: 10px;
-	// height: 10px;
+<details>
+	<summary>Example shift</summary>
+
+	.shift-t(5px); // padding-top: 5px; margin-top: 5px;
+	.shift-b(5px); // padding-bottom: 5px; margin-bottom: 5px;
 </details>
 
 ---
@@ -508,12 +466,9 @@ Border
 	.fz(fw(12px, 20px)); // -> font-size: calc(10.4px + 0.5vw);
 </details>
 
-|params|default
-|:---|:---
-| mobWidthLayout  | 320px
-| mobHeightLayout | 240px
-| PCWidthLayout   | 1920px
-| PCHeightLayout  | 1080px
+|mobWidthLayout|mobHeightLayout|PCWidthLayout|PCHeightLayout
+|:---|:---|:---|:---
+|320px|240px|1920px|1080px
 
 ### Converter functions
 
@@ -536,7 +491,6 @@ Border
 	toEm(16); 		   // 1em;
 	toPx(10%,1920px);  // 192px;
 	toP(20px, 1920px); // 1.0416666666666665%;
-
 
 	.pt(toEm(16)); 	   // padding-top: 1em;
 </details>
@@ -636,12 +590,10 @@ Border
 		@xs : 540px;
 	}
 
-
 	// ANY GRID
 
 	@number-of-columns: 24;
 	@width-wrapper : 1440px;
-
 
 	// OFFSET
 
@@ -672,7 +624,6 @@ Border
 	@offset-bottom: @offset-y;
 	@offset-one-side-bottom: @offset-bottom / 2;
 	@offset-one-deny-bottom: @offset-one-side-bottom * -1;
-
 
 	// SHIFT
 
@@ -710,14 +661,6 @@ If you need different horizontal and vertical offset. Then use these options.
 @offset-var-x: my offset x;
 @offset-var-y: my offset y;
 ```
-
-
-
-<details>
-	<summary></summary>
-
-
-<details>
 
 <details>
 	<summary>Example: @offset-var: 1em;</summary>
