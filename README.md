@@ -19,6 +19,12 @@
 			<a href="#standard-grid-system">Standard grid system</a>
 		</li>
 		<li>
+			<a href="#functions">Functions</a>
+		</li>
+		<li>
+			<a href="#recommendation">Recommendation</a>
+		</li>
+		<li>
 			<a href="#overriding-standard-variables">Overriding standard variables</a>
 		</li>
 	</ul>
@@ -94,6 +100,8 @@ set the entry point to your file
 	}
 </details>
 
+<a href="#recommendation">Example recommendation</a>
+
 ---
 
 ## Standard grid system
@@ -111,7 +119,7 @@ set the entry point to your file
 
 
 
-| columns                | offset 	  | container
+| columns                |<a href="#offsets-a">offset</a>| container
 |:---|:---|:---
 | 12                	 | 2em (32px) | 1680px
 
@@ -152,7 +160,7 @@ set the entry point to your file
 	*/
 </details>
 
-Shift mixin
+#### Shift mixin
 | mixin | input  |<a href="#position">position</a>| output | grid | description
 |:---|:---|:---|:---|:---|:---
 | m     | number | r l t b x y | margin             | true |
@@ -208,6 +216,8 @@ Shift mixin
 		}
 	*/
 </details>
+
+<a href="#any-shift-mixin">example any shift mixin</a>
 
 ### Short mixin
 <abbr>(emmet type)</abbr>
@@ -409,6 +419,7 @@ Border
 | elipse                  | number                            | circle                | false
 
 
+Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
 | mixin | input  |<a href="#position">-position</a>| output | grid | description
 |:---|:---|:---|:---|:---|:---
 | shift	| number | r l t b x y | margin and padding | true | Divides space evenly
@@ -565,6 +576,8 @@ Border
 	);
 </details>
 
+<a href="#example">Back to example</a>
+
 ## Overriding standard variables
 **These settings are optional, but you can change the default mixin behavior.**
 
@@ -644,8 +657,8 @@ Border
 	@default-padding-bottom: @default-padding-y;
 </details>
 
-If you need dynamic offset. You can also set them in your settings file.
-Variable offsets will be automatically inserted into the column system.
+If you need dynamic offset. You can also set them in your <a href="#overriding-standard-variables" id="offsets-a">settings file</a>.
+Variable offsets will be automatically inserted into the <a href="#standard-grid-system">column system</a>.
 
 We strongly recommend using it as an exception.
 
@@ -682,7 +695,7 @@ If you need different horizontal and vertical offset. Then use these options.
 		--offset-one-side-t: calc(var(--offset-y) / 2);
 		--offset-one-side-b: calc(var(--offset-y) / 2);
 	}
-<details>
+</details>
 
 <details>
 	<summary>Example: @offset-var-x: 1em;</summary>
@@ -695,7 +708,7 @@ If you need different horizontal and vertical offset. Then use these options.
 		--offset-one-side-r: calc(var(--offset-x) / 2);
 		--offset-one-side-x: calc(var(--offset-x) / 2);
 	}
-<details>
+</details>
 
 <details>
 	<summary>Example: @offset-var-x: 1em; @offset-var-y: 2em;</summary>
@@ -714,7 +727,9 @@ If you need different horizontal and vertical offset. Then use these options.
 		--offset-one-side-b: calc(var(--offset-y) / 2);
 		--offset-one-side-y: calc(var(--offset-y) / 2);
 	}
-<details>
+</details>
+
+<a href="#nav">Go to navigation</a>
 
 ---
 
