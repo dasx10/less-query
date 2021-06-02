@@ -1,11 +1,8 @@
+@import './offset/_all.less';
+
 @offset: 1em;
 @offset-one-side: @offset / 2;
 @offset-one-deny: @offset-one-side * -1;
-
-.col-offset(@number-of-offset: 1) {
-	.col-offset-x(@number-of-offset);
-	.col-offset-y(@number-of-offset);
-}
 
 .row-offset(@number-of-offset: 1) {
 	.col-offset(@number-of-offset * -1)
@@ -16,11 +13,6 @@
 @offset-one-side-x:  @offset-x / 2;
 @offset-one-deny-x:  @offset-one-side-x * -1;
 
-.col-offset-x(@number-of-offset: 1) {
-	.col-offset-r(@number-of-offset);
-	.col-offset-l(@number-of-offset);
-}
-
 .row-offset-x(@number-of-offset: 1) {
 	.col-offset-x(@number-of-offset * -1);
 }
@@ -29,12 +21,6 @@
 @offset-left: @offset-x;
 @offset-one-side-left: @offset-left / 2;
 @offset-one-deny-left: @offset-one-side-left * -1;
-
-.col-offset-l(@number-of-offset: 1) {
-	& when not(@offset-one-deny-left = 0) {
-		.ml(@offset-one-side-left * @number-of-offset);
-	}
-}
 
 .row-offset-l(@number-of-offset: 1) {
 	.col-offset-l(@number-of-offset * -1);
@@ -45,12 +31,6 @@
 @offset-one-side-right: @offset-right / 2;
 @offset-one-deny-right: @offset-one-side-right * -1;
 
-.col-offset-r(@number-of-offset: 1) {
-	& when not(@offset-one-deny-right = 0) {
-		.mr(@offset-one-side-right * @number-of-offset);
-	}
-}
-
 .row-offset-r(@number-of-offset: 1) {
 	.col-offset-r(@number-of-offset * -1);
 }
@@ -59,11 +39,6 @@
 @offset-y: @offset;
 @offset-one-side-y:  @offset-y / 2;
 @offset-one-deny-y:  @offset-one-side-y * -1;
-
-.col-offset-y(@number-of-offset: 1) {
-	.col-offset-t(@number-of-offset);
-	.col-offset-b(@number-of-offset);
-}
 
 .row-offset-y(@number-of-offset: 1) {
 	.col-offset-y(@number-of-offset * -1);
@@ -74,12 +49,6 @@
 @offset-one-side-top: @offset-top / 2;
 @offset-one-deny-top: @offset-one-side-top * -1;
 
-.col-offset-t(@number-of-offset: 1) {
-	& when not(@offset-one-deny-top = 0) {
-		.mt(@offset-one-side-top * @number-of-offset);
-	}
-}
-
 .row-offset-t(@number-of-offset: 1) {
 	.col-offset-t(@number-of-offset * -1);
 }
@@ -88,12 +57,6 @@
 @offset-bottom: @offset-y;
 @offset-one-side-bottom: @offset-bottom / 2;
 @offset-one-deny-bottom: @offset-one-side-bottom * -1;
-
-.col-offset-b(@number-of-offset: 1) {
-	& when not(@offset-one-deny-bottom = 0) {
-		.mb(@offset-one-side-bottom * @number-of-offset);
-	}
-}
 
 .row-offset-b(@number-of-offset: 1) {
 	.col-offset-b(@number-of-offset * -1);

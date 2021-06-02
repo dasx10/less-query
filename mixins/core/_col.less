@@ -14,11 +14,11 @@
 			@value_1-11: @false, @value_2-11: @false,
 			@value_1-12: @false, @value_2-12: @false
 		) {
+			.m(if((@offset-var = 1), var(--offset-one-side), @offset));
 			.injects(
 				{
 					.ww(break-word);
 					.bz(border-box);
-					.col-offset(1);
 				},
 				@value_1-1,  @value_2-1,
 				@value_1-2,  @value_2-2,
@@ -88,11 +88,19 @@
 				}
 				& when not (@col-type = grid) {
 					@width_without_offset: 100% / @col-count * @col-size;
-					& when (ispercentage(@offset)){
-						width:@width_without_offset - @offset;
+					& when not(@offset-var = 1) {
+						& when (ispercentage(@offset)), (@offset = 0){
+							width: @width_without_offset - @offset;
+						}
+						& when not (ispercentage(@offset)) {
+							& when not (@offset = 0) {
+								width: ~"calc(@{width_without_offset} - @{offset})";
+							}
+						}
 					}
-					& when not (ispercentage(@offset)){
-						width:~"calc(@{width_without_offset} - @{offset})";
+
+					& when (@offset-var = 1) {
+						width: ~"calc(@{width_without_offset} - var(--offset))";
 					}
 				}
 			}

@@ -109,6 +109,8 @@ set the entry point to your file
 | ti         | 430px       | tiny
 | xt         | 320px       | extra tiny
 
+
+
 | columns                | offset 	  | container
 |:---|:---|:---
 | 12                	 | 2em (32px) | 1680px
@@ -117,7 +119,7 @@ set the entry point to your file
 
 ### Grid system mixin
 
-| name mixin |<a href="#position">position</a>| input   | grid  | decription
+| name mixin |<a href="#position">-position</a>| input   | grid  | decription
 |:---|:---|:---|:---|:---
 | row        |			   					  | keyword | true  |
 | col        |			   					  | number  | true  |
@@ -157,8 +159,6 @@ Shift mixin
 |:---|:---|:---|:---|:---|:---
 | m     | number | r l t b x y | margin             | true |
 | p     | number | r l t b x y | padding            | true |
-| shift	| number | r l t b x y | margin and padding | true | Divides space evenly
-| out 	| number | r l t b x y | margin and padding | true | Creates a tension effect
 
 <details id="ex-shift">
 	<summary>Example mixin shift mixin</summary>
@@ -413,6 +413,25 @@ Border
 | round                   | number                            | border-radius:50%     | false
 | circle                  | number                            | circle                | false
 | elipse                  | number                            | circle                | false
+
+
+| mixin | input  |<a href="#position">-position</a>| output | grid | description
+|:---|:---|:---|:---|:---|:---
+| shift	| number | r l t b x y | margin and padding | true | Divides space evenly
+| out 	| number | r l t b x y | margin and padding | true | Creates a tension effect
+
+<details>
+	<summary>Example shift</summary>
+
+	.shift(5px);
+	// padding: 5px; margin: 5px;
+
+	.shift-t
+	// padding-top: 5px; margin-top: 5px;
+
+	.shift-b
+	// padding-bottom: 5px; margin-bottom: 5px;
+<details>
 
 
 <details id="pxrt">

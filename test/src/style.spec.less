@@ -2,12 +2,11 @@
 @import './data.less';
 // .reset();
 
-.grid{
-	.row();
-	.grid__col {
-		.bd(1px solid rgb(43, 39, 39));
-		.col-count(24);
-		.col(12, xs, 6, sm, 3);
-		.out-x(2px, xs, 3px);
+@offset-var: 1;
+
+.grid {
+	.row;
+	&__col {
+		.col(12, xs, 6, md, 3);
 	}
 }
