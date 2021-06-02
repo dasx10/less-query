@@ -36,24 +36,5 @@
 
 @import './_reset.less';
 @import './custom/_all.less';
+@import './_set-offset.less';
 // @import './_debug.less';
-
-& when (@offset-var = 1) {
-	:root {
-		--offset: 1em;
-		--offset-x: var(--offset);
-		--offset-y: var(--offset);
-		--offset-l: var(--offset-x);
-		--offset-r: var(--offset-x);
-		--offset-t: var(--offset-y);
-		--offset-b: var(--offset-y);
-
-		--offset-one-side:   calc(var(--offset) / 2);
-		--offset-one-side-x: calc(var(--offset-x) / 2);
-		--offset-one-side-y: calc(var(--offset-y) / 2);
-		--offset-one-side-l: calc(var(--offset-x) / 2);
-		--offset-one-side-r: calc(var(--offset-x) / 2);
-		--offset-one-side-t: calc(var(--offset-y) / 2);
-		--offset-one-side-b: calc(var(--offset-y) / 2);
-	}
-}

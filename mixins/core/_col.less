@@ -14,7 +14,13 @@
 			@value_1-11: @false, @value_2-11: @false,
 			@value_1-12: @false, @value_2-12: @false
 		) {
-			.m(if((@offset-var = 1), var(--offset-one-side), @offset));
+			& when (@offset-var > 0) {
+				.m(var(--offset-one-side));
+			}
+			& when (@offset-var-x > 0) {
+				.mx(var(--offset-one-side-x));
+			}
+
 			.injects(
 				{
 					.ww(break-word);
@@ -88,7 +94,7 @@
 				}
 				& when not (@col-type = grid) {
 					@width_without_offset: 100% / @col-count * @col-size;
-					& when not(@offset-var = 1) {
+					& when not(@offset-var > 0) {
 						& when (ispercentage(@offset)), (@offset = 0){
 							width: @width_without_offset - @offset;
 						}
@@ -99,8 +105,12 @@
 						}
 					}
 
-					& when (@offset-var = 1) {
+					& when (@offset-var > 0) {
 						width: ~"calc(@{width_without_offset} - var(--offset))";
+					}
+
+					& when (@offset-var-x > 0) {
+						width: ~"calc(@{width_without_offset} - var(--offset-x))";
 					}
 				}
 			}

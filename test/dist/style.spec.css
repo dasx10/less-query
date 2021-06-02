@@ -1,20 +1,3 @@
-:root {
-  --offset: 1em;
-  --offset-x: var(--offset);
-  --offset-y: var(--offset);
-  --offset-l: var(--offset-x);
-  --offset-r: var(--offset-x);
-  --offset-t: var(--offset-y);
-  --offset-b: var(--offset-y);
-  --offset-one-side: calc(var(--offset) / 2);
-  --offset-one-side-x: calc(var(--offset-x) / 2);
-  --offset-one-side-y: calc(var(--offset-y) / 2);
-  --offset-one-side-l: calc(var(--offset-x) / 2);
-  --offset-one-side-r: calc(var(--offset-x) / 2);
-  --offset-one-side-t: calc(var(--offset-y) / 2);
-  --offset-one-side-b: calc(var(--offset-y) / 2);
-}
-
 .grid {
   margin: -0.5rem;
   display: flex;
@@ -22,25 +5,24 @@
 }
 
 .grid__col {
-  margin: var(--offset-one-side);
   word-wrap: break-word;
   box-sizing: border-box;
 }
 
 @media (min-width: 60em) {
   .grid__col {
-    width: calc(25% - var(--offset));
+    width: calc(25% - 1rem);
   }
 }
 
 @media (max-width: 33.75em) {
   .grid__col {
-    width: calc(100% - var(--offset));
+    width: calc(100% - 1rem);
   }
 }
 
 @media (min-width: 33.75em) and (max-width: 60em) {
   .grid__col {
-    width: calc(50% - var(--offset));
+    width: calc(50% - 1rem);
   }
 }

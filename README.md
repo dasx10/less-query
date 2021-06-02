@@ -124,8 +124,6 @@ set the entry point to your file
 | row        |			   					  | keyword | true  |
 | col        |			   					  | number  | true  |
 | col-count  |			   					  | number  | false | overrides the default column count
-| col-offset | r l t b x y 					  | number  | false | change default column margin
-| row-offset | r l t b x y 					  | number  | false | change default rows margin
 | mq         |			   					  | mixin   | true  | media width builder
 | to         |			   					  | mixin   | true  | media max width only
 | from       |			   					  | mixin   | true  | media min width only
@@ -694,6 +692,86 @@ Border
 	@default-padding-top: 	 @default-padding-y;
 	@default-padding-bottom: @default-padding-y;
 </details>
+
+If you need dynamic offset. You can also set them in your settings file.
+Variable offsets will be automatically inserted into the column system.
+
+We strongly recommend using it as an exception.
+
+If you want the same offsets on all sides. Then use
+
+```
+ @offset-var: my offset;
+
+```
+If you need different horizontal and vertical offset. Then use these options.
+
+```
+@offset-var-x: my offset x;
+@offset-var-y: my offset y;
+```
+
+
+
+<details>
+	<summary></summary>
+
+
+<details>
+
+<details>
+	<summary>Example: @offset-var: 1em;</summary>
+
+	:root {
+		--offset: 	1em;
+		--offset-x: var(--offset);
+		--offset-y: var(--offset);
+		--offset-l: var(--offset-x);
+		--offset-r: var(--offset-x);
+		--offset-t: var(--offset-y);
+		--offset-b: var(--offset-y);
+
+		--offset-one-side:   calc(var(--offset) / 2);
+		--offset-one-side-x: calc(var(--offset-x) / 2);
+		--offset-one-side-y: calc(var(--offset-y) / 2);
+		--offset-one-side-l: calc(var(--offset-x) / 2);
+		--offset-one-side-r: calc(var(--offset-x) / 2);
+		--offset-one-side-t: calc(var(--offset-y) / 2);
+		--offset-one-side-b: calc(var(--offset-y) / 2);
+	}
+<details>
+
+<details>
+	<summary>Example: @offset-var-x: 1em;</summary>
+
+	:root {
+		--offset-x: 1em;
+		--offset-l: var(--offset-x);
+		--offset-r: var(--offset-x);
+		--offset-one-side-l: calc(var(--offset-x) / 2);
+		--offset-one-side-r: calc(var(--offset-x) / 2);
+		--offset-one-side-x: calc(var(--offset-x) / 2);
+	}
+<details>
+
+<details>
+	<summary>Example: @offset-var-x: 1em; @offset-var-y: 2em;</summary>
+
+	:root {
+		--offset-x: 1em;
+		--offset-l: var(--offset-x);
+		--offset-r: var(--offset-x);
+		--offset-one-side-l: calc(var(--offset-x) / 2);
+		--offset-one-side-r: calc(var(--offset-x) / 2);
+		--offset-one-side-x: calc(var(--offset-x) / 2);
+		--offset-y: 2em;
+		--offset-t: var(--offset-y);
+		--offset-b: var(--offset-y);
+		--offset-one-side-t: calc(var(--offset-y) / 2);
+		--offset-one-side-b: calc(var(--offset-y) / 2);
+		--offset-one-side-y: calc(var(--offset-y) / 2);
+	}
+<details>
 
 ---
 
