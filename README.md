@@ -4,7 +4,9 @@
 **Modified approach to responsive layout**
 ----
 
-<nav id="nav">
+
+##### Navigation
+<nav id="navigation">
 	<ul>
 		<li>
 			<a href="#install">Install</a>
@@ -16,10 +18,47 @@
 			<a href="#example">Example</a>
 		</li>
 		<li>
-			<a href="#standard-grid-system">Standard grid system</a>
+			<a href="#grid-system-mixin">Mixins</a>
+			<ul>
+				<li>
+					<a href="#standard-grid-system">Standard grid system</a>
+				</li>
+				<li>
+					<a href="#shift-mixin">Shift mixin</a>
+				</li>
+				<li>
+					<a href="#grid-system-mixin">Grid system mixin</a>
+				</li>
+				<li>
+					<a href="#short-mixin">Short</a>
+				</li>
+				<li>
+					<a href="#content-mixin">Content</a>
+				</li>
+				<li>
+					<a href="#standard-mixin">Standard</a>
+				</li>
+				<li>
+					<a href="#position-mixin">Position</a>
+				</li>
+				<li>
+					<a href="#any-mixin">Any</a>
+				</li>
+			</ul>
 		</li>
 		<li>
 			<a href="#functions">Functions</a>
+			<ul>
+				<li>
+					<a href="#flexible-size-functions">Flexible size</a>
+				</li>
+				<li>
+					<a href="#converter-functions">Converter</a>
+				</li>
+				<li>
+					<a href="#console-functions">Console</a>
+				</li>
+			</ul>
 		</li>
 		<li>
 			<a href="#recommendation">Recommendation</a>
@@ -127,17 +166,17 @@ set the entry point to your file
 
 ### Grid system mixin
 
-| name mixin |<a href="#position">-position</a>| input   | grid  | decription
-|:---|:---|:---|:---|:---
-| row        |			   					  | keyword | true  |
-| col        |			   					  | number  | true  |
-| col-count  |			   					  | number  | false | overrides the default column count
-| mq         |			   					  | mixin   | true  | media width builder
-| to         |			   					  | mixin   | true  | media max width only
-| from       |			   					  | mixin   | true  | media min width only
-| mqh        |			   					  | mixin   | true  | media height builder
-| container  |			   					  | number  | true  | max size (container)
-| wrp        |			   					  | number  | true  | padding max size (container)
+| mixin 	| input   | grid  | decription
+|:---|:---|:---|:---
+| row       | keyword | true  |
+| col       | number  | true  |
+| col-count | number  | false | overrides the default column count
+| mq        | mixin   | true  | media width builder
+| to        | mixin   | true  | media max width only
+| from      | mixin   | true  | media min width only
+| mqh       | mixin   | true  | media height builder
+| container | number  | true  | max size (container)
+| wrp       | number  | true  | padding max size (container)
 
 <details id="grid-s-mix">
 	<summary>Example grid system mixin</summary>
@@ -161,10 +200,10 @@ set the entry point to your file
 </details>
 
 #### Shift mixin
-| mixin | input  |<a href="#position">position</a>| output | grid | description
+| mixin | input  |<a href="#position">position</a>| output 	| grid | example
 |:---|:---|:---|:---|:---|:---
-| m     | number | r l t b x y | margin             | true |
-| p     | number | r l t b x y | padding            | true |
+| m     | number | r l t b x y 					  | margin	| true | .m(0.5rem);
+| p     | number | r l t b x y 					  | padding	| true | .p(0.5rem);
 
 <details id="ex-shift">
 	<summary>Example mixin shift mixin</summary>
@@ -222,36 +261,48 @@ set the entry point to your file
 ### Short mixin
 <abbr>(emmet type)</abbr>
 
-| example name | post prefix      | output     | grid
-|:---|:---|:---|:---
-| t            | a d i s t v      | text       | true
-| f            | s z w f          | font       | true
-| w            | b s w            | word       | true
-| fx           | b d f g s w      | flex       | true
-| b            | sh z             | box        | true
-| bg           | a cl c i o p r z | background | true
+<style>
+	i {
+		cursor: help;
+	}
+</style>
 
-Content mixin
+| example name | post prefix      | output     | grid |
+|:---|:---|:---|:---
+| <i title=".ta() .td() .ti ...">t</i>            | <i title="align">a</i> <i title="decoration">d</i> <i title="indent">i</i> <i title="shadow">s</i> <i title="transform">t</i> <i title="overflow">v</i>      | text       | true |
+| f            | <i title="style">s</i> <i title="size">z</i> <i title="weight">w</i> <i title="family">f</i>          | font       | true |
+| w            | <i title="break">b</i> <i title="spacing">s</i> <i title="wrap">w</i>            | word       | true |
+| fx           | <i title="basis">b</i> <i title="decoration">d</i> <i title="flow">f</i> <i title="grow">g</i> <i title="shrink">s</i> <i title="wrap">w</i>      | flex       | true |
+| b            | <i title="shadow">sh</i> <i title="sizing">z</i>             | box        | true |
+| bg           | <i title="attachment">a</i> <i title="clip">cl</i> <i title="color">c</i> <i title="image">i</i> <i title="origin">o</i> <i title="position">p</i> <i title="repeat">r</i> <i title="size">z</i> | background | true |
+
+<details>
+	<summary>Example</summary>
+
+	.tt(uppercase);
+	.ai(center);
+
+	// text-transform:uppercase;
+	// align-items:center;
+</details>
+
+### Content mixin
 | example name | post prefix | output  | grid
 |:---|:---|:---|:---
-| j            | c s i       | justify | true
-| a            | c s i       | align   | true
+| j            | <i title="content">c</i> <i title="self">s</i> <i title="item">i</i>       | justify | true
+| a            | <i title="content">c</i> <i title="self">s</i> <i title="item">i</i>       | align   | true
 
-| post prefix | output
-|:---|:---
-| c           | content
-| s           | self
-| i           | item
+post prefix
+| c  | s  | i
+|:---|:---|:---
+| content | self | item
 
-example
-```
-.tt(uppercase);
-.ai(center);
-```
-```
-text-transform:uppercase;
-align-items:center;
-```
+<details>
+	<summary>Example</summary>
+
+	.jc(center); // justify-content: center;
+	.as(flex-start); // align-self: flex-start;
+</details>
 
 Border
 | mixin | input 			 |<a href="#position">position</a>| post prefix | output | grid
@@ -292,7 +343,7 @@ Border
 | lh    | number  | line-height    | true
 | od    | number  | order          | true
 | ls    | number  | letter-spacing | true
-| d     | keyword | display        | true
+| d     | <i title="none block inline flex grid table inline-...">keyword</i> | display        | true
 | rz    | keyword | resize         | true
 | va    | keyword | vertical-align | true
 | fx    | keyword | flex           | true
@@ -324,11 +375,13 @@ Border
 ### Position mixin
 | mixin  | input  | output       | grid
 |:---|:---|:---|:---
-| a		 | number | all position | true
-| r		 | number | right        | true
-| l		 | number | left         | true
-| t		 | number | top          | true
-| b		 | number | bottom       | true
+| a		 | number or none | all position | true
+| x		 | number or none | right + left | true
+| r		 | number or none | right        | true
+| l		 | number or none | left         | true
+| y		 | number or none | top + bottom | true
+| t		 | number or none | top          | true
+| b		 | number or none | bottom       | true
 
 <details>
 	<summary>Example</summary>
@@ -380,16 +433,6 @@ Border
 
 </details>
 
-### post prefix
-| prefix | input   | output
-|:---|:---|:---
-| a      | keyword | align
-| d      | keyword | decoration
-| i      | number  | indent
-| s      | keyword | style
-| t      | keyword | transform
-| v      | number  | overflow
-
 <details>
 	<summary>Example</summary>
 
@@ -404,7 +447,7 @@ Border
 | name                    | input  or type                    | output                | grid system
 |:---|:---|:---|:---
 | pxrt                    |                                   | <a href="#pxrt">Pixel ratio</a>| false
-| reset                   |                                   | normilize css         | false
+| reset                   |                                   | normalize css         | false
 | box                     | number                            | width + height        | true
 | mbox                    | number                            | max width and height  | true
 | mibox                   | number                            | min width and height  | true
@@ -418,12 +461,6 @@ Border
 | circle                  | number                            | circle                | false
 | elipse                  | number                            | circle                | false
 
-
-Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
-| mixin | input  |<a href="#position">-position</a>| output | grid | description
-|:---|:---|:---|:---|:---|:---
-| shift	| number | r l t b x y | margin and padding | true | Divides space evenly
-| out 	| number | r l t b x y | margin and padding | true | Creates a tension effect
 
 <details id="pxrt">
 	<summary><strong><big>Pixel Ratio Example</big></strong></summary>
@@ -450,6 +487,12 @@ Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
 	.circle(10px); //border-radius: 50%; width: 10px; height: 10px;
 </details>
 
+Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
+| mixin | input  |<a href="#position">-position</a>| output | grid | description
+|:---|:---|:---|:---|:---|:---
+| shift	| number | r l t b x y | margin and padding | true | Divides space evenly
+| out 	| number | r l t b x y | margin and padding | true | Creates a tension effect
+
 <details>
 	<summary>Example shift</summary>
 
@@ -457,10 +500,12 @@ Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
 	.shift-b(5px); // padding-bottom: 5px; margin-bottom: 5px;
 </details>
 
+<a href="#standard-grid-system">back to mixin</a> | <a href="#navigation">back to navigation<a>
+
 ---
 ## Functions
 
-### Flexible size function
+### Flexible size functions
 
 |input| params | description
 |:---|:---|:---
@@ -513,6 +558,8 @@ Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
 | console-log   | console.log
 | console-error | console.error "red output"
 | console-dir   | console.dir
+
+<a href="#functions">back to functions</a> | <a href="#navigation">back to navigation<a>
 
 ---
 ## Recommendation
@@ -729,7 +776,7 @@ If you need different horizontal and vertical offset. Then use these options.
 	}
 </details>
 
-<a href="#nav">Go to navigation</a>
+<a href="#navigation">Go to navigation</a>
 
 ---
 
