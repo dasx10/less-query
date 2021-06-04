@@ -261,7 +261,7 @@ set the entry point to your file
 ### Short mixin
 <abbr>(emmet type)</abbr>
 
-<style>
+<style style="opacity: 0;">
 	i {
 		cursor: help;
 	}
