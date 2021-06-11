@@ -1,49 +1,49 @@
 {
-  "name": "less-query",
-  "version": "2.6.5",
-  "description": "grid-system and flexible mixins for less",
-  "main": "style.less",
-  "scripts": {
-    "test": "jest",
-    "build": "babel ./plugin/src/flexability-size.js -d ./",
-	"css": "gulp css",
-	"css:watch": "gulp watch"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dasx10/less-mixin.git"
-  },
-  "keywords": [
-    "less",
-    "css",
-    "responsive",
-    "web",
-    "front-end",
-    "mixin",
-    "media",
-    "flexible",
-    "grid-system",
-    "query",
-    "mq",
-    "optimisation",
-    "retina",
-    "mobile",
-    "desctop",
-    "framework"
-  ],
-  "author": "Yevhenii Kleshchev <dasx10@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dasx10/less-mixin/issues"
-  },
-  "homepage": "https://github.com/dasx10/less-mixin#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.12.16",
-    "@babel/core": "^7.12.10",
-    "@babel/node": "^7.12.16",
-    "@babel/preset-env": "^7.12.16",
-    "gulp": "^4.0.2",
-    "gulp-less": "^4.0.1",
-    "jest": "^26.6.3"
-  }
+	"name": "less-query",
+	"version": "2.6.5",
+	"description": "grid-system and flexible mixins for less",
+	"main": "style.less",
+	"scripts": {
+		"test": "jest",
+		"build": "babel ./plugin/src/flexability-size.js -d ./",
+		"css": "gulp css",
+		"css:watch": "gulp watch"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dasx10/less-mixin.git"
+	},
+	"keywords": [
+		"less",
+		"css",
+		"responsive",
+		"web",
+		"front-end",
+		"mixin",
+		"media",
+		"flexible",
+		"grid-system",
+		"query",
+		"mq",
+		"optimisation",
+		"retina",
+		"mobile",
+		"desctop",
+		"framework"
+	],
+	"author": "Yevhenii Kleshchev <dasx10@gmail.com>",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/dasx10/less-mixin/issues"
+	},
+	"homepage": "https://github.com/dasx10/less-mixin#readme",
+	"devDependencies": {
+		"@babel/cli": "^7.12.16",
+		"@babel/core": "^7.12.10",
+		"@babel/node": "^7.12.16",
+		"@babel/preset-env": "^7.12.16",
+		"gulp": "^4.0.2",
+		"gulp-less": "^4.0.1",
+		"jest": "^26.6.3"
+	}
 }
