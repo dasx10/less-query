@@ -7,7 +7,7 @@ module.exports = {
         functions.add('toW',toW);
         functions.add('toH',toH);
         functions.add('toMi',toMi);
-        functions.add('toM',toM);
+        functions.add('toM',	toM);
         functions.add('toPx',toPx);
     }
 };

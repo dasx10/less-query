@@ -1,0 +1,63 @@
+@import './offset/_all.less';
+
+@offset: 1em;
+@offset-one-side: @offset / 2;
+@offset-one-deny: @offset-one-side * -1;
+
+.row-offset(@number-of-offset: 1) {
+	.col-offset(@number-of-offset * -1)
+}
+
+// ** X
+@offset-x: @offset;
+@offset-one-side-x:  @offset-x / 2;
+@offset-one-deny-x:  @offset-one-side-x * -1;
+
+.row-offset-x(@number-of-offset: 1) {
+	.col-offset-x(@number-of-offset * -1);
+}
+
+// ** left
+@offset-left: @offset-x;
+@offset-one-side-left: @offset-left / 2;
+@offset-one-deny-left: @offset-one-side-left * -1;
+
+.row-offset-l(@number-of-offset: 1) {
+	.col-offset-l(@number-of-offset * -1);
+}
+
+// ** right
+@offset-right: @offset-x;
+@offset-one-side-right: @offset-right / 2;
+@offset-one-deny-right: @offset-one-side-right * -1;
+
+.row-offset-r(@number-of-offset: 1) {
+	.col-offset-r(@number-of-offset * -1);
+}
+
+// ** Y
+@offset-y: @offset;
+@offset-one-side-y:  @offset-y / 2;
+@offset-one-deny-y:  @offset-one-side-y * -1;
+
+.row-offset-y(@number-of-offset: 1) {
+	.col-offset-y(@number-of-offset * -1);
+}
+
+// ** top
+@offset-top: @offset-y;
+@offset-one-side-top: @offset-top / 2;
+@offset-one-deny-top: @offset-one-side-top * -1;
+
+.row-offset-t(@number-of-offset: 1) {
+	.col-offset-t(@number-of-offset * -1);
+}
+
+// ** bottom
+@offset-bottom: @offset-y;
+@offset-one-side-bottom: @offset-bottom / 2;
+@offset-one-deny-bottom: @offset-one-side-bottom * -1;
+
+.row-offset-b(@number-of-offset: 1) {
+	.col-offset-b(@number-of-offset * -1);
+}

@@ -1,3 +1,14 @@
+.clearfix(){
+    &::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+
+@import './core/_all.less';
+
 @import './background/_all.less';
 @import './border/_all.less';
 @import './box-shadow/_all.less';
@@ -8,7 +19,6 @@
 @import './display/_all.less';
 @import './flex/_all.less';
 @import './font/_all.less';
-@import './grid/_all.less';
 @import './letter-spacing/_all.less';
 @import './line-height/_all.less';
 @import './margin/_all.less';
@@ -25,5 +35,6 @@
 @import './word/_all.less';
 
 @import './_reset.less';
-// @import './_debug.less';
 @import './custom/_all.less';
+@import './_set-offset.less';
+// @import './_debug.less';

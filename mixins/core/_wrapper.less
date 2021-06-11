@@ -1,10 +1,10 @@
-.container-full(@px:@offsetOneSide, @px_lg:@offset_lg_one_side, @px_md:@offset_md_one_side, @px_sm:@offset_sm_one_side, @px_xs:@offset_xs_one_side){
+.container-full(@px:@offset-one-side){
     .w(100%);
     .px(@px);
 }
 
 .container(
-    @value_1-1 : @widthWrap, @value_2-1 : @false,
+    @value_1-1 : @width-wrapper, @value_2-1 : @false,
     @value_1-2 : @false, @value_2-2 : @false,
     @value_1-3 : @false, @value_2-3 : @false,
     @value_1-4 : @false, @value_2-4 : @false,
@@ -36,13 +36,13 @@
     .container-full();
 }
 
-.wrp(@width:@widthWrap){
+.wrp(@width:@width-wrapper){
     .w(100%);
     .bz(border-box);
     position: relative;
     @val: ((@width) / 2);
     @medW:@width + @offset;
-    @off:- @offsetOneSide;
-    @padding_wrap : @val - (@offsetOneSide);
-    .mq(.px(@offsetOneSide), @medW - @offset, .px(calc(50% - @padding_wrap)));
+    @off:- @offset-one-side;
+    @padding_wrap : @val - (@offset-one-side);
+    .mq(.px(@offset-one-side), @medW - @offset, .px(calc(50% - @padding_wrap)));
 }

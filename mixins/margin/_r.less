@@ -1,7 +1,3 @@
-._mr(@n1:auto){
-    margin-right: @n1;
-}
-
 .mr(
     @value_1-1 : @false, @value_2-1 : @false,
     @value_1-2 : @false, @value_2-2 : @false,
@@ -17,7 +13,7 @@
     @value_1-12: @false, @value_2-12: @false
 ){
     .grid_mixin(
-        auto, margin-right, 0, 0, 0,
+        @default-margin-right, margin-right, 0, 0, 0,
         @value_1-1, @value_2-1,
         @value_1-2, @value_2-2,
         @value_1-3, @value_2-3,
