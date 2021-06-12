@@ -18,16 +18,16 @@
 			<a href="#example">Example</a>
 		</li>
 		<li>
+			<a href="#standard-grid-system">Standard grid system</a>
+		</li>
+		<li>
 			<a href="#grid-system-mixin">Mixins</a>
 			<ul>
 				<li>
-					<a href="#standard-grid-system">Standard grid system</a>
+					<a href="#grid-system-mixin">Grid system</a>
 				</li>
 				<li>
-					<a href="#shift-mixin">Shift mixin</a>
-				</li>
-				<li>
-					<a href="#grid-system-mixin">Grid system mixin</a>
+					<a href="#shift-mixin">Shift</a>
 				</li>
 				<li>
 					<a href="#short-mixin">Short</a>
@@ -228,44 +228,68 @@ set the entry point to your file
 <details>
 	<summary>Example mixin with grid</summary>
 
+	// input
 	.class{
 		.px(1px, xs, 2px, sm, 3px);
 	}
 
-	/*
-		@media (max-width: 540px) {
-			.class {
-				padding-left: 1px;
-				padding-right: 1px;
-			}
+	// output
+	@media (min-width: 45em) {
+		.class {
+			padding-left: 3px;
+			padding-right: 3px;
 		}
+	}
 
-		@media (min-width: 540px) and (max-width: 720px) {
-			.class {
-				padding-left: 2px;
-				padding-right: 2px;
-			}
+	@media (max-width: 33.75em) {
+		.class {
+			padding-left: 1px;
+			padding-right: 1px;
 		}
+	}
 
-		@media (min-width: 720px) {
-			.class {
-				padding-left: 3px;
-				padding-right: 3px;
-			}
+	@media (min-width: 33.75em) and (max-width: 45em) {
+		.class {
+			padding-left: 2px;
+			padding-right: 2px;
 		}
-	*/
+	}
+</details>
+
+<details>
+	<summary>Example multi line</summary>
+
+	// input
+	.shift {
+		.mx(1px 2px);
+		.my(10px 5px, sm, 8px);
+	}
+
+	// output
+	.shift {
+		margin-right: 1px;
+		margin-left: 2px;
+	}
+
+	@media (min-width: 45em) {
+		.shift {
+			margin-top: 8px;
+			margin-bottom: 8px;
+		}
+	}
+
+	@media (max-width: 45em) {
+		.shift {
+			margin-top: 10px;
+			margin-bottom: 5px;
+		}
+	}
 </details>
 
 <a href="#any-shift-mixin">example any shift mixin</a>
 
 ### Short mixin
 <abbr>(emmet type)</abbr>
-
-<style style="opacity: 0;">
-	i {
-		cursor: help;
-	}
-</style>
 
 | example name | post prefix      | output     | grid |
 |:---|:---|:---|:---

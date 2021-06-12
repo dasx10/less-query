@@ -17,16 +17,16 @@
 ){
     ._mixin(@n1 : @default_props){
         & when not (@params_1 = 0){
-            @{params_1}: if(@params_4 = 0, get-value(@n1, 0), @n1);
-        }
-        & when not (@params_2 = 0){
-            @{params_2}: get-value(@n1, 1);
-        }
-        & when not (@params_3 = 0){
-            @{params_3}: get-value(@n1, 2);
-        }
-        & when not (isnumber(@params_4)){
-            @{params_4}: get-value(@n1, 3);
+            @{params_1}: if((@params_2 = 0), @n1, get-value(@n1, 0));
+			& when not (@params_2 = 0){
+				@{params_2}: get-value(@n1, 1);
+				& when not (@params_3 = 0){
+					@{params_3}: get-value(@n1, 2, 0);
+					& when not (isnumber(@params_4)){
+						@{params_4}: get-value(@n1, 3, 1);
+					}
+				}
+			}
         }
     }
 
