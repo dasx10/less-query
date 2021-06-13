@@ -331,7 +331,7 @@ post prefix
 Border
 | mixin | input 			 |<a href="#position">position</a>| post prefix | output | grid
 |:---|:---|:---|:---|:---|:---
-| bd    | number style color | r l t b x y 					  | w s c       | border | true
+| bd    | number style color | <i title="right">r<i> <i title="left">l<i> <i title="top">t<i> <i title="bottom">b<i> x y | w s c       | border | true
 
 <details>
 	<summary>Example</summary>
@@ -354,6 +354,28 @@ Border
 
 </details>
 
+Border-radius
+| mixin | input  | <a href="#position">-position</a> | grid
+|:---|:---|:---|:---
+| bd-rs | number | t r b l tr tl br bl 				 | true
+
+<details>
+	<summary>
+		example
+	</summary>
+
+	// input
+	.bd-rs(3px);
+	.bd-t-rs(50%);
+	.bd-br-rs(1rem);
+
+	// Output
+	border-radius: 3px;
+	border-top-left-radius: 50%;
+  	border-top-right-radius: 50%;
+  	border-bottom-right-radius: 1rem;
+
+</details>
 
 ### Standard mixin
 | mixin | input   | output         | grid
