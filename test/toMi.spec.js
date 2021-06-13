@@ -1,4 +1,4 @@
-const {toMi} = require('../plugin/src/function/convert');
+const {toMi} = require('../plugin/function/convert');
 
 test('return vmin', () => {
     expect(toMi({value:192})).toBe("10vmin");

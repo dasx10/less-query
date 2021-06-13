@@ -1,4 +1,4 @@
-const {toEm} = require('../plugin/src/function/convert');
+const {toEm} = require('../plugin/function/convert');
 
 test('return 1em', () => {
     expect(toEm({value:16})).toBe("1em");

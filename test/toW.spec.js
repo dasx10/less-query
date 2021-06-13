@@ -1,4 +1,4 @@
-const {toW} = require('../plugin/src/function/convert');
+const {toW} = require('../plugin/function/convert');
 
 test('return vw', () => {
     expect(toW({value:192})).toBe("10vw");

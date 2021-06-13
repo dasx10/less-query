@@ -1,4 +1,4 @@
-const {toH} = require('../plugin/src/function/convert');
+const {toH} = require('../plugin/function/convert');
 
 test('return vh', () => {
     expect(toH({value:192})).toBe("10vh");

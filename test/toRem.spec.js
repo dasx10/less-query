@@ -1,4 +1,4 @@
-const {toRem} = require('../plugin/src/function/convert');
+const {toRem} = require('../plugin/function/convert');
 
 test('return 1rem', () => {
     expect(toRem({value:16})).toBe("1rem");
