@@ -36,6 +36,12 @@
 					<a href="#content-mixin">Content</a>
 				</li>
 				<li>
+					<a href="#border">Border</a>
+				</li>
+				<li>
+					<a href="#border-radius">Border radius</a>
+				</li>
+				<li>
 					<a href="#standard-mixin">Standard</a>
 				</li>
 				<li>
@@ -328,7 +334,7 @@ post prefix
 	.as(flex-start); // align-self: flex-start;
 </details>
 
-Border
+### Border
 | mixin | input 			 |<a href="#position">position</a>| post prefix | output | grid
 |:---|:---|:---|:---|:---|:---
 | bd    | number style color | <i title="right">r<i> <i title="left">l<i> <i title="top">t<i> <i title="bottom">b<i> x y | w s c       | border | true
@@ -354,14 +360,14 @@ Border
 
 </details>
 
-Border-radius
+### Border radius
 | mixin | input  | <a href="#position">-position</a> | grid
 |:---|:---|:---|:---
 | bd-rs | number | t r b l tr tl br bl 				 | true
 
 <details>
 	<summary>
-		example
+		Example
 	</summary>
 
 	// input
@@ -460,6 +466,9 @@ Border-radius
 |:---|:---|:---|:---|:---|:---
 | left | right | top | bottom | left + right | top + bottom
 
+| tl | tr | bl | br
+|:---|:---|:---|:---
+| top + left | top + right | bottom + left | bottom + right
 
 <details>
 	<summary>Example</summary>
