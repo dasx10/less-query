@@ -8,7 +8,8 @@
     "build": "babel ./plugin/src/flexability-size.js -d ./",
     "css": "gulp css",
     "css:watch": "gulp watch",
-    "git": "git add -A & git cz & git push"
+    "git": "git add -A & git cz & git push",
+	"send": "npm run git & npm version patch & npm publish"
   },
   "repository": {
     "type": "git",
