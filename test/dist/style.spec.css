@@ -1,20 +1,4 @@
-@media (min-width: 45em) {
-  .class {
-    padding-left: 3px;
-    padding-right: 3px;
-  }
-}
-
-@media (max-width: 33.75em) {
-  .class {
-    padding-left: 1px;
-    padding-right: 1px;
-  }
-}
-
-@media (min-width: 33.75em) and (max-width: 45em) {
-  .class {
-    padding-left: 2px;
-    padding-right: 2px;
-  }
+.class {
+  border-top-color: red;
+  border-bottom-color: green;
 }
