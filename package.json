@@ -1,6 +1,6 @@
 {
   "name": "less-query",
-  "version": "3.1.9",
+  "version": "3.1.10",
   "description": "grid-system and flexible mixins for less",
   "main": "style.less",
   "scripts": {
@@ -24,7 +24,7 @@
     "media",
     "query",
     "flexible",
-	"grid",
+    "grid",
     "grid-system",
     "query",
     "mq",
