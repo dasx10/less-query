@@ -1,6 +1,6 @@
 {
   "name": "less-query",
-  "version": "3.1.6",
+  "version": "3.1.7",
   "description": "grid-system and flexible mixins for less",
   "main": "style.less",
   "scripts": {
@@ -9,7 +9,7 @@
     "css": "gulp css",
     "css:watch": "gulp watch",
     "git": "git add -A & git cz & git push",
-	"send": "npm run git & npm version patch & npm publish"
+    "send": "npm run git & npm version patch & npm publish"
   },
   "repository": {
     "type": "git",
