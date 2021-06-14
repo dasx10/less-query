@@ -206,10 +206,10 @@ set the entry point to your file
 </details>
 
 #### Shift mixin
-| mixin | input  |<a href="#position">position</a>| output 	| grid | example
-|:---|:---|:---|:---|:---|:---
-| m     | number | r l t b x y 					  | margin	| true | .m(0.5rem);
-| p     | number | r l t b x y 					  | padding	| true | .p(0.5rem);
+| mixin    | short | input  |<a href="#position">position</a>| output 	| grid | example
+|:---|:---|:---|:---|:---|:---|:---
+| .margin  | m     | number | r l t b x y 					  | margin	| true | .m(0.5rem);
+| .padding | p     | number | r l t b x y 					  | padding	| true | .p(0.5rem);
 
 <details id="ex-shift">
 	<summary>Example mixin shift mixin</summary>
@@ -317,10 +317,10 @@ set the entry point to your file
 </details>
 
 ### Content mixin
-| example name | post prefix | output  | grid
-|:---|:---|:---|:---
-| j            | <i title="content">c</i> <i title="self">s</i> <i title="item">i</i>       | justify | true
-| a            | <i title="content">c</i> <i title="self">s</i> <i title="item">i</i>       | align   | true
+| example name | example short name | post prefix | output  | grid
+|:---|:---|:---|:---|:---
+| .justify     | .j            | <i title="content">c</i> <i title="self">s</i> <i title="item">i</i>       | justify | true
+| .align       | .a            | <i title="content">c</i> <i title="self">s</i> <i title="item">i</i>       | align   | true
 
 post prefix
 | c  | s  | i
@@ -335,9 +335,9 @@ post prefix
 </details>
 
 ### Border
-| mixin | input 			 |<a href="#position">position</a>| post prefix | output | grid
-|:---|:---|:---|:---|:---|:---
-| bd    | number style color | <i title="right">r<i> <i title="left">l<i> <i title="top">t<i> <i title="bottom">b<i> x y | w s c       | border | true
+| mixin   | short | input 			 |<a href="#position">position</a>| post prefix | output | grid
+|:---|:---|:---|:---|:---|:---|:---
+| .border | .bd    | number style color | <i title="right">r<i> <i title="left">l<i> <i title="top">t<i> <i title="bottom">b<i> x y | w s c       | border | true
 
 <details>
 	<summary>Example</summary>
@@ -361,9 +361,9 @@ post prefix
 </details>
 
 ### Border radius
-| mixin | input  | <a href="#position">-position</a> | grid
-|:---|:---|:---|:---
-| bd-rs | number | t r b l tr tl br bl 				 | true
+| mixin 		 | short  | input  | <a href="#position">-position</a> | grid
+|:---|:---|:---|:---|:---
+| .border-radius | .bd-rs | number | t r b l tr tl br bl 				 | true
 
 <details>
 	<summary>
@@ -384,23 +384,23 @@ post prefix
 </details>
 
 ### Standard mixin
-| mixin | input   | output         | grid
+| short  | input   | mixin         | grid
 |:---|:---|:---|:---
-| w     | number  | width          | true
-| h     | number  | height         | true
-| mw    | number  | max-width      | true
-| mh    | number  | max-height     | true
-| miw   | number  | min-width      | true
-| mih   | number  | min-height     | true
-| lh    | number  | line-height    | true
-| od    | number  | order          | true
-| ls    | number  | letter-spacing | true
-| d     | <i title="none block inline flex grid table inline-...">keyword</i> | display        | true
-| rz    | keyword | resize         | true
-| va    | keyword | vertical-align | true
-| fx    | keyword | flex           | true
-| cp    | keyword | clip           | true
-| f     | keyword | font           | true
+| .w     | number  | .width          | true
+| .h     | number  | .height         | true
+| .mw    | number  | .max-width      | true
+| .mh    | number  | .max-height     | true
+| .miw   | number  | .min-width      | true
+| .mih   | number  | .min-height     | true
+| .lh    | number  | .line-height    | true
+| .od    | number  | .order          | true
+| .ls    | number  | .letter-spacing | true
+| .d     | <i title="none block inline flex grid table inline-...">keyword</i> | .display        | true
+| .rz    | keyword | .resize         | true
+| .va    | keyword | .vertical-align | true
+| .fx    | keyword | .flex           | true
+| .cp    | keyword | .clip           | true
+| .f     | keyword | .font           | true
 
 
 <details>
@@ -425,15 +425,15 @@ post prefix
 </details>
 
 ### Position mixin
-| mixin  | input  | output       | grid
-|:---|:---|:---|:---
-| a		 | number or none | all position | true
-| x		 | number or none | right + left | true
-| r		 | number or none | right        | true
-| l		 | number or none | left         | true
-| y		 | number or none | top + bottom | true
-| t		 | number or none | top          | true
-| b		 | number or none | bottom       | true
+| mixin   | short  | input  | output       | grid
+|:---|:---|:---|:---|:---
+|	      | .a	 | number or none | all position | true
+|	      | .x	 | number or none | right + left | true
+| .right  | .r	 | number or none | right        | true
+| .left   | .l	 | number or none | left         | true
+| 	      | .y	 | number or none | top + bottom | true
+| .top	  | .t	 | number or none | top          | true
+| .bottom | .b	 | number or none | bottom       | true
 
 <details>
 	<summary>Example</summary>
@@ -501,20 +501,20 @@ post prefix
 
 | name                    | input  or type                    | output                | grid system
 |:---|:---|:---|:---
-| pxrt                    |                                   | <a href="#pxrt">Pixel ratio</a>| false
-| reset                   |                                   | normalize css         | false
-| box                     | number                            | width + height        | true
-| mbox                    | number                            | max width and height  | true
-| mibox                   | number                            | min width and height  | true
-| triangle-t              | number                            | triangle              | false
-| triangle-b              | number                            | triangle              | false
-| triangle-l              | number                            | triangle              | false
-| triangle-r              | number                            | triangle              | false
-| triangle-rt             | number                            | triangle              | false
-| triangle-rb             | number                            | triangle              | false
-| round                   | number                            | border-radius:50%     | false
-| circle                  | number                            | circle                | false
-| elipse                  | number                            | circle                | false
+| .pxrt                    |                                   | <a href="#pxrt">Pixel ratio</a>| false
+| .reset                   |                                   | normalize css         | false
+| .box                     | number                            | width + height        | true
+| .mbox                    | number                            | max width and height  | true
+| .mibox                   | number                            | min width and height  | true
+| .triangle-t              | number                            | triangle              | false
+| .triangle-b              | number                            | triangle              | false
+| .triangle-l              | number                            | triangle              | false
+| .triangle-r              | number                            | triangle              | false
+| .triangle-rt             | number                            | triangle              | false
+| .triangle-rb             | number                            | triangle              | false
+| .round                   | number                            | border-radius:50%     | false
+| .circle                  | number                            | circle                | false
+| .elipse                  | number                            | circle                | false
 
 
 <details id="pxrt">
@@ -545,8 +545,8 @@ post prefix
 Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
 | mixin | input  |<a href="#position">-position</a>| output | grid | description
 |:---|:---|:---|:---|:---|:---
-| shift	| number | r l t b x y | margin and padding | true | Divides space evenly
-| out 	| number | r l t b x y | margin and padding | true | Creates a tension effect
+| .shift	| number | r l t b x y | margin and padding | true | Divides space evenly
+| .out 	| number | r l t b x y | margin and padding | true | Creates a tension effect
 
 <details>
 	<summary>Example shift</summary>
