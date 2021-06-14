@@ -1,4 +1,4 @@
-const {toM} = require('../plugin/src/function/convert');
+const {toM} = require('../plugin/function/convert');
 
 test('return vmax', () => {
     expect(toM({value:192})).toBe("10vmax");

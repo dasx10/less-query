@@ -1,4 +1,4 @@
-const log = require('../plugin/src/function/log');
+const log = require('../plugin/function/log');
 
 test('log return ""', () => {
     expect(log.log(1)).toBe("");

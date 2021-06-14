@@ -1,13 +1,14 @@
 {
   "name": "less-query",
-  "version": "3.0.5",
+  "version": "3.1.9",
   "description": "grid-system and flexible mixins for less",
   "main": "style.less",
   "scripts": {
     "test": "jest",
     "build": "babel ./plugin/src/flexability-size.js -d ./",
-    "css": "gulp css",
-    "css:watch": "gulp watch"
+    "watch": "gulp watch",
+    "git": "git add -A & git cz & git push",
+    "send": "npm run git & npm version patch & npm publish"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,9 @@
     "front-end",
     "mixin",
     "media",
+    "query",
     "flexible",
+	"grid",
     "grid-system",
     "query",
     "mq",

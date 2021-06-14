@@ -1,4 +1,4 @@
-const getCorrect = require('../plugin/src/function/getCorrect');
+const getCorrect = require('../plugin/function/getCorrect');
 
 test('get correct change', () => {
     expect(getCorrect(2,4,2)).toBe(0);

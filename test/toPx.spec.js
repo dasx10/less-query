@@ -1,4 +1,4 @@
-const {toP} = require('../plugin/src/function/convert');
+const {toP} = require('../plugin/function/convert');
 
 test('zero return', () => {
     expect(toP({value:0})).toBe("0");

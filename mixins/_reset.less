@@ -14,9 +14,15 @@
         color:inherit;
         background-color:transparent;
     }
-    b,strong{
+    b, strong{
         font-weight: bolder;
     }
+	i, em{
+		font-style: italic;
+	}
+	u {
+		text-decoration: underline;
+	}
     fieldset,img,abbr{
         border: none;
     }
@@ -32,8 +38,8 @@
         font-weight: normal;
     }
     input,textarea,select,optgroup,button{
-        font-family: inherit;
         font-size: inherit;
+        font-family: inherit;
         font-weight: inherit;
         line-height: inherit;
         text-transform: none;
@@ -83,12 +89,33 @@
     footer{
         margin-top: auto;
         margin-bottom: 0;
+<<<<<<< HEAD
         bottom: 0;
         order: 1;
     }
 	a, button, [onclick] {
 		cursor: pointer;
 	}
+=======
+        bottom:0;
+        order:1;
+    }
+	input {
+		filter: none;
+	}
+	button, a, select, option, label,
+	[type="button"],
+	[type="submit"],
+	[type="reset"],
+	[type="checkbox"],
+	[type="radio"],
+	[onclick],[ondbclick] {
+		cursor: pointer;
+	}
+	[readonly] {
+		cursor: default;
+	}
+>>>>>>> fed8946ab6212947dd386d061aa70bd1693252ca
 	[disabled] {
 		cursor: not-allowed;
 	}

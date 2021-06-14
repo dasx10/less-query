@@ -18,22 +18,28 @@
 			<a href="#example">Example</a>
 		</li>
 		<li>
+			<a href="#standard-grid-system">Standard grid system</a>
+		</li>
+		<li>
 			<a href="#grid-system-mixin">Mixins</a>
 			<ul>
 				<li>
-					<a href="#standard-grid-system">Standard grid system</a>
+					<a href="#grid-system-mixin">Grid system</a>
 				</li>
 				<li>
-					<a href="#shift-mixin">Shift mixin</a>
-				</li>
-				<li>
-					<a href="#grid-system-mixin">Grid system mixin</a>
+					<a href="#shift-mixin">Shift</a>
 				</li>
 				<li>
 					<a href="#short-mixin">Short</a>
 				</li>
 				<li>
 					<a href="#content-mixin">Content</a>
+				</li>
+				<li>
+					<a href="#border">Border</a>
+				</li>
+				<li>
+					<a href="#border-radius">Border radius</a>
 				</li>
 				<li>
 					<a href="#standard-mixin">Standard</a>
@@ -228,44 +234,68 @@ set the entry point to your file
 <details>
 	<summary>Example mixin with grid</summary>
 
+	// input
 	.class{
 		.px(1px, xs, 2px, sm, 3px);
 	}
 
-	/*
-		@media (max-width: 540px) {
-			.class {
-				padding-left: 1px;
-				padding-right: 1px;
-			}
+	// output
+	@media (min-width: 45em) {
+		.class {
+			padding-left: 3px;
+			padding-right: 3px;
 		}
+	}
 
-		@media (min-width: 540px) and (max-width: 720px) {
-			.class {
-				padding-left: 2px;
-				padding-right: 2px;
-			}
+	@media (max-width: 33.75em) {
+		.class {
+			padding-left: 1px;
+			padding-right: 1px;
 		}
+	}
 
-		@media (min-width: 720px) {
-			.class {
-				padding-left: 3px;
-				padding-right: 3px;
-			}
+	@media (min-width: 33.75em) and (max-width: 45em) {
+		.class {
+			padding-left: 2px;
+			padding-right: 2px;
 		}
-	*/
+	}
+</details>
+
+<details>
+	<summary>Example multi line</summary>
+
+	// input
+	.shift {
+		.mx(1px 2px);
+		.my(10px 5px, sm, 8px);
+	}
+
+	// output
+	.shift {
+		margin-right: 1px;
+		margin-left: 2px;
+	}
+
+	@media (min-width: 45em) {
+		.shift {
+			margin-top: 8px;
+			margin-bottom: 8px;
+		}
+	}
+
+	@media (max-width: 45em) {
+		.shift {
+			margin-top: 10px;
+			margin-bottom: 5px;
+		}
+	}
 </details>
 
 <a href="#any-shift-mixin">example any shift mixin</a>
 
 ### Short mixin
 <abbr>(emmet type)</abbr>
-
-<style style="opacity: 0;">
-	i {
-		cursor: help;
-	}
-</style>
 
 | example name | post prefix      | output     | grid |
 |:---|:---|:---|:---
@@ -304,10 +334,10 @@ post prefix
 	.as(flex-start); // align-self: flex-start;
 </details>
 
-Border
+### Border
 | mixin | input 			 |<a href="#position">position</a>| post prefix | output | grid
 |:---|:---|:---|:---|:---|:---
-| bd    | number style color | r l t b x y 					  | w s c       | border | true
+| bd    | number style color | <i title="right">r<i> <i title="left">l<i> <i title="top">t<i> <i title="bottom">b<i> x y | w s c       | border | true
 
 <details>
 	<summary>Example</summary>
@@ -330,6 +360,28 @@ Border
 
 </details>
 
+### Border radius
+| mixin | input  | <a href="#position">-position</a> | grid
+|:---|:---|:---|:---
+| bd-rs | number | t r b l tr tl br bl 				 | true
+
+<details>
+	<summary>
+		Example
+	</summary>
+
+	// input
+	.bd-rs(3px);
+	.bd-t-rs(50%);
+	.bd-br-rs(1rem);
+
+	// Output
+	border-radius: 3px;
+	border-top-left-radius: 50%;
+  	border-top-right-radius: 50%;
+  	border-bottom-right-radius: 1rem;
+
+</details>
 
 ### Standard mixin
 | mixin | input   | output         | grid
@@ -414,6 +466,9 @@ Border
 |:---|:---|:---|:---|:---|:---
 | left | right | top | bottom | left + right | top + bottom
 
+| tl | tr | bl | br
+|:---|:---|:---|:---
+| top + left | top + right | bottom + left | bottom + right
 
 <details>
 	<summary>Example</summary>

@@ -1,7 +1,7 @@
 const intOrZero = require('./intOrZero');
 const getCof = require('./getCof');
 const getCorrect = require('./getCorrect');
-module.exports = ( met , m, d , sm , sd , name = 'fd') => {
+module.exports = ( met, m, d, sm, sd, name = 'fd') => {
     let cof = 0;
     let correct = 0;
     let type = m?.unit?.backupUnit||d?.unit?.backupUnit||'';
