@@ -208,21 +208,88 @@ set the entry point to your file
 	*/
 </details>
 
-#### Grid mixin
-| mixin | short | grid system
-|:---|:---|:---
-| .grid-area 			| .ga  | true
-| .grid-auto-column 	| .gac | true
-| .grid-auto-row 		| .gar | true
-| .grid-template 		| .gt  | true
-| .grid-template-column | .gtc | true
-| .grid-template-row 	| .gtr | true
-| .grid-column 			| .gc  | true
-| .grid-column-start 	| .gcs | true
-| .grid-column-end 		| .gce | true
-| .grid-row 			| .gr  | true
-| .grid-row-start 		| .grs | true
-| .grid-row-end 		| .gre | true
+<details id="grid-mixin">
+	<summary>
+		Grid mixin
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.grid-area</td>
+				<td>.ga</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-auto-column</td>
+				<td>.gac</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-auto-row</td>
+				<td>.gar</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-auto-row</td>
+				<td>.gar</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-template</td>
+				<td>.gt</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-template-column</td>
+				<td>.gtc</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-template-row</td>
+				<td>.gtr</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-column</td>
+				<td>.gc</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-column-start</td>
+				<td>.gcs</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-column-end</td>
+				<td>.gce</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-row</td>
+				<td>.gr</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-row-start</td>
+				<td>.grs</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-row-end</td>
+				<td>.gre</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
 #### Shift mixin
 | mixin    | short | input  |<a href="#position">position</a>| output 	| grid system | example
 |:---|:---|:---|:---|:---|:---|:---
