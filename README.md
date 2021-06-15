@@ -226,8 +226,8 @@ set the entry point to your file
 #### Shift mixin
 | mixin    | short | input  |<a href="#position">position</a>| output 	| grid system | example
 |:---|:---|:---|:---|:---|:---|:---
-| .margin  | m     | number | r l t b x y 					  | margin	| true | .m(0.5rem);
-| .padding | p     | number | r l t b x y 					  | padding	| true | .p(0.5rem);
+| .margin  | .m    | number | r l t b x y 					  | margin	| true | .m(0.5rem);
+| .padding | .p    | number | r l t b x y 					  | padding	| true | .p(0.5rem);
 
 <details id="ex-shift">
 	<summary>Example mixin shift mixin</summary>
