@@ -1,0 +1,13 @@
+<details>
+	<summary>if the property is still missing, then you can create your own mix and use it like this</summary>
+
+	.myMix(@params){
+		.c(lighten(@params));
+		.bgc(darken(@params));
+	}
+
+	.mq(
+		sm,     .myMix(darkred),
+		1280px, .myMix(#000)
+	);
+</details>

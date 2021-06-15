@@ -22,6 +22,11 @@ function watch(){
     gulp.watch(['./test/src/style.spec.less'],css);
 }
 
+function watchReadme(){
+    gulp.watch(['./doc/README.md'],readme);
+}
+
 module.exports.css = css;
 module.exports.readme = readme;
+module.exports.watchReadme = watchReadme;
 module.exports.watch = watch;
