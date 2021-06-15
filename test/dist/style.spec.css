@@ -1,3 +1,4 @@
 .class {
-  justify-items: flex-start;
+  min-height: 10px;
+  max-height: 200px;
 }

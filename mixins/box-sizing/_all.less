@@ -13,7 +13,7 @@
     @value_1-12: @false, @value_2-12: @false
 ){
     .grid_mixin(
-        auto, box-sizing, 0, 0, 1,
+        auto, box-sizing, 0, 0, 0,
         @value_1-1, @value_2-1,
         @value_1-2, @value_2-2,
         @value_1-3, @value_2-3,
@@ -30,7 +30,7 @@
 }
 
 .box-sizing(
-	@value_1-1 : @false, @value_2-1 : @false,
+    @value_1-1 : @false, @value_2-1 : @false,
     @value_1-2 : @false, @value_2-2 : @false,
     @value_1-3 : @false, @value_2-3 : @false,
     @value_1-4 : @false, @value_2-4 : @false,
@@ -42,9 +42,10 @@
     @value_1-10: @false, @value_2-10: @false,
     @value_1-11: @false, @value_2-11: @false,
     @value_1-12: @false, @value_2-12: @false
-) {
-	.bz(
-		@value_1-1, @value_2-1,
+){
+    .grid_mixin(
+        auto, box-sizing, 0, 0, 0,
+        @value_1-1, @value_2-1,
         @value_1-2, @value_2-2,
         @value_1-3, @value_2-3,
         @value_1-4, @value_2-4,
@@ -56,5 +57,5 @@
         @value_1-10, @value_2-10,
         @value_1-11, @value_2-11,
         @value_1-12, @value_2-12
-	);
+    );
 }

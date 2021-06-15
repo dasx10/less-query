@@ -27,6 +27,9 @@
 					<a href="#grid-system-mixin">Grid system</a>
 				</li>
 				<li>
+					<a href="#grid-mixin">Grid</a>
+				</li>
+				<li>
 					<a href="#shift-mixin">Shift</a>
 				</li>
 				<li>
@@ -172,7 +175,7 @@ set the entry point to your file
 
 ### Grid system mixin
 
-| mixin 	| input   | grid  | decription
+| mixin 	| input   | grid system  | decription
 |:---|:---|:---|:---
 | row       | keyword | true  |
 | col       | number  | true  |
@@ -205,8 +208,23 @@ set the entry point to your file
 	*/
 </details>
 
+#### Grid mixin
+| mixin | short | grid system
+|:---|:---|:---
+| .grid-area 			| .ga  | true
+| .grid-auto-column 	| .gac | true
+| .grid-auto-row 		| .gar | true
+| .grid-template 		| .gt  | true
+| .grid-template-column | .gtc | true
+| .grid-template-row 	| .gtr | true
+| .grid-column 			| .gc  | true
+| .grid-column-start 	| .gcs | true
+| .grid-column-end 		| .gce | true
+| .grid-row 			| .gr  | true
+| .grid-row-start 		| .grs | true
+| .grid-row-end 		| .gre | true
 #### Shift mixin
-| mixin    | short | input  |<a href="#position">position</a>| output 	| grid | example
+| mixin    | short | input  |<a href="#position">position</a>| output 	| grid system | example
 |:---|:---|:---|:---|:---|:---|:---
 | .margin  | m     | number | r l t b x y 					  | margin	| true | .m(0.5rem);
 | .padding | p     | number | r l t b x y 					  | padding	| true | .p(0.5rem);
@@ -297,30 +315,35 @@ set the entry point to your file
 ### Short mixin
 <abbr>(emmet type)</abbr>
 
-| example name | post prefix      | output     | grid |
+| example name 									   | post prefix      | output     | grid system |
 |:---|:---|:---|:---
-| <i title=".ta() .td() .ti ...">t</i>            | <i title="align">a</i> <i title="decoration">d</i> <i title="indent">i</i> <i title="shadow">s</i> <i title="transform">t</i> <i title="overflow">v</i>      | text       | true |
-| f            | <i title="style">s</i> <i title="size">z</i> <i title="weight">w</i> <i title="family">f</i>          | font       | true |
-| w            | <i title="break">b</i> <i title="spacing">s</i> <i title="wrap">w</i>            | word       | true |
-| fx           | <i title="basis">b</i> <i title="decoration">d</i> <i title="flow">f</i> <i title="grow">g</i> <i title="shrink">s</i> <i title="wrap">w</i>      | flex       | true |
-| b            | <i title="shadow">sh</i> <i title="sizing">z</i>             | box        | true |
-| bg           | <i title="attachment">a</i> <i title="clip">cl</i> <i title="color">c</i> <i title="image">i</i> <i title="origin">o</i> <i title="position">p</i> <i title="repeat">r</i> <i title="size">z</i> | background | true |
+| <i title=".ta() .td() .ti ...">.t</i>            | <i title="align">a</i> <i title="decoration">d</i> <i title="indent">i</i> <i title="shadow">s</i> <i title="transform">t</i> <i title="overflow">v</i>      | text       | true |
+| <i title=".f() .ff(). fz( ...">.f</i>            | <i title="style">s</i> <i title="size">z</i> <i title="weight">w</i> <i title="family">f</i>          | font       | true |
+| <i title=".ww() .ws()">.w</i>           		   | <i title="break">b</i> <i title="spacing">s</i> <i title="wrap">w</i>            | word       | true |
+| <i title=".fx() .fxd() ...">.fx</i>              | <i title="basis">b</i> <i title="decoration">d</i> <i title="flow">f</i> <i title="grow">g</i> <i title="shrink">s</i> <i title="wrap">w</i>      | flex       | true |
+| <i title=".bz() .bsh()">.b</i>            	   | <i title="shadow">sh</i> <i title="sizing">z</i>             | box        | true |
+| <i title=".bg() .bgc() ...">.bg</i>              | <i title="attachment">a</i> <i title="clip">cl</i> <i title="color">c</i> <i title="image">i</i> <i title="origin">o</i> <i title="position">p</i> <i title="repeat">r</i> <i title="size">z</i> | background | true |
 
 <details>
 	<summary>Example</summary>
 
-	.tt(uppercase);
-	.ai(center);
-
-	// text-transform:uppercase;
-	// align-items:center;
+	.tt(uppercase);  // text-transform:uppercase;
+	.tt(lower-case); // text-transform: lower-case;
+	.td(none); 	 	 // text-decoration: none;
+	.ta(center); 	 // text-align: center;
+	.ai(center); 	 // align-items:center;
+	.fz(1em); 	     // font-size: 1em;
+	.fxd(column);    // flex-direction: column;
+	.fxw(wrap);      // flex-wrap: wrap;
+	.bgc(red); 	     // background-color: red;
 </details>
 
 ### Content mixin
-| example name | example short name | post prefix | output  | grid
+| example name | example short name | post prefix | output  | grid system
 |:---|:---|:---|:---|:---
-| .justify     | .j            | <i title="content">c</i> <i title="self">s</i> <i title="item">i</i>       | justify | true
-| .align       | .a            | <i title="content">c</i> <i title="self">s</i> <i title="item">i</i>       | align   | true
+| .justify     | .j            | <i title="content">c</i> <i title="self">s</i> <i title="item">i</i>       | justify 		  | true
+| .align       | .a            | <i title="content">c</i> <i title="self">s</i> <i title="item">i</i>       | align   		  | true
+| .even        | .e            | <i title="content">c</i> <i title="self">s</i> <i title="item">i</i>       | align + justify | true
 
 post prefix
 | c  | s  | i
@@ -332,10 +355,12 @@ post prefix
 
 	.jc(center); // justify-content: center;
 	.as(flex-start); // align-self: flex-start;
+
+	.ec(center); // align-content: center; justify-content: center;
 </details>
 
 ### Border
-| mixin   | short | input 			 |<a href="#position">position</a>| post prefix | output | grid
+| mixin   | short | input 			 |<a href="#position">position</a>| post prefix | output | grid system
 |:---|:---|:---|:---|:---|:---|:---
 | .border | .bd    | number style color | <i title="right">r<i> <i title="left">l<i> <i title="top">t<i> <i title="bottom">b<i> x y | w s c       | border | true
 
@@ -361,7 +386,7 @@ post prefix
 </details>
 
 ### Border radius
-| mixin 		 | short  | input  | <a href="#position">-position</a> | grid
+| mixin 		 | short  | input  | <a href="#position">-position</a> | grid system
 |:---|:---|:---|:---|:---
 | .border-radius | .bd-rs | number | t r b l tr tl br bl 				 | true
 
@@ -384,7 +409,7 @@ post prefix
 </details>
 
 ### Standard mixin
-| short  | input   | mixin         | grid
+| short  | input   | mixin         | grid system
 |:---|:---|:---|:---
 | .w     | number  | .width          | true
 | .h     | number  | .height         | true
@@ -425,7 +450,7 @@ post prefix
 </details>
 
 ### Position mixin
-| mixin   | short  | input  | output       | grid
+| mixin   | short  | input  | output       | grid system
 |:---|:---|:---|:---|:---
 |	      | .a	 | number or none | all position | true
 |	      | .x	 | number or none | right + left | true
@@ -488,14 +513,6 @@ post prefix
 
 </details>
 
-<details>
-	<summary>Example</summary>
-
-	.td(none); 	 	 // text-decoration: none;
-	.ta(center); 	 // text-align: center;
-	.tt(lower-case); // text-transform: lower-case;
-</details>
-
 ---
 ### any mixin
 
@@ -514,8 +531,6 @@ post prefix
 | .triangle-rb             | number                            | triangle              | false
 | .round                   | number                            | border-radius:50%     | false
 | .circle                  | number                            | circle                | false
-| .elipse                  | number                            | circle                | false
-
 
 <details id="pxrt">
 	<summary><strong><big>Pixel Ratio Example</big></strong></summary>
@@ -543,7 +558,7 @@ post prefix
 </details>
 
 Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
-| mixin | input  |<a href="#position">-position</a>| output | grid | description
+| mixin | input  |<a href="#position">-position</a>| output | grid system | description
 |:---|:---|:---|:---|:---|:---
 | .shift	| number | r l t b x y | margin and padding | true | Divides space evenly
 | .out 	| number | r l t b x y | margin and padding | true | Creates a tension effect
