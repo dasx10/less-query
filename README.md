@@ -177,15 +177,15 @@ set the entry point to your file
 
 | mixin 	| input   | grid system  | decription
 |:---|:---|:---|:---
-| row       | keyword | true  |
-| col       | number  | true  |
-| col-count | number  | false | overrides the default column count
-| mq        | mixin   | true  | media width builder
-| to        | mixin   | true  | media max width only
-| from      | mixin   | true  | media min width only
-| mqh       | mixin   | true  | media height builder
-| container | number  | true  | max size (container)
-| wrp       | number  | true  | padding max size (container)
+| .row       | keyword | true  |
+| .col       | number  | true  |
+| .col-count | number  | false | overrides the default column count
+| .mq        | mixin   | true  | media width builder
+| .to        | mixin   | true  | media max width only
+| .from      | mixin   | true  | media min width only
+| .mqh       | mixin   | true  | media height builder
+| .container | number  | true  | max size (container)
+| .wrp       | number  | true  | padding max size (container)
 
 <details id="grid-s-mix">
 	<summary>Example grid system mixin</summary>
