@@ -50,6 +50,7 @@ set the entry point to your file
 
 
 ## Standard grid system
+
 <details id="grid-system-mixin">
 	<summary>
 		Default break point
@@ -112,7 +113,6 @@ set the entry point to your file
 	</table>
 </details>
 
-
 <details id="grid-system-mixin">
 	<summary>
 		Default grid system setup
@@ -148,7 +148,7 @@ set the entry point to your file
 </details>
 
 
-<a href="#overriding-standard-variables">Overriding this variables</a>
+Go to <a href="#overriding-standard-variables">overriding this variables</a>
 
 ## Mixins
 
@@ -1521,10 +1521,7 @@ Go back to <a href="#mixins">mixins</a> | <a href="#navigation">navigation</a>
 
 Go back to <a href="#mixins"> mixins</a> | <a href="#experimental-mixins">experimental mixins</a> | <a href="#navigation">navigation</a>
 
-----
 ## Functions
-
-### Flexible size functions
 
 <details id="flexible-function">
 	<summary>
@@ -1738,9 +1735,8 @@ Go back to <a href="#mixins"> mixins</a> | <a href="#experimental-mixins">experi
 
 Go back to <a href="#functions">functions</a> | <a href="#navigation">navigation</a>
 
----
-
 ## Examples
+
 <details>
 	<summary>Example mixin with grid</summary>
 
@@ -1802,7 +1798,6 @@ Go back to <a href="#functions">functions</a> | <a href="#navigation">navigation
 	}
 </details>
 
----
 
 ## Recommendation
 
