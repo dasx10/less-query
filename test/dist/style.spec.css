@@ -1,4 +1,6 @@
 .class {
   min-height: 10px;
   max-height: 200px;
+  margin: 5px;
+  padding: -5px;
 }

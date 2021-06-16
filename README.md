@@ -31,6 +31,9 @@
 		<li>
 			<a href="#overriding-standard-variables">Overriding standard variables</a>
 		</li>
+		<li>
+			<a href="#faq">F.A.Q.</a>
+		</li>
 	</ul>
 </nav>
 
@@ -148,7 +151,8 @@ set the entry point to your file
 </details>
 
 
-Go to <a href="#overriding-standard-variables">overriding this variables</a>
+<p>Go back to <a href="#navigation">navigation</a></p>
+<p>Go to <a href="#overriding-standard-variables">overriding this variables</a></p>
 
 ## Mixins
 
@@ -1464,6 +1468,59 @@ Go back to <a href="#mixins">mixins</a> | <a href="#navigation">navigation</a>
 	</table>
 </details>
 
+<details id="pull-mixin">
+	<summary title="-margin +padding">
+		Pull mixins
+	</summary>
+	<p>-margin +padding</p>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.pull</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.pull-t</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.pull-r</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.pull-b</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.pull-l</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.pull-y</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.pull-x</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
 <details>
 	<summary>
 		Any experimental mixin
@@ -1818,8 +1875,11 @@ Go back to <a href="#functions">functions</a> | <a href="#navigation">navigation
 <details>
 	<summary>How not recommended to use</summary>
 
-	.px(xs, 10px, sm, 20px);
-	.my(sm, 5px, md, 12px, lg, auto);
+	.mq(
+		{.px(xs, 10px, sm, 20px);},
+		md,
+		{.my(sm, 5px, md, 12px, lg, auto);}
+	)
 </details>
 
 <details>
@@ -1858,6 +1918,27 @@ Go back to <a href="#functions">functions</a> | <a href="#navigation">navigation
 	);
 </details>
 
+<details>
+	<summary>Recommendations for use media query</summary>
+	<p>We strongly recommend that your media mixin starts with a parameter and ends with a parameter.</p>
+	<p>This does not mean that you are using it incorrectly. But this is a signal that you are most likely doing something wrong.</p>
+	<p></p>
+	<details>
+		<summary>Example of correct use</summary>
+		<pre>
+			.mq(.p(5px), xs, .p(10px));
+			.m(1rem, xs, 1.5rem);
+		</pre>
+	</details>
+	<details>
+		<summary>An example of a possibly incorrect use</summary>
+		<pre>
+			.mq(xs, .p(10px), sm, .p(5px), md);
+			.m(xs, 1.5rem, sm, 2rem, md);
+		</pre>
+	</details>
+	<hr />
+</details>
 
 <p>Go back to <a href="#recommendation">recommendation</a> | <a href="#navigation">navigation</a></p>
 <p>Go to <a href="#example">example</a></p>
@@ -1872,7 +1953,6 @@ Go back to <a href="#functions">functions</a> | <a href="#navigation">navigation
 	@import './node_modules/less-query/style.less';
 	@import './data.less';
 </details>
-
 <details>
 	<summary><strong>Reassigning Variables <em>(example data.less file)</em></strong></summary>
 	<em>Use parameters in your data.less file</em>
@@ -1940,26 +2020,23 @@ Go back to <a href="#functions">functions</a> | <a href="#navigation">navigation
 	@default-padding-top: 	 @default-padding-y;
 	@default-padding-bottom: @default-padding-y;
 </details>
-
-If you need dynamic offset. You can also set them in your <a href="#overriding-standard-variables" id="offsets-a">settings file</a>.
-Variable offsets will be automatically inserted into the <a href="#standard-grid-system">column system</a>.
-
-We strongly recommend using it as an exception.
-
-If you want the same offsets on all sides. Then use
-
-```
- @offset-var: my offset;
-
-```
-If you need different horizontal and vertical offset. Then use these options.
-
-```
-@offset-var-x: my offset x;
-@offset-var-y: my offset y;
-```
-
 <details>
+	<summary><strong>If you need dynamic offset.</strong></summary>
+	<p>
+		You can also set them in your <a href="#overriding-standard-variables" id="offsets-a">settings file</a>.
+		Variable offsets will be automatically inserted into the <a href="#standard-grid-system">column system</a>.
+	</p>
+	<p>We strongly recommend using it as an exception.</p>
+	<p>If you want the same offsets on all sides. Then use</p>
+	<pre>
+		@offset-var: my offset;
+	</pre>
+	<p>If you need different horizontal and vertical offset. Then use these options.</p>
+	<pre>
+		@offset-var-x: my offset x;
+		@offset-var-y: my offset y;
+	</pre>
+	<details>
 	<summary>Example: @offset-var: 1em;</summary>
 
 	:root {
@@ -1980,8 +2057,7 @@ If you need different horizontal and vertical offset. Then use these options.
 		--offset-one-side-b: calc(var(--offset-y) / 2);
 	}
 </details>
-
-<details>
+	<details>
 	<summary>Example: @offset-var-x: 1em;</summary>
 
 	:root {
@@ -1993,8 +2069,7 @@ If you need different horizontal and vertical offset. Then use these options.
 		--offset-one-side-x: calc(var(--offset-x) / 2);
 	}
 </details>
-
-<details>
+	<details>
 	<summary>Example: @offset-var-x: 1em; @offset-var-y: 2em;</summary>
 
 	:root {
@@ -2012,9 +2087,58 @@ If you need different horizontal and vertical offset. Then use these options.
 		--offset-one-side-y: calc(var(--offset-y) / 2);
 	}
 </details>
+</details>
 
-<a href="#navigation">Go to navigation</a>
+Go back to <a href="#overriding-standard-variables">Overriding standard variables</a> | <a href="#navigation">navigation</a>
 
 ---
+
+## F.A.Q.
+
+<details>
+	<summary>Mobile first or desktop first?</summary>
+	<p>this library does not take a mobile-first approach. It also does not use a desktop-centric approach. But there is an opportunity to apply one or another approach in the library. Read the instructions carefully. The library combines both approaches.</p>
+	<h4>Benefits of this approach</h4>
+	<p>Faster rendering speed</p>
+	<p><i>Since you don't need to apply styles and then overwrite them</i></p>
+	<p>Since you don't need to apply styles and then overwrite them</p>
+	<p>You don't have to think about which approach to use.</p>
+	<p><i>since the hybrid approach is backward compatible with any of the approaches</i></p>
+	<br />
+	<h4>Disadvantages of this approach</h4>
+	<p>increases file size almost insignificantly</p>
+	<p><i>due to the use of both the minimum and maximum value</i></p>
+</details>
+
+<details>
+	<summary>Documentation in another language?</summary>
+	<p>There is currently no documentation in other languages.Work in progress. If you would like to help us translate, you can send a pull request to the author.</p>
+</details>
+
+<details>
+	<summary>Your library won't start!</summary>
+	<p>Please check your version node js. - Tested and works correctly since version 14</p>
+	<p>check your transpiler `less` - the library was tested as with a regular transpiler. Same thing via 'webpack' 'gulp'</p>
+	<p>Check if the library is connected correctly</p>
+	<p>You are trying to run the library through the browser? This does not work. You need node js to work</p>
+	<p>I checked everything and tried everything. But still doesn't work - Please write to the author about this problem. Preferably informative with screenshots. So that we can help you</p>
+</details>
+
+<details>
+	<summary>The library is too big - what's the problem?</summary>
+	<p>Don't worry about it - your latest kit will only get what you need.</p>
+</details>
+
+<details>
+	<summary>My bundle is too big.</summary>
+	<p>To reduce the size of the bundle, we recommend using minifiers in conjunction with the library to combine media query.</p>
+</details>
+
+<details>
+	<summary>Do you have any suggestions for the library?</summary>
+	<p>Please write to the author or send a pull request. We will be glad to consider your suggestions.</p>
+</details>
+
+Go back to <a href="#navigation">navigation</a>
 
 ***If you find a bug or have suggestions for improving the system, i will be glad to your feedback.***

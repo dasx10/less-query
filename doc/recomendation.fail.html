@@ -1,6 +1,9 @@
 <details>
 	<summary>How not recommended to use</summary>
 
-	.px(xs, 10px, sm, 20px);
-	.my(sm, 5px, md, 12px, lg, auto);
+	.mq(
+		{.px(xs, 10px, sm, 20px);},
+		md,
+		{.my(sm, 5px, md, 12px, lg, auto);}
+	)
 </details>

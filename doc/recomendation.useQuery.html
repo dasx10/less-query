@@ -1,0 +1,21 @@
+<details>
+	<summary>Recommendations for use media query</summary>
+	<p>We strongly recommend that your media mixin starts with a parameter and ends with a parameter.</p>
+	<p>This does not mean that you are using it incorrectly. But this is a signal that you are most likely doing something wrong.</p>
+	<p></p>
+	<details>
+		<summary>Example of correct use</summary>
+		<pre>
+			.mq(.p(5px), xs, .p(10px));
+			.m(1rem, xs, 1.5rem);
+		</pre>
+	</details>
+	<details>
+		<summary>An example of a possibly incorrect use</summary>
+		<pre>
+			.mq(xs, .p(10px), sm, .p(5px), md);
+			.m(xs, 1.5rem, sm, 2rem, md);
+		</pre>
+	</details>
+	<hr />
+</details>
