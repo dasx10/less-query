@@ -1,0 +1,16 @@
+<details id="pxrt">
+	<summary>
+		Pixel ratio
+	</summary>
+	<p>Mixin: .pxrt()</p>
+	<p>Params: pixel ration (number) or mixin</p>
+
+	.pxrt(
+		1, { background-image:url('1.webp') },
+		2, { background-image:url('2.webp') },
+		3, { background-image:url('3.webp') }
+	);
+	// 1x upload only 1.webp
+	// retina 2x upload only 2.webp
+	// retina 3x upload only 3.webp
+</details>

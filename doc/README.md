@@ -5,9 +5,7 @@
 ----
 
 @@include('./nav.html')
-
 @@include('./install.md')
-
 
 ## Standard grid system
 @@include('./break.html')
@@ -18,157 +16,58 @@
 
 ## Mixins
 
-@@include('./mix.grid-system.html')
+@@include('./base/grid-system.html')
 
-@@include('./mix.grid.html')
-@@include('./mix.flex.html')
+@@include('./base/grid.html')
+@@include('./base/flex.html')
 
-@@include('./mix.align.html')
-@@include('./mix.justify.html')
+@@include('./base/align.html')
+@@include('./base/justify.html')
 
-@@include('./mix.box.html')
-@@include('./mix.margin.html')
-@@include('./mix.padding.html')
-@@include('./mix.width.html')
-@@include('./mix.height.html')
-@@include('./mix.position.html')
-@@include('./mix.text.html')
-@@include('./mix.font.html')
-@@include('./mix.word.html')
-@@include('./mix.background.html')
-@@include('./mix.border.html')
-@@include('./mix.any.html')
+@@include('./base/box.html')
+@@include('./base/margin.html')
+@@include('./base/padding.html')
+@@include('./base/width.html')
+@@include('./base/height.html')
+@@include('./base/position.html')
+@@include('./base/text.html')
+@@include('./base/font.html')
+@@include('./base/word.html')
+@@include('./base/background.html')
+@@include('./base/border.html')
+@@include('./base/any.html')
 
 Go back to <a href="#mixins">mixins</a> | <a href="#navigation">navigation</a>
 
 ## Experimental mixins
 
-@@include('./ex.mix.even.html')
+@@include('./test/size.html')
+@@include('./test/even.html')
+@@include('./test/triangle.html')
+@@include('./test/shift.html')
+@@include('./test/out.html')
+@@include('./test/any.html')
+@@include('./test/pxrt.html')
 
 
----
-### any mixin
+Go back to <a href="#mixins"> mixins</a> | <a href="#experimental-mixins">experimental mixins</a> | <a href="#navigation">navigation</a>
 
-| name                    | input  or type                    | output                | grid system
-|:---|:---|:---|:---
-| .pxrt                    |                                   | <a href="#pxrt">Pixel ratio</a>| false
-| .reset                   |                                   | normalize css         | false
-| .box                     | number                            | width + height        | true
-| .mbox                    | number                            | max width and height  | true
-| .mibox                   | number                            | min width and height  | true
-| .triangle-t              | number                            | triangle              | false
-| .triangle-b              | number                            | triangle              | false
-| .triangle-l              | number                            | triangle              | false
-| .triangle-r              | number                            | triangle              | false
-| .triangle-rt             | number                            | triangle              | false
-| .triangle-rb             | number                            | triangle              | false
-| .round                   | number                            | border-radius:50%     | false
-| .circle                  | number                            | circle                | false
-
-<details id="pxrt">
-	<summary><strong><big>Pixel Ratio Example</big></strong></summary>
-
-	.pxrt(
-		1, { background-image:url('1.webp') },
-		2, { background-image:url('2.webp') },
-		3, { background-image:url('3.webp') }
-	);
-	// 1x upload only 1.webp
-	// retina 2x upload only 2.webp
-	// retina 3x upload only 3.webp
-</details>
-
-<details>
-	<summary>box example</summary>
-
-	.box(10px); // width: 10px; height: 10px;
-</details>
-
-<details>
-	<summary>circle example</summary>
-
-	.circle(10px); //border-radius: 50%; width: 10px; height: 10px;
-</details>
-
-Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
-| mixin | input  |<a href="#position">-position</a>| output | grid system | description
-|:---|:---|:---|:---|:---|:---
-| .shift	| number | r l t b x y | margin and padding | true | Divides space evenly
-| .out 	| number | r l t b x y | margin and padding | true | Creates a tension effect
-
-<details>
-	<summary>Example shift</summary>
-
-	.shift-t(5px); // padding-top: 5px; margin-top: 5px;
-	.shift-b(5px); // padding-bottom: 5px; margin-bottom: 5px;
-</details>
-
-<a href="#standard-grid-system">back to mixin</a> | <a href="#navigation">back to navigation<a>
-
----
+----
 ## Functions
 
 ### Flexible size functions
 
-|input| params | description
-|:---|:---|:---
-|fw  |mobSize PCSize mobWidthLayout PCWidthLayout                               |from the width
-|fh  |mobSize PCSize mobHeightLayout PCHeightLayout                             |from the height
-|fmin|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the minScreen
-|fmax|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the maxScreen
-|fd  |mobSize PCSize mobWidthLayout mobHeightLayout PCWidthLayout PCHeightLayout|from the screen
+@@include('./function/flexible.html')
+@@include('./function/converter.html')
+@@include('./function/console.html')
 
-<details>
-	<summary>Example</summary>
-
-	// flexible font
-	.fz(fw(12px, 20px)); // -> font-size: calc(10.4px + 0.5vw);
-</details>
-
-|mobWidthLayout|mobHeightLayout|PCWidthLayout|PCHeightLayout
-|:---|:---|:---|:---
-|320px|240px|1920px|1080px
-
-### Converter functions
-
-|input  | params            | description
-|:---|:---|:---
-|toEm   | px default_em     | convert pixel to em
-|toRem  | px default_rem    | convert pixel to rem
-|toP    | px default_layout | convert pixel to percent
-|toW    | px default_layout | convert pixel to viewport width
-|toH    | px default_layout | convert pixel to viewport height
-|toM    | px default_layout | convert pixel to viewport max size
-|toMi   | px default_layout | convert pixel to viewport min size
-|toPx   | value px          | convert percent to pixel
-
-<details>
-	<summary>
-		example
-	</summary>
-
-	toEm(16); 		   // 1em;
-	toPx(10%,1920px);  // 192px;
-	toP(20px, 1920px); // 1.0416666666666665%;
-
-	.pt(toEm(16)); 	   // padding-top: 1em;
-</details>
-
-### Console functions
-
-| function name | input or type
-|:---|:---
-| console-log   | console.log
-| console-error | console.error "red output"
-| console-dir   | console.dir
-
-<a href="#functions">back to functions</a> | <a href="#navigation">back to navigation<a>
+Go back to <a href="#functions">functions</a> | <a href="#navigation">navigation</a>
 
 ---
 
 ## Examples
-@@include('./example.use-grid.html')
-@@include('./example.use-multi-line.html')
+@@include('./example/use-grid.html')
+@@include('./example/use-multi-line.html')
 ---
 
 ## Recommendation
@@ -178,7 +77,9 @@ Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
 @@include('./recomendation-1.html')
 @@include('./recomendation-2.html')
 @@include('./recomendation-3.html')
-<a href="#example">Back to example</a>
+
+<p>Go back to <a href="#recommendation">recommendation</a> | <a href="#navigation">navigation</a></p>
+<p>Go to <a href="#example">example</a></p>
 
 ## Overriding standard variables
 **These settings are optional, but you can change the default mixin behavior.**

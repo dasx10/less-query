@@ -1,5 +1,9 @@
-.mmw(
-    @value_1-1 : @false, @value_2-1 : @false,
+@import './_max.less';
+@import './_min.less';
+@import './_minmax.less';
+
+.size(
+    @value_1-1 : 2rem, @value_2-1 : @false,
     @value_1-2 : @false, @value_2-2 : @false,
     @value_1-3 : @false, @value_2-3 : @false,
     @value_1-4 : @false, @value_2-4 : @false,
@@ -13,7 +17,7 @@
     @value_1-12: @false, @value_2-12: @false
 ){
     .grid_mixin(
-        auto, min-width, max-width, 0, 0,
+        2rem, height, width, 0, 0,
         @value_1-1, @value_2-1,
         @value_1-2, @value_2-2,
         @value_1-3, @value_2-3,
@@ -29,8 +33,8 @@
     );
 }
 
-.minmax-width(
-    @value_1-1 : @false, @value_2-1 : @false,
+.sz(
+    @value_1-1 : 2rem, @value_2-1 : @false,
     @value_1-2 : @false, @value_2-2 : @false,
     @value_1-3 : @false, @value_2-3 : @false,
     @value_1-4 : @false, @value_2-4 : @false,
@@ -44,7 +48,7 @@
     @value_1-12: @false, @value_2-12: @false
 ){
     .grid_mixin(
-        auto, min-width, max-width, 0, 0,
+        2rem, height, width, 0, 0,
         @value_1-1, @value_2-1,
         @value_1-2, @value_2-2,
         @value_1-3, @value_2-3,

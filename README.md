@@ -11,19 +11,19 @@
 			<a href="#install">Install</a>
 		</li>
 		<li>
-			<a href="#use">Use</a>
-		</li>
-		<li>
-			<a href="#example">Example</a>
-		</li>
-		<li>
 			<a href="#standard-grid-system">Standard grid system</a>
 		</li>
 		<li>
 			<a href="#mixins">Mixins</a>
 		</li>
 		<li>
+			<a href="#experimental-mixins">Experimental mixins</a>
+		</li>
+		<li>
 			<a href="#functions">Functions</a>
+		</li>
+		<li>
+			<a href="#examples">Example</a>
 		</li>
 		<li>
 			<a href="#recommendation">Recommendation</a>
@@ -34,14 +34,12 @@
 	</ul>
 </nav>
 
-
 ---
 ## Install
 ```
 npm install -D less-query
 ```
 
-## Use
 set the entry point to your file
 
 ```
@@ -49,7 +47,6 @@ set the entry point to your file
 ```
 
 ---
-
 
 
 ## Standard grid system
@@ -329,11 +326,6 @@ set the entry point to your file
 				<td>true</td>
 			</tr>
 			<tr>
-				<td>.grid-auto-row</td>
-				<td>.gar</td>
-				<td>true</td>
-			</tr>
-			<tr>
 				<td>.grid-template</td>
 				<td>.gt</td>
 				<td>true</td>
@@ -354,6 +346,11 @@ set the entry point to your file
 				<td>true</td>
 			</tr>
 			<tr>
+				<td>.grid-column-gap</td>
+				<td>.gcg</td>
+				<td>true</td>
+			</tr>
+			<tr>
 				<td>.grid-column-start</td>
 				<td>.gcs</td>
 				<td>true</td>
@@ -369,6 +366,11 @@ set the entry point to your file
 				<td>true</td>
 			</tr>
 			<tr>
+				<td>.grid-row-gap</td>
+				<td>.grg</td>
+				<td>true</td>
+			</tr>
+			<tr>
 				<td>.grid-row-start</td>
 				<td>.grs</td>
 				<td>true</td>
@@ -376,6 +378,11 @@ set the entry point to your file
 			<tr>
 				<td>.grid-row-end</td>
 				<td>.gre</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-gap</td>
+				<td>.gg</td>
 				<td>true</td>
 			</tr>
 		</tbody>
@@ -602,6 +609,30 @@ set the entry point to your file
 				<td>true</td>
 				<td>true</td>
 			</tr>
+			<tr>
+				<td>.margin-y-right</td>
+				<td>.myr</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.margin-y-left</td>
+				<td>.myl</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.margin-top-x</td>
+				<td>.mxt</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.margin-bottom-x</td>
+				<td>.mxb</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
 		</tbody>
 	</table>
 	<details>
@@ -676,6 +707,30 @@ set the entry point to your file
 				<td>true</td>
 				<td>true</td>
 			</tr>
+			<tr>
+				<td>.padding-y-right</td>
+				<td>.pyr</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.padding-y-left</td>
+				<td>.pyl</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.padding-top-x</td>
+				<td>.pxt</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.padding-bottom-x</td>
+				<td>.pxb</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
 		</tbody>
 	</table>
 	<details>
@@ -726,6 +781,12 @@ set the entry point to your file
 				<td>true</td>
 				<td>false</td>
 			</tr>
+			<tr>
+				<td>.minmax-width</td>
+				<td>.mmw</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
 		</tbody>
 	</table>
 </details>
@@ -761,6 +822,12 @@ set the entry point to your file
 				<td>.mh</td>
 				<td>true</td>
 				<td>false</td>
+			</tr>
+			<tr>
+				<td>.minmax-height</td>
+				<td>.mmh</td>
+				<td>true</td>
+				<td>true</td>
 			</tr>
 		</tbody>
 	</table>
@@ -1157,6 +1224,49 @@ Go back to <a href="#mixins">mixins</a> | <a href="#navigation">navigation</a>
 
 ## Experimental mixins
 
+<details id="size-mixin">
+	<summary title="height + width">
+		Size mixins
+	</summary>
+	<p>Height + width</p>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.size</td>
+				<td>.sz</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.min-size</td>
+				<td>.misz</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.max-size</td>
+				<td>.msz</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.minmax-size</td>
+				<td>.mmsz</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
 <details id="even-mixin">
 	<summary title="Align + justify">
 		Even mixin
@@ -1176,47 +1286,226 @@ Go back to <a href="#mixins">mixins</a> | <a href="#navigation">navigation</a>
 				<td>.even-content</td>
 				<td>.ec</td>
 				<td>true</td>
-				<td>false</td>
+				<td>true</td>
 			</tr>
 			<tr>
 				<td>.even-items</td>
 				<td>.ei</td>
 				<td>true</td>
-				<td>false</td>
+				<td>true</td>
 			</tr>
 			<tr>
 				<td>.even-self</td>
 				<td>.es</td>
 				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="triangle-mixin">
+	<summary>
+		Triangle mixin
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>input</th>
+				<th>grid system</th>
+				<th>Multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.triangle-t</td>
+				<td>number</td>
+				<td>false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.triangle-r</td>
+				<td>number</td>
+				<td>false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.triangle-b</td>
+				<td>number</td>
+				<td>false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.triangle-l</td>
+				<td>number</td>
+				<td>false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.triangle-rt</td>
+				<td>number</td>
+				<td>false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.triangle-rb</td>
+				<td>number</td>
+				<td>false</td>
 				<td>false</td>
 			</tr>
 		</tbody>
 	</table>
 </details>
 
+<details id="shift-mixin">
+	<summary title="margin + padding">
+		Shift mixins
+	</summary>
+	<p>margin + padding</p>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.shift</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.shift-t</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.shift-r</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.shift-b</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.shift-l</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.shift-y</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.shift-x</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
 
+<details id="out-mixin">
+	<summary title="-margin +padding">
+		Out mixins
+	</summary>
+	<p>-margin +padding</p>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.out</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.out-t</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.out-r</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.out-b</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.out-l</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.out-y</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.out-x</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
 
----
-### any mixin
-
-| name                    | input  or type                    | output                | grid system
-|:---|:---|:---|:---
-| .pxrt                    |                                   | <a href="#pxrt">Pixel ratio</a>| false
-| .reset                   |                                   | normalize css         | false
-| .box                     | number                            | width + height        | true
-| .mbox                    | number                            | max width and height  | true
-| .mibox                   | number                            | min width and height  | true
-| .triangle-t              | number                            | triangle              | false
-| .triangle-b              | number                            | triangle              | false
-| .triangle-l              | number                            | triangle              | false
-| .triangle-r              | number                            | triangle              | false
-| .triangle-rt             | number                            | triangle              | false
-| .triangle-rb             | number                            | triangle              | false
-| .round                   | number                            | border-radius:50%     | false
-| .circle                  | number                            | circle                | false
+<details>
+	<summary>
+		Any experimental mixin
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>grid system</th>
+				<th>multi line</th>
+				<th>description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.reset</td>
+				<td>false</td>
+				<td>false</td>
+				<td>normalize</td>
+			</tr>
+			<tr>
+				<td>.round</td>
+				<td>false</td>
+				<td>false</td>
+				<td>border-radius: 50%;</td>
+			</tr>
+			<tr>
+				<td>.circle</td>
+				<td>false</td>
+				<td>false</td>
+				<td>circle</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
 
 <details id="pxrt">
-	<summary><strong><big>Pixel Ratio Example</big></strong></summary>
+	<summary>
+		Pixel ratio
+	</summary>
+	<p>Mixin: .pxrt()</p>
+	<p>Params: pixel ration (number) or mixin</p>
 
 	.pxrt(
 		1, { background-image:url('1.webp') },
@@ -1228,91 +1517,226 @@ Go back to <a href="#mixins">mixins</a> | <a href="#navigation">navigation</a>
 	// retina 3x upload only 3.webp
 </details>
 
-<details>
-	<summary>box example</summary>
 
-	.box(10px); // width: 10px; height: 10px;
-</details>
 
-<details>
-	<summary>circle example</summary>
+Go back to <a href="#mixins"> mixins</a> | <a href="#experimental-mixins">experimental mixins</a> | <a href="#navigation">navigation</a>
 
-	.circle(10px); //border-radius: 50%; width: 10px; height: 10px;
-</details>
-
-Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
-| mixin | input  |<a href="#position">-position</a>| output | grid system | description
-|:---|:---|:---|:---|:---|:---
-| .shift	| number | r l t b x y | margin and padding | true | Divides space evenly
-| .out 	| number | r l t b x y | margin and padding | true | Creates a tension effect
-
-<details>
-	<summary>Example shift</summary>
-
-	.shift-t(5px); // padding-top: 5px; margin-top: 5px;
-	.shift-b(5px); // padding-bottom: 5px; margin-bottom: 5px;
-</details>
-
-<a href="#standard-grid-system">back to mixin</a> | <a href="#navigation">back to navigation<a>
-
----
+----
 ## Functions
 
 ### Flexible size functions
 
-|input| params | description
-|:---|:---|:---
-|fw  |mobSize PCSize mobWidthLayout PCWidthLayout                               |from the width
-|fh  |mobSize PCSize mobHeightLayout PCHeightLayout                             |from the height
-|fmin|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the minScreen
-|fmax|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the maxScreen
-|fd  |mobSize PCSize mobWidthLayout mobHeightLayout PCWidthLayout PCHeightLayout|from the screen
-
-<details>
+<details id="flexible-function">
+	<summary>
+		Flexible function
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>first param *</th>
+				<th>second param *</th>
+				<th>next params</th>
+				<th>description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>fw</td>
+				<td>min size</td>
+				<td>max size</td>
+				<td>min-width, max-width</td>
+				<td>adapts to width</td>
+			</tr>
+			<tr>
+				<td>fh</td>
+				<td>min size</td>
+				<td>max size</td>
+				<td>min-height, max-height</td>
+				<td>adapts to height</td>
+			</tr>
+			<tr>
+				<td>fmin</td>
+				<td>min size</td>
+				<td>max size</td>
+				<td>min-size, max-size</td>
+				<td>adapts to min height or width desktop size</td>
+			</tr>
+			<tr>
+				<td>fmax</td>
+				<td>min size</td>
+				<td>max size</td>
+				<td>min-size, max-size</td>
+				<td>adapts to max height or width desktop size</td>
+			</tr>
+			<tr>
+				<td>fd</td>
+				<td>min size</td>
+				<td>max size</td>
+				<td>min-width, min-height, max-width, max-height</td>
+				<td>adapts to desktop size</td>
+			</tr>
+		</tbody>
+	</table>
+	<details>
 	<summary>Example</summary>
 
 	// flexible font
 	.fz(fw(12px, 20px)); // -> font-size: calc(10.4px + 0.5vw);
 </details>
-
-|mobWidthLayout|mobHeightLayout|PCWidthLayout|PCHeightLayout
-|:---|:---|:---|:---
-|320px|240px|1920px|1080px
-
-### Converter functions
-
-|input  | params            | description
-|:---|:---|:---
-|toEm   | px default_em     | convert pixel to em
-|toRem  | px default_rem    | convert pixel to rem
-|toP    | px default_layout | convert pixel to percent
-|toW    | px default_layout | convert pixel to viewport width
-|toH    | px default_layout | convert pixel to viewport height
-|toM    | px default_layout | convert pixel to viewport max size
-|toMi   | px default_layout | convert pixel to viewport min size
-|toPx   | value px          | convert percent to pixel
-
-<details>
+	<details>
 	<summary>
-		example
+		Default params (next params)
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>value</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>min-height</td>
+				<td>240px</td>
+			</tr>
+			<tr>
+				<td>min-width</td>
+				<td>320px</td>
+			</tr>
+			<tr>
+				<td>max-height</td>
+				<td>1080px</td>
+			</tr>
+			<tr>
+				<td>max-width</td>
+				<td>1920px</td>
+			</tr>
+			<tr>
+				<td>min-size</td>
+				<td>320px</td>
+			</tr>
+			<tr>
+				<td>max-size</td>
+				<td>1920px</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+	<hr />
+</details>
+<details id="converter-function">
+	<summary>
+		Converter unit function
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>first param *</th>
+				<th>second param</th>
+				<th>description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>toEm</td>
+				<td>px unit</td>
+				<td>default em</td>
+				<td>convert pixel to em</td>
+			</tr>
+			<tr>
+				<td>toRem</td>
+				<td>px unit</td>
+				<td>default rem</td>
+				<td>convert pixel to rem</td>
+			</tr>
+			<tr>
+				<td>toP</td>
+				<td>px unit</td>
+				<td>default width layout</td>
+				<td>convert pixel to %</td>
+			</tr>
+			<tr>
+				<td>toW</td>
+				<td>px unit</td>
+				<td>default width layout</td>
+				<td>convert pixel to vw</td>
+			</tr>
+			<tr>
+				<td>toH</td>
+				<td>px unit</td>
+				<td>default width layout</td>
+				<td>convert pixel to vh</td>
+			</tr>
+			<tr>
+				<td>toM</td>
+				<td>px unit</td>
+				<td>default width layout</td>
+				<td>convert pixel to vmax</td>
+			</tr>
+			<tr>
+				<td>toMi</td>
+				<td>px unit</td>
+				<td>default width layout</td>
+				<td>convert pixel to vmin</td>
+			</tr>
+			<tr>
+				<td>toPx</td>
+				<td>any number unit</td>
+				<td>default width layout</td>
+				<td>convert unit to px</td>
+			</tr>
+		</tbody>
+	</table>
+	<details>
+	<summary>
+		Example
 	</summary>
 
 	toEm(16); 		   // 1em;
-	toPx(10%,1920px);  // 192px;
+	toPx(10%, 1920px);  // 192px;
 	toP(20px, 1920px); // 1.0416666666666665%;
 
 	.pt(toEm(16)); 	   // padding-top: 1em;
 </details>
+	<hr />
+</details>
 
-### Console functions
+<details id="console-function">
+	<summary>
+		Console function
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>input or type</th>
+				<th>description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>console-log</td>
+				<td>varaiable | unit | params | string ...</td>
+				<td>output from console</td>
+			</tr>
+			<tr>
+				<td>console-dir</td>
+				<td>varaiable | unit | params | string ...</td>
+				<td>output from console full information</td>
+			</tr>
+			<tr>
+				<td>console-error</td>
+				<td>varaiable | unit | params | string ...</td>
+				<td>output from console (red output)</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
 
-| function name | input or type
-|:---|:---
-| console-log   | console.log
-| console-error | console.error "red output"
-| console-dir   | console.dir
 
-<a href="#functions">back to functions</a> | <a href="#navigation">back to navigation<a>
+Go back to <a href="#functions">functions</a> | <a href="#navigation">navigation</a>
 
 ---
 
@@ -1397,7 +1821,7 @@ Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
 </details>
 
 <details>
-	<summary>How to use it correctly <strong>(example #1)</strong></summary>
+	<summary>How not recommended to use</summary>
 
 	.px(xs, 10px, sm, 20px);
 	.my(sm, 5px, md, 12px, lg, auto);
@@ -1439,7 +1863,9 @@ Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
 	);
 </details>
 
-<a href="#example">Back to example</a>
+
+<p>Go back to <a href="#recommendation">recommendation</a> | <a href="#navigation">navigation</a></p>
+<p>Go to <a href="#example">example</a></p>
 
 ## Overriding standard variables
 **These settings are optional, but you can change the default mixin behavior.**

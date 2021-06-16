@@ -4,7 +4,6 @@
 npm install -D less-query
 ```
 
-## Use
 set the entry point to your file
 
 ```

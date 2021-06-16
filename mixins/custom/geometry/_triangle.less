@@ -3,7 +3,7 @@
         .triangle-t(@color:#000, @l, @r, @b)
     }
     & when not (isNumber(@color)){
-        .box(0);
+        .size(0);
         .bdwx(@l,@r);
         .bdbw(@b);
         .bdsxb(solid);
@@ -16,7 +16,7 @@
         .triangle-b(@color:#000, @l, @r, @b)
     }
     & when not (isNumber(@color)){
-        .box(0);
+        .size(0);
         .bdwx(@l,@r);
         .bdtw(@b);
         .bdsxt(solid);
@@ -29,7 +29,7 @@
         .triangle-l(@color:#000, @l, @r, @b)
     }
     & when not (isNumber(@color)){
-        .box(0);
+        .size(0);
         .bdwy(@l,@r);
         .bdrw(@b);
         .bdsyr(solid);
@@ -41,7 +41,7 @@
         .triangle-r(@color:#000, @l, @r, @b)
     }
     & when not (isNumber(@color)){
-        .box(0);
+        .size(0);
         .bdwy(@l,@r);
         .bdlw(@b);
         .bdsyl(solid);
@@ -54,7 +54,7 @@
         .triangle-rb(@color:#000, @r, @t)
     }
     & when not (isNumber(@color)){
-        .box(0);
+        .size(0);
         border-right:@r solid @color;
         border-top:@t solid transparent;
     }
@@ -65,7 +65,7 @@
         .triangle-rb(@color:#000, @r, @b)
     }
     & when not (isNumber(@color)){
-        .box(0);
+        .size(0);
         border-right:@r solid @color;
         border-bottom:@b solid transparent;
     }
