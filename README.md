@@ -4,7 +4,6 @@
 **Modified approach to responsive layout**
 ----
 
-
 ##### Navigation
 <nav id="navigation">
 	<ul>
@@ -12,65 +11,28 @@
 			<a href="#install">Install</a>
 		</li>
 		<li>
-			<a href="#use">Use</a>
-		</li>
-		<li>
-			<a href="#example">Example</a>
-		</li>
-		<li>
 			<a href="#standard-grid-system">Standard grid system</a>
 		</li>
 		<li>
-			<a href="#grid-system-mixin">Mixins</a>
-			<ul>
-				<li>
-					<a href="#grid-system-mixin">Grid system</a>
-				</li>
-				<li>
-					<a href="#shift-mixin">Shift</a>
-				</li>
-				<li>
-					<a href="#short-mixin">Short</a>
-				</li>
-				<li>
-					<a href="#content-mixin">Content</a>
-				</li>
-				<li>
-					<a href="#border">Border</a>
-				</li>
-				<li>
-					<a href="#border-radius">Border radius</a>
-				</li>
-				<li>
-					<a href="#standard-mixin">Standard</a>
-				</li>
-				<li>
-					<a href="#position-mixin">Position</a>
-				</li>
-				<li>
-					<a href="#any-mixin">Any</a>
-				</li>
-			</ul>
+			<a href="#mixins">Mixins</a>
+		</li>
+		<li>
+			<a href="#experimental-mixins">Experimental mixins</a>
 		</li>
 		<li>
 			<a href="#functions">Functions</a>
-			<ul>
-				<li>
-					<a href="#flexible-size-functions">Flexible size</a>
-				</li>
-				<li>
-					<a href="#converter-functions">Converter</a>
-				</li>
-				<li>
-					<a href="#console-functions">Console</a>
-				</li>
-			</ul>
+		</li>
+		<li>
+			<a href="#examples">Example</a>
 		</li>
 		<li>
 			<a href="#recommendation">Recommendation</a>
 		</li>
 		<li>
 			<a href="#overriding-standard-variables">Overriding standard variables</a>
+		</li>
+		<li>
+			<a href="#faq">F.A.Q.</a>
 		</li>
 	</ul>
 </nav>
@@ -81,7 +43,6 @@
 npm install -D less-query
 ```
 
-## Use
 set the entry point to your file
 
 ```
@@ -90,22 +51,193 @@ set the entry point to your file
 
 ---
 
-## Example
 
-<details>
-	<summary>Input</summary>
+## Standard grid system
 
+<details id="grid-system-mixin">
+	<summary>
+		Default break point
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>width</th>
+				<th>description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>xt</td>
+				<td>320px</td>
+				<td>extra tiny</td>
+			</tr>
+			<tr>
+				<td>ti</td>
+				<td>430px</td>
+				<td>tiny</td>
+			</tr>
+			<tr>
+				<td>xs</td>
+				<td>540px</td>
+				<td>extra small</td>
+			</tr>
+			<tr>
+				<td>sm</td>
+				<td>720px</td>
+				<td>small</td>
+			</tr>
+			<tr>
+				<td>md</td>
+				<td>960px</td>
+				<td>medium</td>
+			</tr>
+			<tr>
+				<td>lg</td>
+				<td>1140px</td>
+				<td>large</td>
+			</tr>
+			<tr>
+				<td>xl</td>
+				<td>1320px</td>
+				<td>extra large</td>
+			</tr>
+			<tr>
+				<td>hu</td>
+				<td>1530px</td>
+				<td>huge</td>
+			</tr>
+			<tr>
+				<td>xh</td>
+				<td>1680px</td>
+				<td>extra huge</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="grid-system-mixin">
+	<summary>
+		Default grid system setup
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>params</th>
+				<th>description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>columns count</td>
+				<td>12</td>
+				<td>number of columns in a column</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#offsets-a">offset</a>
+				</td>
+				<td>2em</td>
+				<td>Column indents</td>
+			</tr>
+			<tr>
+				<td>container</td>
+				<td>1680px</td>
+				<td>Standard container width</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+
+<p>Go back to <a href="#navigation">navigation</a></p>
+<p>Go to <a href="#overriding-standard-variables">overriding this variables</a></p>
+
+## Mixins
+
+<details id="grid-system-mixin">
+	<summary>
+		Break point mixins
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>input</th>
+				<th>system</th>
+				<th>description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.row</td>
+				<td>keyword</td>
+				<td>grid</td>
+				<td>row for columns</td>
+			</tr>
+			<tr>
+				<td>.col</td>
+				<td>number</td>
+				<td>grid</td>
+				<td>column</td>
+			</tr>
+			<tr>
+				<td>.col-count</td>
+				<td>number</td>
+				<td>false</td>
+				<td>overrides the default column count</td>
+			</tr>
+			<tr>
+				<td>.mq</td>
+				<td>mixin</td>
+				<td>grid</td>
+				<td>media width builder</td>
+			</tr>
+			<tr>
+				<td>.to</td>
+				<td>mixin</td>
+				<td>grid</td>
+				<td>media max width only</td>
+			</tr>
+			<tr>
+				<td>.from</td>
+				<td>mixin</td>
+				<td>grid</td>
+				<td>media min width only</td>
+			</tr>
+			<tr>
+				<td>.mqh</td>
+				<td>mixin</td>
+				<td>grid</td>
+				<td>media height builder</td>
+			</tr>
+			<tr>
+				<td>.container</td>
+				<td>mixin</td>
+				<td>false</td>
+				<td>max size (container)</td>
+			</tr>
+			<tr>
+				<td>.wrp</td>
+				<td>mixin</td>
+				<td>false</td>
+				<td>padding max size (container)</td>
+			</tr>
+		</tbody>
+	</table>
+	<details id="example-grid-system-mixin">
+	<summary>Example grid system mixin</summary>
+
+	// input
 	.grid{
 		.row;
 		&__col{
 			.col(12, sm, 6, md, 4, lg, 3);
 		}
 	}
-</details>
 
-<details>
-	<summary>Output</summary>
-
+	// output
 	.grid {
 		margin-left: -15px;
 		margin-right: -15px;
@@ -144,48 +276,8 @@ set the entry point to your file
 		}
 	}
 </details>
-
-<a href="#recommendation">Example recommendation</a>
-
----
-
-## Standard grid system
-| short name | break point | description
-|:---|:---|:---
-| xh         | 1680px      | extra huge
-| hu         | 1530px      | huge
-| xl         | 1320px      | extra large
-| lg         | 1140px      | large
-| md         | 960px       | medium
-| sm         | 720px       | small
-| xs         | 540px       | extra small
-| ti         | 430px       | tiny
-| xt         | 320px       | extra tiny
-
-
-
-| columns                |<a href="#offsets-a">offset</a>| container
-|:---|:---|:---
-| 12                	 | 2em (32px) | 1680px
-
-<a href="#overriding-standard-variables">Overriding this variables</a>
-
-### Grid system mixin
-
-| mixin 	| input   | grid  | decription
-|:---|:---|:---|:---
-| row       | keyword | true  |
-| col       | number  | true  |
-| col-count | number  | false | overrides the default column count
-| mq        | mixin   | true  | media width builder
-| to        | mixin   | true  | media max width only
-| from      | mixin   | true  | media min width only
-| mqh       | mixin   | true  | media height builder
-| container | number  | true  | max size (container)
-| wrp       | number  | true  | padding max size (container)
-
 <details id="grid-s-mix">
-	<summary>Example grid system mixin</summary>
+	<summary>Example .mq</summary>
 
 	.mq(xs, { .p(1px); color:red }, 1200px, .m(2px));
 
@@ -204,32 +296,1503 @@ set the entry point to your file
 		}
 	*/
 </details>
+<hr />
 
-#### Shift mixin
-| mixin | input  |<a href="#position">position</a>| output 	| grid | example
-|:---|:---|:---|:---|:---|:---
-| m     | number | r l t b x y 					  | margin	| true | .m(0.5rem);
-| p     | number | r l t b x y 					  | padding	| true | .p(0.5rem);
+</details>
 
-<details id="ex-shift">
-	<summary>Example mixin shift mixin</summary>
 
-	.m(2px); // margin: 2px;
-	.p(8px); // padding: 8px;
+<details id="grid-mixin">
+	<summary>
+		Grid mixins
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.grid-area</td>
+				<td>.ga</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-auto-column</td>
+				<td>.gac</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-auto-row</td>
+				<td>.gar</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-template</td>
+				<td>.gt</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-template-column</td>
+				<td>.gtc</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-template-row</td>
+				<td>.gtr</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-column</td>
+				<td>.gc</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-column-gap</td>
+				<td>.gcg</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-column-start</td>
+				<td>.gcs</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-column-end</td>
+				<td>.gce</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-row</td>
+				<td>.gr</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-row-gap</td>
+				<td>.grg</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-row-start</td>
+				<td>.grs</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-row-end</td>
+				<td>.gre</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.grid-gap</td>
+				<td>.gg</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
 
-	.shift(2px); // margin: 2px; padding: 2px;
+<details id="flex-mixin">
+	<summary>
+		Flex box mixins
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.flex</td>
+				<td>.fx</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.flex-basis</td>
+				<td>.fxb</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.flex-direction</td>
+				<td>.fxd</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.flex-flow</td>
+				<td>.fxf</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.flex-grow</td>
+				<td>.fxg</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.flex-shrink</td>
+				<td>.fxs</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.flex-wrap</td>
+				<td>.fxw</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
 
-	.out(10px); // margin: -10px; padding: 10px;
+
+<details id="align-mixin">
+	<summary>
+		Align mixin
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.align-content</td>
+				<td>.ac</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.align-items</td>
+				<td>.ai</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.align-self</td>
+				<td>.as</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="justify-mixin">
+	<summary>
+		Justify mixin
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.justify-content</td>
+				<td>.jc</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.justify-items</td>
+				<td>.ji</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.justify-self</td>
+				<td>.js</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+
+<details id="box-mixin">
+	<summary>
+		Box mixins
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.box-shadow</td>
+				<td>.bsh</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.box-sizing</td>
+				<td>.bz</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="margin-mixin">
+	<summary>
+		Margin mixins
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.margin</td>
+				<td>.m</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.margin-top</td>
+				<td>.mt</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.margin-right</td>
+				<td>.mr</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.margin-bottom</td>
+				<td>.mb</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.margin-left</td>
+				<td>.ml</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.margin-y</td>
+				<td>.my</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.margin-x</td>
+				<td>.mx</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.margin-y-right</td>
+				<td>.myr</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.margin-y-left</td>
+				<td>.myl</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.margin-top-x</td>
+				<td>.mxt</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.margin-bottom-x</td>
+				<td>.mxb</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+	<details>
+	<summary>Example margin mixins</summary>
+
+	.m(1rem 2rem);  // margin: 1rem 2rem;
+	.mt(10px); 		// margin-top: 10px;
+	.mb(10px); 		// margin-bottom: 10px;
+	.ml(10px); 		// margin-left: 10px;
+	.mr(10px); 		// margin-right: 10px;
+
+	.my(5px); 		// margin-top: 5px; margin-bottom: 5px;
+	.mx(5px); 		// margin-right: 5px; margin-left: 5px;
+</details>
+<hr />
+
+</details>
+
+<details id="padding-mixin">
+	<summary>
+		Padding mixins
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.padding</td>
+				<td>.p</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.padding-top</td>
+				<td>.pt</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.padding-right</td>
+				<td>.pr</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.padding-bottom</td>
+				<td>.pb</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.padding-left</td>
+				<td>.pl</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.padding-y</td>
+				<td>.py</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.padding-x</td>
+				<td>.px</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.padding-y-right</td>
+				<td>.pyr</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.padding-y-left</td>
+				<td>.pyl</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.padding-top-x</td>
+				<td>.pxt</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.padding-bottom-x</td>
+				<td>.pxb</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+	<details>
+	<summary>Example padding mixins</summary>
+
+	.p(1rem 2rem);  // padding: 1rem 2rem;
+	.pt(10px); 		// padding-top: 10px;
+	.pb(10px); 		// padding-bottom: 10px;
+	.pl(10px); 		// padding-left: 10px;
+	.pr(10px); 		// padding-right: 10px;
+
+	.py(5px); 		// padding-top: 5px; padding-bottom: 5px;
+	.px(5px); 		// padding-right: 5px; padding-left: 5px;
+</details>
+<hr />
+
+</details>
+
+<details id="width-mixin">
+	<summary>
+		Width mixins
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.width</td>
+				<td>.w</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.min-width</td>
+				<td>.miw</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.max-width</td>
+				<td>.mw</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.minmax-width</td>
+				<td>.mmw</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="height-mixin">
+	<summary>
+		Height mixins
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.height</td>
+				<td>.h</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.min-height</td>
+				<td>.mih</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.max-height</td>
+				<td>.mh</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.minmax-height</td>
+				<td>.mmh</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="position-mixin">
+	<summary>
+		Position mixins
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+				<th>description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.a</td>
+				<td>.a</td>
+				<td>true</td>
+				<td>true</td>
+				<td>All position</td>
+			</tr>
+			<tr>
+				<td>.top</td>
+				<td>.t</td>
+				<td>true</td>
+				<td>false</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>.right</td>
+				<td>.r</td>
+				<td>true</td>
+				<td>false</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>.bottom</td>
+				<td>.b</td>
+				<td>true</td>
+				<td>false</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>.left</td>
+				<td>.l</td>
+				<td>true</td>
+				<td>false</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>.y</td>
+				<td>.y</td>
+				<td>true</td>
+				<td>true</td>
+				<td>top + bottom</td>
+			</tr>
+			<tr>
+				<td>.x</td>
+				<td>.x</td>
+				<td>true</td>
+				<td>true</td>
+				<td>right + left</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="text-mixin">
+	<summary>
+		Text mixins
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.text-align</td>
+				<td>.ta</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.text-decoration</td>
+				<td>.td</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.text-indent</td>
+				<td>.ti</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.text-shadow</td>
+				<td>.ts</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.text-transform</td>
+				<td>.tt</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.text-overflow</td>
+				<td>.tv</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="font-mixin">
+	<summary>
+		Font mixins
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.font</td>
+				<td>.f</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.font-style</td>
+				<td>.fs</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.font-size</td>
+				<td>.fz</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.font-weight</td>
+				<td>.f</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.font-family</td>
+				<td>.ff</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="word-mixin">
+	<summary>
+		Word mixins
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.word-break</td>
+				<td>.wb</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.word-spacing</td>
+				<td>.ws</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.word-wrap</td>
+				<td>.ww</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="background-mixin">
+	<summary>
+		Background mixin
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.background</td>
+				<td>.bg</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.background-attachment</td>
+				<td>.bga</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.background-clip</td>
+				<td>.bgcl</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.background-color</td>
+				<td>.bgc</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.background-image</td>
+				<td>.bgi</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.background-origin</td>
+				<td>.bgo</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.background-position</td>
+				<td>.bgp</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.background-repeat</td>
+				<td>.bgr</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.background-size</td>
+				<td>.bgz</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="border-mixin">
+	<summary>
+		Border mixin
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.border</td>
+				<td>.bd</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.border-style</td>
+				<td>.bds</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.border-color</td>
+				<td>.bdc</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.border-radius</td>
+				<td>.bd-rs</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="any-mixin">
+	<summary>
+		Any mixin
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.line-height</td>
+				<td>.lh</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.order</td>
+				<td>.od</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.letter-spacing</td>
+				<td>.ls</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.display</td>
+				<td>.d</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.resize</td>
+				<td>.rz</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.position</td>
+				<td>.pos</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.vertical-align</td>
+				<td>.va</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.clip</td>
+				<td>.cp</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+
+Go back to <a href="#mixins">mixins</a> | <a href="#navigation">navigation</a>
+
+## Experimental mixins
+
+<details id="size-mixin">
+	<summary title="height + width">
+		Size mixins
+	</summary>
+	<p>Height + width</p>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.size</td>
+				<td>.sz</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.min-size</td>
+				<td>.misz</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.max-size</td>
+				<td>.msz</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.minmax-size</td>
+				<td>.mmsz</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="even-mixin">
+	<summary title="Align + justify">
+		Even mixin
+	</summary>
+	<p>Align + justify</p>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.even-content</td>
+				<td>.ec</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.even-items</td>
+				<td>.ei</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.even-self</td>
+				<td>.es</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="triangle-mixin">
+	<summary>
+		Triangle mixin
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>input</th>
+				<th>grid system</th>
+				<th>Multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.triangle-t</td>
+				<td>number</td>
+				<td>false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.triangle-r</td>
+				<td>number</td>
+				<td>false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.triangle-b</td>
+				<td>number</td>
+				<td>false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.triangle-l</td>
+				<td>number</td>
+				<td>false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.triangle-rt</td>
+				<td>number</td>
+				<td>false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.triangle-rb</td>
+				<td>number</td>
+				<td>false</td>
+				<td>false</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="shift-mixin">
+	<summary title="margin + padding">
+		Shift mixins
+	</summary>
+	<p>margin + padding</p>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.shift</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.shift-t</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.shift-r</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.shift-b</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.shift-l</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.shift-y</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.shift-x</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="out-mixin">
+	<summary title="-margin +padding">
+		Out mixins
+	</summary>
+	<p>-margin +padding</p>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.out</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.out-t</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.out-r</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.out-b</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.out-l</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.out-y</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.out-x</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="pull-mixin">
+	<summary title="-margin +padding">
+		Pull mixins
+	</summary>
+	<p>-margin +padding</p>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.pull</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.pull-t</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.pull-r</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.pull-b</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.pull-l</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.pull-y</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.pull-x</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
 </details>
 
 <details>
-	<summary>Example mixin with prefix</summary>
-
-	.pt(10px); // padding-top: 10px;
-	.pb(10px); // padding-bottom: 10px;
-	.pl(10px); // padding-left: 10px;
-	.pr(10px); // padding-right: 10px;
+	<summary>
+		Any experimental mixin
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>grid system</th>
+				<th>multi line</th>
+				<th>description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.reset</td>
+				<td>false</td>
+				<td>false</td>
+				<td>normalize</td>
+			</tr>
+			<tr>
+				<td>.round</td>
+				<td>false</td>
+				<td>false</td>
+				<td>border-radius: 50%;</td>
+			</tr>
+			<tr>
+				<td>.circle</td>
+				<td>false</td>
+				<td>false</td>
+				<td>circle</td>
+			</tr>
+		</tbody>
+	</table>
 </details>
+
+<details id="pxrt">
+	<summary>
+		Pixel ratio
+	</summary>
+	<p>Mixin: .pxrt()</p>
+	<p>Params: pixel ration (number) or mixin</p>
+
+	.pxrt(
+		1, { background-image:url('1.webp') },
+		2, { background-image:url('2.webp') },
+		3, { background-image:url('3.webp') }
+	);
+	// 1x upload only 1.webp
+	// retina 2x upload only 2.webp
+	// retina 3x upload only 3.webp
+</details>
+
+
+
+Go back to <a href="#mixins"> mixins</a> | <a href="#experimental-mixins">experimental mixins</a> | <a href="#navigation">navigation</a>
+
+## Functions
+
+<details id="flexible-function">
+	<summary>
+		Flexible function
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>first param *</th>
+				<th>second param *</th>
+				<th>next params</th>
+				<th>description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>fw</td>
+				<td>min size</td>
+				<td>max size</td>
+				<td>min-width, max-width</td>
+				<td>adapts to width</td>
+			</tr>
+			<tr>
+				<td>fh</td>
+				<td>min size</td>
+				<td>max size</td>
+				<td>min-height, max-height</td>
+				<td>adapts to height</td>
+			</tr>
+			<tr>
+				<td>fmin</td>
+				<td>min size</td>
+				<td>max size</td>
+				<td>min-size, max-size</td>
+				<td>adapts to min height or width desktop size</td>
+			</tr>
+			<tr>
+				<td>fmax</td>
+				<td>min size</td>
+				<td>max size</td>
+				<td>min-size, max-size</td>
+				<td>adapts to max height or width desktop size</td>
+			</tr>
+			<tr>
+				<td>fd</td>
+				<td>min size</td>
+				<td>max size</td>
+				<td>min-width, min-height, max-width, max-height</td>
+				<td>adapts to desktop size</td>
+			</tr>
+		</tbody>
+	</table>
+	<details>
+	<summary>Example</summary>
+
+	// flexible font
+	.fz(fw(12px, 20px)); // -> font-size: calc(10.4px + 0.5vw);
+</details>
+	<details>
+	<summary>
+		Default params (next params)
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>value</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>min-height</td>
+				<td>240px</td>
+			</tr>
+			<tr>
+				<td>min-width</td>
+				<td>320px</td>
+			</tr>
+			<tr>
+				<td>max-height</td>
+				<td>1080px</td>
+			</tr>
+			<tr>
+				<td>max-width</td>
+				<td>1920px</td>
+			</tr>
+			<tr>
+				<td>min-size</td>
+				<td>320px</td>
+			</tr>
+			<tr>
+				<td>max-size</td>
+				<td>1920px</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+	<hr />
+</details>
+<details id="converter-function">
+	<summary>
+		Converter unit function
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>first param *</th>
+				<th>second param</th>
+				<th>description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>toEm</td>
+				<td>number params</td>
+				<td>the default font-size of this block</td>
+				<td>convert pixel to em (If the font-size is already set for the block. The second parameter is optional. Not applicable if the font-size in the block is set in ЕМ) (If you did not specify the parameter and the parameter was not found. The font value for root will be taken)</td>
+			</tr>
+			<tr>
+				<td>toRem</td>
+				<td>number params</td>
+				<td>default :root or html font-size</td>
+				<td>convert pixel to rem (unless you specify 2 parameter. The function will try to find it automatically. if the value cannot be found, the default value is 16px)</td>
+			</tr>
+			<tr>
+				<td>toP</td>
+				<td>px unit</td>
+				<td>default width layout</td>
+				<td>convert pixel to %</td>
+			</tr>
+			<tr>
+				<td>toW</td>
+				<td>px unit</td>
+				<td>default width layout</td>
+				<td>convert pixel to vw</td>
+			</tr>
+			<tr>
+				<td>toH</td>
+				<td>px unit</td>
+				<td>default width layout</td>
+				<td>convert pixel to vh</td>
+			</tr>
+			<tr>
+				<td>toM</td>
+				<td>px unit</td>
+				<td>default width layout</td>
+				<td>convert pixel to vmax</td>
+			</tr>
+			<tr>
+				<td>toMi</td>
+				<td>px unit</td>
+				<td>default width layout</td>
+				<td>convert pixel to vmin</td>
+			</tr>
+			<tr>
+				<td>toPx</td>
+				<td>any number unit</td>
+				<td>default width layout</td>
+				<td>convert unit to px</td>
+			</tr>
+		</tbody>
+	</table>
+	<details>
+	<summary>
+		Example
+	</summary>
+
+	toEm(16); 		   // 1em;
+	toPx(10%, 1920px);  // 192px;
+	toP(20px, 1920px); // 1.0416666666666665%;
+
+	.pt(toEm(16)); 	   // padding-top: 1em;
+</details>
+	<hr />
+</details>
+
+<details id="console-function">
+	<summary>
+		Console function
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>input or type</th>
+				<th>description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>console-log</td>
+				<td>varaiable | unit | params | string ...</td>
+				<td>output from console</td>
+			</tr>
+			<tr>
+				<td>console-dir</td>
+				<td>varaiable | unit | params | string ...</td>
+				<td>output from console full information</td>
+			</tr>
+			<tr>
+				<td>console-error</td>
+				<td>varaiable | unit | params | string ...</td>
+				<td>output from console (red output)</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+
+Go back to <a href="#functions">functions</a> | <a href="#navigation">navigation</a>
+
+## Examples
 
 <details>
 	<summary>Example mixin with grid</summary>
@@ -292,331 +1855,7 @@ set the entry point to your file
 	}
 </details>
 
-<a href="#any-shift-mixin">example any shift mixin</a>
 
-### Short mixin
-<abbr>(emmet type)</abbr>
-
-| example name | post prefix      | output     | grid |
-|:---|:---|:---|:---
-| <i title=".ta() .td() .ti ...">t</i>            | <i title="align">a</i> <i title="decoration">d</i> <i title="indent">i</i> <i title="shadow">s</i> <i title="transform">t</i> <i title="overflow">v</i>      | text       | true |
-| f            | <i title="style">s</i> <i title="size">z</i> <i title="weight">w</i> <i title="family">f</i>          | font       | true |
-| w            | <i title="break">b</i> <i title="spacing">s</i> <i title="wrap">w</i>            | word       | true |
-| fx           | <i title="basis">b</i> <i title="decoration">d</i> <i title="flow">f</i> <i title="grow">g</i> <i title="shrink">s</i> <i title="wrap">w</i>      | flex       | true |
-| b            | <i title="shadow">sh</i> <i title="sizing">z</i>             | box        | true |
-| bg           | <i title="attachment">a</i> <i title="clip">cl</i> <i title="color">c</i> <i title="image">i</i> <i title="origin">o</i> <i title="position">p</i> <i title="repeat">r</i> <i title="size">z</i> | background | true |
-
-<details>
-	<summary>Example</summary>
-
-	.tt(uppercase);
-	.ai(center);
-
-	// text-transform:uppercase;
-	// align-items:center;
-</details>
-
-### Content mixin
-| example name | post prefix | output  | grid
-|:---|:---|:---|:---
-| j            | <i title="content">c</i> <i title="self">s</i> <i title="item">i</i>       | justify | true
-| a            | <i title="content">c</i> <i title="self">s</i> <i title="item">i</i>       | align   | true
-
-post prefix
-| c  | s  | i
-|:---|:---|:---
-| content | self | item
-
-<details>
-	<summary>Example</summary>
-
-	.jc(center); // justify-content: center;
-	.as(flex-start); // align-self: flex-start;
-</details>
-
-### Border
-| mixin | input 			 |<a href="#position">position</a>| post prefix | output | grid
-|:---|:---|:---|:---|:---|:---
-| bd    | number style color | <i title="right">r<i> <i title="left">l<i> <i title="top">t<i> <i title="bottom">b<i> x y | w s c       | border | true
-
-<details>
-	<summary>Example</summary>
-
-	.bd(1px solid black); // border: 1px solid black;
-
-	.bdxw(2px);
-
-	/*
-		border-left-width: 2px;
-		border-right-width: 2px;
-	*/
-
-	.bdyc(red);
-
-	/*
-		border-top-color: red;
-		border-bottom-color: red;
-	*/
-
-</details>
-
-### Border radius
-| mixin | input  | <a href="#position">-position</a> | grid
-|:---|:---|:---|:---
-| bd-rs | number | t r b l tr tl br bl 				 | true
-
-<details>
-	<summary>
-		Example
-	</summary>
-
-	// input
-	.bd-rs(3px);
-	.bd-t-rs(50%);
-	.bd-br-rs(1rem);
-
-	// Output
-	border-radius: 3px;
-	border-top-left-radius: 50%;
-  	border-top-right-radius: 50%;
-  	border-bottom-right-radius: 1rem;
-
-</details>
-
-### Standard mixin
-| mixin | input   | output         | grid
-|:---|:---|:---|:---
-| w     | number  | width          | true
-| h     | number  | height         | true
-| mw    | number  | max-width      | true
-| mh    | number  | max-height     | true
-| miw   | number  | min-width      | true
-| mih   | number  | min-height     | true
-| lh    | number  | line-height    | true
-| od    | number  | order          | true
-| ls    | number  | letter-spacing | true
-| d     | <i title="none block inline flex grid table inline-...">keyword</i> | display        | true
-| rz    | keyword | resize         | true
-| va    | keyword | vertical-align | true
-| fx    | keyword | flex           | true
-| cp    | keyword | clip           | true
-| f     | keyword | font           | true
-
-
-<details>
-	<summary>Example standard mixin</summary>
-
-	.class{
-		.d(block, sm, flex);
-	}
-	/*
-	@media (min-width: 720px) {
-		.class {
-			display: flex;
-		}
-	}
-
-	@media (max-width: 720px) {
-		.class {
-			display: block;
-		}
-	}
-	*/
-</details>
-
-### Position mixin
-| mixin  | input  | output       | grid
-|:---|:---|:---|:---
-| a		 | number or none | all position | true
-| x		 | number or none | right + left | true
-| r		 | number or none | right        | true
-| l		 | number or none | left         | true
-| y		 | number or none | top + bottom | true
-| t		 | number or none | top          | true
-| b		 | number or none | bottom       | true
-
-<details>
-	<summary>Example</summary>
-
-	.a(10px);
-
-	// top: 10px;
-	// bottom: 10px;
-	// left: 10px;
-	// right: 10px;
-
-
-	.x(5px);
-
-	// left: 5px;
-	// right: 5px;
-
-	.r(1%);  // right: 1%;
-	.l(2px); // left: 2px;
-	.t(1vw); // top: 1vw;
-	.b(1em); // bottom: 1em;
-</details>
-
----
-## Prefix
-
-### position
-
-| l	 | r  |	t  | b	| x	 | y
-|:---|:---|:---|:---|:---|:---
-| left | right | top | bottom | left + right | top + bottom
-
-| tl | tr | bl | br
-|:---|:---|:---|:---
-| top + left | top + right | bottom + left | bottom + right
-
-<details>
-	<summary>Example</summary>
-
-	// no prefix
-	.p(10px);  // padding: 10px;
-	.m(auth);  // margin: auto;
-
-	// with prefix
-	.pt(10px); // padding-top: 10px;
-	.pb(10px); // padding-bottom: 10px;
-	.pl(10px); // padding-left: 10px;
-	.pr(10px); // padding-right: 10px;
-
-	.mx(auto); // margin-left: auto; margin-right: auto;
-	.my(auto); // margin-top: auto; margin-bottom: auto;
-
-</details>
-
-<details>
-	<summary>Example</summary>
-
-	.td(none); 	 	 // text-decoration: none;
-	.ta(center); 	 // text-align: center;
-	.tt(lower-case); // text-transform: lower-case;
-</details>
-
----
-### any mixin
-
-| name                    | input  or type                    | output                | grid system
-|:---|:---|:---|:---
-| pxrt                    |                                   | <a href="#pxrt">Pixel ratio</a>| false
-| reset                   |                                   | normalize css         | false
-| box                     | number                            | width + height        | true
-| mbox                    | number                            | max width and height  | true
-| mibox                   | number                            | min width and height  | true
-| triangle-t              | number                            | triangle              | false
-| triangle-b              | number                            | triangle              | false
-| triangle-l              | number                            | triangle              | false
-| triangle-r              | number                            | triangle              | false
-| triangle-rt             | number                            | triangle              | false
-| triangle-rb             | number                            | triangle              | false
-| round                   | number                            | border-radius:50%     | false
-| circle                  | number                            | circle                | false
-| elipse                  | number                            | circle                | false
-
-
-<details id="pxrt">
-	<summary><strong><big>Pixel Ratio Example</big></strong></summary>
-
-	.pxrt(
-		1, { background-image:url('1.webp') },
-		2, { background-image:url('2.webp') },
-		3, { background-image:url('3.webp') }
-	);
-	// 1x upload only 1.webp
-	// retina 2x upload only 2.webp
-	// retina 3x upload only 3.webp
-</details>
-
-<details>
-	<summary>box example</summary>
-
-	.box(10px); // width: 10px; height: 10px;
-</details>
-
-<details>
-	<summary>circle example</summary>
-
-	.circle(10px); //border-radius: 50%; width: 10px; height: 10px;
-</details>
-
-Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
-| mixin | input  |<a href="#position">-position</a>| output | grid | description
-|:---|:---|:---|:---|:---|:---
-| shift	| number | r l t b x y | margin and padding | true | Divides space evenly
-| out 	| number | r l t b x y | margin and padding | true | Creates a tension effect
-
-<details>
-	<summary>Example shift</summary>
-
-	.shift-t(5px); // padding-top: 5px; margin-top: 5px;
-	.shift-b(5px); // padding-bottom: 5px; margin-bottom: 5px;
-</details>
-
-<a href="#standard-grid-system">back to mixin</a> | <a href="#navigation">back to navigation<a>
-
----
-## Functions
-
-### Flexible size functions
-
-|input| params | description
-|:---|:---|:---
-|fw  |mobSize PCSize mobWidthLayout PCWidthLayout                               |from the width
-|fh  |mobSize PCSize mobHeightLayout PCHeightLayout                             |from the height
-|fmin|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the minScreen
-|fmax|mobSize PCSize mobSizeLayout PCSizeLayout                                 |from the maxScreen
-|fd  |mobSize PCSize mobWidthLayout mobHeightLayout PCWidthLayout PCHeightLayout|from the screen
-
-<details>
-	<summary>Example</summary>
-
-	// flexible font
-	.fz(fw(12px, 20px)); // -> font-size: calc(10.4px + 0.5vw);
-</details>
-
-|mobWidthLayout|mobHeightLayout|PCWidthLayout|PCHeightLayout
-|:---|:---|:---|:---
-|320px|240px|1920px|1080px
-
-### Converter functions
-
-|input  | params            | description
-|:---|:---|:---
-|toEm   | px default_em     | convert pixel to em
-|toRem  | px default_rem    | convert pixel to rem
-|toP    | px default_layout | convert pixel to percent
-|toW    | px default_layout | convert pixel to viewport width
-|toH    | px default_layout | convert pixel to viewport height
-|toM    | px default_layout | convert pixel to viewport max size
-|toMi   | px default_layout | convert pixel to viewport min size
-|toPx   | value px          | convert percent to pixel
-
-<details>
-	<summary>
-		example
-	</summary>
-
-	toEm(16); 		   // 1em;
-	toPx(10%,1920px);  // 192px;
-	toP(20px, 1920px); // 1.0416666666666665%;
-
-	.pt(toEm(16)); 	   // padding-top: 1em;
-</details>
-
-### Console functions
-
-| function name | input or type
-|:---|:---
-| console-log   | console.log
-| console-error | console.error "red output"
-| console-dir   | console.dir
-
-<a href="#functions">back to functions</a> | <a href="#navigation">back to navigation<a>
-
----
 ## Recommendation
 
 <details>
@@ -637,9 +1876,10 @@ Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
 	<summary>How not recommended to use</summary>
 
 	.mq(
-		xs, .px(10px, sm, 20px),
-		s,  .my(5px, md, 12px, lg, auto),
-	);
+		{.px(xs, 10px, sm, 20px);},
+		md,
+		{.my(sm, 5px, md, 12px, lg, auto);}
+	)
 </details>
 
 <details>
@@ -678,7 +1918,30 @@ Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
 	);
 </details>
 
-<a href="#example">Back to example</a>
+<details>
+	<summary>Recommendations for use media query</summary>
+	<p>We strongly recommend that your media mixin starts with a parameter and ends with a parameter.</p>
+	<p>This does not mean that you are using it incorrectly. But this is a signal that you are most likely doing something wrong.</p>
+	<p></p>
+	<details>
+		<summary>Example of correct use</summary>
+		<pre>
+			.mq(.p(5px), xs, .p(10px));
+			.m(1rem, xs, 1.5rem);
+		</pre>
+	</details>
+	<details>
+		<summary>An example of a possibly incorrect use</summary>
+		<pre>
+			.mq(xs, .p(10px), sm, .p(5px), md);
+			.m(xs, 1.5rem, sm, 2rem, md);
+		</pre>
+	</details>
+	<hr />
+</details>
+
+<p>Go back to <a href="#recommendation">recommendation</a> | <a href="#navigation">navigation</a></p>
+<p>Go to <a href="#example">example</a></p>
 
 ## Overriding standard variables
 **These settings are optional, but you can change the default mixin behavior.**
@@ -690,7 +1953,6 @@ Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
 	@import './node_modules/less-query/style.less';
 	@import './data.less';
 </details>
-
 <details>
 	<summary><strong>Reassigning Variables <em>(example data.less file)</em></strong></summary>
 	<em>Use parameters in your data.less file</em>
@@ -758,26 +2020,23 @@ Any <a href="#shift-mixin" id="any-shift-mixin">shift mixin</a>
 	@default-padding-top: 	 @default-padding-y;
 	@default-padding-bottom: @default-padding-y;
 </details>
-
-If you need dynamic offset. You can also set them in your <a href="#overriding-standard-variables" id="offsets-a">settings file</a>.
-Variable offsets will be automatically inserted into the <a href="#standard-grid-system">column system</a>.
-
-We strongly recommend using it as an exception.
-
-If you want the same offsets on all sides. Then use
-
-```
- @offset-var: my offset;
-
-```
-If you need different horizontal and vertical offset. Then use these options.
-
-```
-@offset-var-x: my offset x;
-@offset-var-y: my offset y;
-```
-
 <details>
+	<summary><strong>If you need dynamic offset.</strong></summary>
+	<p>
+		You can also set them in your <a href="#overriding-standard-variables" id="offsets-a">settings file</a>.
+		Variable offsets will be automatically inserted into the <a href="#standard-grid-system">column system</a>.
+	</p>
+	<p>We strongly recommend using it as an exception.</p>
+	<p>If you want the same offsets on all sides. Then use</p>
+	<pre>
+		@offset-var: my offset;
+	</pre>
+	<p>If you need different horizontal and vertical offset. Then use these options.</p>
+	<pre>
+		@offset-var-x: my offset x;
+		@offset-var-y: my offset y;
+	</pre>
+	<details>
 	<summary>Example: @offset-var: 1em;</summary>
 
 	:root {
@@ -798,8 +2057,7 @@ If you need different horizontal and vertical offset. Then use these options.
 		--offset-one-side-b: calc(var(--offset-y) / 2);
 	}
 </details>
-
-<details>
+	<details>
 	<summary>Example: @offset-var-x: 1em;</summary>
 
 	:root {
@@ -811,8 +2069,7 @@ If you need different horizontal and vertical offset. Then use these options.
 		--offset-one-side-x: calc(var(--offset-x) / 2);
 	}
 </details>
-
-<details>
+	<details>
 	<summary>Example: @offset-var-x: 1em; @offset-var-y: 2em;</summary>
 
 	:root {
@@ -830,9 +2087,58 @@ If you need different horizontal and vertical offset. Then use these options.
 		--offset-one-side-y: calc(var(--offset-y) / 2);
 	}
 </details>
+</details>
 
-<a href="#navigation">Go to navigation</a>
+Go back to <a href="#overriding-standard-variables">Overriding standard variables</a> | <a href="#navigation">navigation</a>
 
 ---
+
+## F.A.Q.
+
+<details>
+	<summary>Mobile first or desktop first?</summary>
+	<p>this library does not take a mobile-first approach. It also does not use a desktop-centric approach. But there is an opportunity to apply one or another approach in the library. Read the instructions carefully. The library combines both approaches.</p>
+	<h4>Benefits of this approach</h4>
+	<p>Faster rendering speed</p>
+	<p><i>Since you don't need to apply styles and then overwrite them</i></p>
+	<p>Since you don't need to apply styles and then overwrite them</p>
+	<p>You don't have to think about which approach to use.</p>
+	<p><i>since the hybrid approach is backward compatible with any of the approaches</i></p>
+	<br />
+	<h4>Disadvantages of this approach</h4>
+	<p>increases file size almost insignificantly</p>
+	<p><i>due to the use of both the minimum and maximum value</i></p>
+</details>
+
+<details>
+	<summary>Documentation in another language?</summary>
+	<p>There is currently no documentation in other languages.Work in progress. If you would like to help us translate, you can send a pull request to the author.</p>
+</details>
+
+<details>
+	<summary>Your library won't start!</summary>
+	<p>Please check your version node js. - Tested and works correctly since version 14</p>
+	<p>check your transpiler `less` - the library was tested as with a regular transpiler. Same thing via 'webpack' 'gulp'</p>
+	<p>Check if the library is connected correctly</p>
+	<p>You are trying to run the library through the browser? This does not work. You need node js to work</p>
+	<p>I checked everything and tried everything. But still doesn't work - Please write to the author about this problem. Preferably informative with screenshots. So that we can help you</p>
+</details>
+
+<details>
+	<summary>The library is too big - what's the problem?</summary>
+	<p>Don't worry about it - your latest kit will only get what you need.</p>
+</details>
+
+<details>
+	<summary>My bundle is too big.</summary>
+	<p>To reduce the size of the bundle, we recommend using minifiers in conjunction with the library to combine media query.</p>
+</details>
+
+<details>
+	<summary>Do you have any suggestions for the library?</summary>
+	<p>Please write to the author or send a pull request. We will be glad to consider your suggestions.</p>
+</details>
+
+Go back to <a href="#navigation">navigation</a>
 
 ***If you find a bug or have suggestions for improving the system, i will be glad to your feedback.***

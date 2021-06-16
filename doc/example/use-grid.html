@@ -1,0 +1,30 @@
+<details>
+	<summary>Example mixin with grid</summary>
+
+	// input
+	.class{
+		.px(1px, xs, 2px, sm, 3px);
+	}
+
+	// output
+	@media (min-width: 45em) {
+		.class {
+			padding-left: 3px;
+			padding-right: 3px;
+		}
+	}
+
+	@media (max-width: 33.75em) {
+		.class {
+			padding-left: 1px;
+			padding-right: 1px;
+		}
+	}
+
+	@media (min-width: 33.75em) and (max-width: 45em) {
+		.class {
+			padding-left: 2px;
+			padding-right: 2px;
+		}
+	}
+</details>

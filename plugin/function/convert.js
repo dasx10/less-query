@@ -1,6 +1,18 @@
 const isFalsy = (props) => !props || props.value === 0;
 
-const toEme = (props, def, unit) => isFalsy(props) ? '0' : (props.value / def.value) + unit;
+const calcEm = (props, def, unit)=> {
+	const unitProp = def?.unit?.numerator?.[0] || 'px';
+	switch (unitProp) {
+		case 'em':
+		case 'rem':
+			return  (props.value / (16 * def.value)) + unit;
+		case '%':
+			return ((props.value * 100) / (16 * (def.value))) + unit;
+		default: return (props.value / def.value) + unit;
+	}
+}
+
+const toEme = (props, def, unit) => isFalsy(props) ? '0' : calcEm(props, def, unit);
 const DEm = { value: 16 };
 module.exports.toEm  = (props, def = DEm) => toEme(props, def, 'em');
 module.exports.toRem = (props, def = DEm) => toEme(props, def, 'rem');

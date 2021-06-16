@@ -1,0 +1,29 @@
+<details>
+	<summary>Example multi line</summary>
+
+	// input
+	.shift {
+		.mx(1px 2px);
+		.my(10px 5px, sm, 8px);
+	}
+
+	// output
+	.shift {
+		margin-right: 1px;
+		margin-left: 2px;
+	}
+
+	@media (min-width: 45em) {
+		.shift {
+			margin-top: 8px;
+			margin-bottom: 8px;
+		}
+	}
+
+	@media (max-width: 45em) {
+		.shift {
+			margin-top: 10px;
+			margin-bottom: 5px;
+		}
+	}
+</details>

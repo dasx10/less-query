@@ -1,10 +1,16 @@
-@import '../../style.less';
+// @import '../../style.less';
 @import './data.less';
 // .reset();
+@plugin '../../plugin/log';
+@plugin '../../plugin/convert';
 
 // @offset-var-x: 10px;
 // @offset-var-y: 15px;
+:root {
+	font-size: calc(10px + 20 + 10px);
+}
 
-.class{
-	.bd-rs(50%);
+.class {
+	font-size: 18px;
+	width: toEm(32px);
 }

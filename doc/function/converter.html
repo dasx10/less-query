@@ -1,0 +1,67 @@
+<details id="converter-function">
+	<summary>
+		Converter unit function
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>first param *</th>
+				<th>second param</th>
+				<th>description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>toEm</td>
+				<td>number params</td>
+				<td>the default font-size of this block</td>
+				<td>convert pixel to em (If the font-size is already set for the block. The second parameter is optional. Not applicable if the font-size in the block is set in ЕМ) (If you did not specify the parameter and the parameter was not found. The font value for root will be taken)</td>
+			</tr>
+			<tr>
+				<td>toRem</td>
+				<td>number params</td>
+				<td>default :root or html font-size</td>
+				<td>convert pixel to rem (unless you specify 2 parameter. The function will try to find it automatically. if the value cannot be found, the default value is 16px)</td>
+			</tr>
+			<tr>
+				<td>toP</td>
+				<td>px unit</td>
+				<td>default width layout</td>
+				<td>convert pixel to %</td>
+			</tr>
+			<tr>
+				<td>toW</td>
+				<td>px unit</td>
+				<td>default width layout</td>
+				<td>convert pixel to vw</td>
+			</tr>
+			<tr>
+				<td>toH</td>
+				<td>px unit</td>
+				<td>default width layout</td>
+				<td>convert pixel to vh</td>
+			</tr>
+			<tr>
+				<td>toM</td>
+				<td>px unit</td>
+				<td>default width layout</td>
+				<td>convert pixel to vmax</td>
+			</tr>
+			<tr>
+				<td>toMi</td>
+				<td>px unit</td>
+				<td>default width layout</td>
+				<td>convert pixel to vmin</td>
+			</tr>
+			<tr>
+				<td>toPx</td>
+				<td>any number unit</td>
+				<td>default width layout</td>
+				<td>convert unit to px</td>
+			</tr>
+		</tbody>
+	</table>
+	@@include('./example/converter.html')
+	<hr />
+</details>

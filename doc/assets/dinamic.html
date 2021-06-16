@@ -1,0 +1,20 @@
+<details>
+	<summary><strong>If you need dynamic offset.</strong></summary>
+	<p>
+		You can also set them in your <a href="#overriding-standard-variables" id="offsets-a">settings file</a>.
+		Variable offsets will be automatically inserted into the <a href="#standard-grid-system">column system</a>.
+	</p>
+	<p>We strongly recommend using it as an exception.</p>
+	<p>If you want the same offsets on all sides. Then use</p>
+	<pre>
+		@offset-var: my offset;
+	</pre>
+	<p>If you need different horizontal and vertical offset. Then use these options.</p>
+	<pre>
+		@offset-var-x: my offset x;
+		@offset-var-y: my offset y;
+	</pre>
+	@@include('./example/offset-var.html')
+	@@include('./example/offset-x.html')
+	@@include('./example/offset-full.html')
+</details>
