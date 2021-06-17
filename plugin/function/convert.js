@@ -2,6 +2,7 @@ const isFalsy = (props) => !props || props.value === 0;
 
 const calcEm = (props, def, unit)=> {
 	const unitProp = def?.unit?.numerator?.[0] || 'px';
+	console.log(def.value);
 	switch (unitProp) {
 		case 'em':
 		case 'rem':

@@ -1,5 +1,4 @@
 const log = require('./function/log');
-const findRoot = require('./function/findRoot');
 
 module.exports = {
     install: function(less, pluginManager, functions) {
