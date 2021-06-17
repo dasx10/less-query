@@ -60,7 +60,7 @@ getBlockEm = (less, props) => {
 	const data = Object.entries(less.importManager.contents);
 	const content = data.reduce((accumulator, item) => accumulator += item.join(''), '');
 
-	const regExp = new RegExp(`{[^}]+toEm\\(${params}\\)[^}]+}`, 'g');
+	const regExp = new RegExp(`{[^{]+toEm\\(${params}\\)[^}]+}`, 'g');
 	const found = content.match(regExp);
 
 	if (found) {
