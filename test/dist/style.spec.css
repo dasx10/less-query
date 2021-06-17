@@ -2,10 +2,12 @@
   font-size: calc(10px + 20 + 10px);
 }
 
-.adm .bord {
-  font-size: 1rem;
+.adm .class {
+  font-size: 3rem;
+  width: 0.3333333333333333em;
 }
 
-.adm .class {
-  width: 1em;
+.adm .class2 {
+  font-size: 2rem;
+  width: 0.5em;
 }
