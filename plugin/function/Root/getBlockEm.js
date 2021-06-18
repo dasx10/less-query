@@ -1,10 +1,18 @@
 const getRoot = require("./getRoot");
 const getRootValue = require("./getRootValue");
 const testCalc = require("./testCalc");
-
+const foundSize = require('../Em/found');
 const matchFontSize = (text = '') => text.match(/[^\/\/ font\-size]font-size+[^;]+;/gi);
-
 const cacheCount = {};
+
+const findIndex = (content, params) => {
+	const pEm = `toEm\\(${params}\\)`;
+	const regExp = new RegExp(`${pEm}`);
+	const found = content.match(regExp);
+	if (found) return found['index'];
+	return -1;
+}
+
 
 module.exports = (less, props) => {
 	const value = props.value;
@@ -29,35 +37,24 @@ module.exports = (less, props) => {
 		cacheCount[params] = 0;
 	}
 
-	const regExp = new RegExp(`{[^{]+${pEm}[^}]+}`, 'g');
-	const found = content.match(regExp);
+	const found = content.match(new RegExp('{[^{]+' +pEm+ '[^}]+}'));
 
-	if (found) {
-		const elem = found[cacheCount[params]];
+	const index = findIndex(found[0], params);
+	// let root = foundSize(content, index);
+	console.log(index);
 
-		let size = matchFontSize(elem);
-
-		if (size && !/toEm/.test(size)) {
-			let root = size[size.length - 1]
-				.replace('font-size', '')
-				.replace(':', '')
-				.replace(';', '')
-				.trim();
-
-			if (/[\(]/.test(root)) {
-				root = testCalc(root) || getRoot(less);
-			}
-
-			const value = root.replace(/[^0-9.]/g, '').trim();
-			const unit = root.replace(/[0-9.]/g, '').trim();
-			return {
-				value: +value,
-				unit: {
-					numerator: [unit]
-				},
-			};
-		}
-	}
+	// if (found) {
+	// 	let root = foundSize(found);
+	// 	root = testCalc(root) || getRoot(less);
+	// 	const value = root.replace(/[^0-9.]/g, '').trim();
+	// 	const unit = root.replace(/[0-9.]/g, '').trim();
+	// 	return {
+	// 		value: +value,
+	// 		unit: {
+	// 			numerator: [unit]
+	// 		},
+	// 	};
+	// }
 
 	return getRootValue(less);
 }

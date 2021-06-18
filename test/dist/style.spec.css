@@ -2,12 +2,22 @@
   font-size: calc(10px + 20 + 10px);
 }
 
+.adm {
+  font-size: 16rem;
+}
+
 .adm .class {
   font-size: 3rem;
-  width: 0.3333333333333333em;
+  width: 0.4em;
+  display: block;
 }
 
 .adm .class2 {
   font-size: 2rem;
-  width: 0.5em;
+  width: 0.9em;
+  display: flex;
+}
+
+.adm .class2 .cl {
+  display: grid;
 }
