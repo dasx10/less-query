@@ -637,6 +637,42 @@ set the entry point to your file
 				<td>true</td>
 				<td>true</td>
 			</tr>
+			<tr>
+				<td>.margin-inline</td>
+				<td>.m-il</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.margin-inline-start</td>
+				<td>.m-ils</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.margin-inline-end</td>
+				<td>.m-ile</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.margin-block</td>
+				<td>.m-bl</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.margin-block-start</td>
+				<td>.m-bls</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.margin-block-end</td>
+				<td>.m-ble</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
 		</tbody>
 	</table>
 	<details>
@@ -734,6 +770,42 @@ set the entry point to your file
 				<td>.pxb</td>
 				<td>true</td>
 				<td>true</td>
+			</tr>
+			<tr>
+				<td>.padding-inline</td>
+				<td>.p-il</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.padding-inline-start</td>
+				<td>.p-ils</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.padding-inline-end</td>
+				<td>.p-ile</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.padding-block</td>
+				<td>.p-bl</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.padding-block-start</td>
+				<td>.p-bls</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.padding-block-end</td>
+				<td>.p-ble</td>
+				<td>true</td>
+				<td>false</td>
 			</tr>
 		</tbody>
 	</table>
@@ -837,6 +909,90 @@ set the entry point to your file
 	</table>
 </details>
 
+<details id="inline-size-mixin">
+	<summary>
+		Inline-size mixins
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.inline-size</td>
+				<td>.il-sz</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.min-inline-size</td>
+				<td>.miil-sz</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.max-inline-size</td>
+				<td>.mil-sz</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.minmax-inline-size</td>
+				<td>.mmil-sz</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="block-size-mixin">
+	<summary>
+		Block-size mixins
+	</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.block-size</td>
+				<td>.bl-sz</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.min-block-size</td>
+				<td>.mibl-sz</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.max-block-size</td>
+				<td>.mbl-sz</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.minmax-block-size</td>
+				<td>.mmbl-sz</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
 <details id="position-mixin">
 	<summary>
 		Position mixins
@@ -900,6 +1056,51 @@ set the entry point to your file
 				<td>true</td>
 				<td>true</td>
 				<td>right + left</td>
+			</tr>
+			<tr>
+				<td>.inset</td>
+				<td>.is</td>
+				<td>true</td>
+				<td>false</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>.inset-block</td>
+				<td>.isbl</td>
+				<td>true</td>
+				<td>false</td>
+				<td></td>
+			</tr>			<tr>
+				<td>.inset-block-start</td>
+				<td>.isbls</td>
+				<td>true</td>
+				<td>false</td>
+				<td></td>
+			</tr>			<tr>
+				<td>.inset-block-end</td>
+				<td>.isble</td>
+				<td>true</td>
+				<td>false</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>.inset-inline</td>
+				<td>.isil</td>
+				<td>true</td>
+				<td>false</td>
+				<td></td>
+			</tr>			<tr>
+				<td>.inset-inline-start</td>
+				<td>.isils</td>
+				<td>true</td>
+				<td>false</td>
+				<td></td>
+			</tr>			<tr>
+				<td>.inset-inline-end</td>
+				<td>.isile</td>
+				<td>true</td>
+				<td>false</td>
+				<td></td>
 			</tr>
 		</tbody>
 	</table>
@@ -1232,7 +1433,7 @@ Go back to <a href="#mixins">mixins</a> | <a href="#navigation">navigation</a>
 	<summary title="height + width">
 		Size mixins
 	</summary>
-	<p>Height + width</p>
+	<p>block-size + inline-size</p>
 	<table>
 		<thead>
 			<tr>
@@ -1264,6 +1465,49 @@ Go back to <a href="#mixins">mixins</a> | <a href="#navigation">navigation</a>
 			<tr>
 				<td>.minmax-size</td>
 				<td>.mmsz</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="box-mixin">
+	<summary title="height + width">
+		Size (width + height) mixins
+	</summary>
+	<p>Height + width</p>
+	<table>
+		<thead>
+			<tr>
+				<th>mixin</th>
+				<th>short</th>
+				<th>grid system</th>
+				<th>multi line</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>.box</td>
+				<td>.bx</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.min-box</td>
+				<td>.mibx</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.max-box</td>
+				<td>.mbx</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+			<tr>
+				<td>.minmax-box</td>
+				<td>.mmbx</td>
 				<td>true</td>
 				<td>true</td>
 			</tr>

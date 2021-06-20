@@ -30,6 +30,8 @@
 @@include('./base/padding.html')
 @@include('./base/width.html')
 @@include('./base/height.html')
+@@include('./base/inline-size.html')
+@@include('./base/block-size.html')
 @@include('./base/position.html')
 @@include('./base/text.html')
 @@include('./base/font.html')
@@ -43,6 +45,7 @@ Go back to <a href="#mixins">mixins</a> | <a href="#navigation">navigation</a>
 ## Experimental mixins
 
 @@include('./test/size.html')
+@@include('./test/box.html')
 @@include('./test/even.html')
 @@include('./test/triangle.html')
 @@include('./test/shift.html')

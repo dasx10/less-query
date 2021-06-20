@@ -9,12 +9,22 @@
 @import './height/_min.less';
 @import './height/_minmax.less';
 
-.fullscreen(@width:100,@height:@width){
-    width:~"@{width}vw";
-    height:~"@{width}vh";
-}
+@import './box/_all.less';
+@import './box/_max.less';
+@import './box/_min.less';
+@import './box/_minmax.less';
 
-.full(@width: 100, @height: @width){
-    width:~"@{width}%";
-    height:~"@{width}%";
-}
+@import './block-size/_all.less';
+@import './block-size/_max.less';
+@import './block-size/_min.less';
+@import './block-size/_minmax.less';
+
+@import './inline-size/_all.less';
+@import './inline-size/_max.less';
+@import './inline-size/_min.less';
+@import './inline-size/_minmax.less';
+
+@import './size/_all.less';
+@import './size/_max.less';
+@import './size/_min.less';
+@import './size/_minmax.less';
