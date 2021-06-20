@@ -1,13 +1,14 @@
 const isFalsy = (props) => !props || props.value === 0;
 
 const calcEm = (props, def, unit)=> {
-	const unitProp = def?.unit?.numerator?.[0] || 'px';
+	const unitProp = props?.unit?.numerator?.[0] || 'px';
 	switch (unitProp) {
 		case 'em':
+			return  props.value + unit;
 		case 'rem':
-			return  (props.value / (16 * def.value)) + unit;
+			return ((parseFloat(globalThis.rootParam) / def.value) * props.value) + unit;
 		case '%':
-			return ((props.value * 100) / (16 * (def.value))) + unit;
+			return (((def.value) * props.value) / (def.value * parseFloat(globalThis.rootParam))) + unit;
 		default: return (props.value / def.value) + unit;
 	}
 }
@@ -28,7 +29,6 @@ module.exports.toMi = (props, def = DFull) => toFull(props, def, 'vmin');
 module.exports.toPx = function(props, def = {}) {
     if(isFalsy(props)) return '0';
     let numerator = props.unit.numerator && props.unit.numerator[0];
-    console.log(numerator === '%')
     switch(numerator){
         case '%':
         case 'vh':

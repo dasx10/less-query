@@ -24,4 +24,6 @@ module.exports = (root) => {
 			return eval(calcMatch) + calcParam[0].replace(/[0-9.]/g, '');
 		}
 	}
+
+	return root;
 };

@@ -1,23 +1,9 @@
 :root {
-  font-size: calc(10px + 20 + 10px);
-}
-
-.adm {
-  font-size: 16rem;
-}
-
-.adm .class {
-  font-size: 3rem;
-  width: 0.4em;
-  display: block;
+  font-size: 10px;
 }
 
 .adm .class2 {
-  font-size: 2rem;
-  width: 0.9em;
+  font-size: 10px;
+  width: 2em;
   display: flex;
-}
-
-.adm .class2 .cl {
-  display: grid;
 }
