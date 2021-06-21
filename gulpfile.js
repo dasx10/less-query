@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const less = require('gulp-less');
 const gcmq = require('gulp-group-css-media-queries');
-const cleanCSS = require('gulp-clean-css');
 const fileinclude = require('gulp-file-include');
 
 function css(){

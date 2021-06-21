@@ -15,6 +15,23 @@
 		</li>
 		<li>
 			<a href="#mixins">Mixins</a>
+			<ul>
+				<li>
+					<a href="#core">Core</a>
+				</li>
+				<li>
+					<a href="#display">Display</a>
+				</li>
+				<li>
+					<a href="#block-model">Block model</a>
+				</li>
+				<li>
+					<a href="#typography">Typography</a>
+				</li>
+				<li>
+					<a href="#other">Other</a>
+				</li>
+			</ul>
 		</li>
 		<li>
 			<a href="#experimental-mixins">Experimental mixins</a>
@@ -150,12 +167,63 @@ set the entry point to your file
 	</table>
 </details>
 
+<details id="example-grid-system-mixin">
+	<summary>Example grid system mixin</summary>
+
+	// input
+	.grid{
+		.row;
+		&__col{
+			.col(12, sm, 6, md, 4, lg, 3);
+		}
+	}
+
+	// output
+	.grid {
+		margin-left: -15px;
+		margin-right: -15px;
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	.grid__col {
+		word-wrap: break-word;
+		box-sizing: border-box;
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+
+	@media (max-width: 720px) {
+		.grid__col {
+			width: calc(100% - 30px);
+		}
+	}
+
+	@media (min-width: 720px) and (max-width: 960px) {
+		.grid__col {
+			width: calc(50% - 30px);
+		}
+	}
+
+	@media (min-width: 960px) and (max-width: 1140px) {
+		.grid__col {
+			width: calc(33.333333333333336% - 30px);
+		}
+	}
+
+	@media (min-width: 1140px) {
+		.grid__col {
+			width: calc(25% - 30px);
+		}
+	}
+</details>
 
 <p>Go back to <a href="#navigation">navigation</a></p>
 <p>Go to <a href="#overriding-standard-variables">overriding this variables</a></p>
 
 ## Mixins
 
+### Core
 <details id="grid-system-mixin">
 	<summary>
 		Break point mixins
@@ -276,7 +344,7 @@ set the entry point to your file
 		}
 	}
 </details>
-<details id="grid-s-mix">
+	<details id="grid-s-mix">
 	<summary>Example .mq</summary>
 
 	.mq(xs, { .p(1px); color:red }, 1200px, .m(2px));
@@ -301,93 +369,112 @@ set the entry point to your file
 </details>
 
 
+### Display
 <details id="grid-mixin">
 	<summary>
 		Grid mixins
 	</summary>
 	<table>
 		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-			</tr>
-		</thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
 		<tbody>
 			<tr>
 				<td>.grid-area</td>
 				<td>.ga</td>
 				<td>true</td>
+				<td>false</td>
 			</tr>
 			<tr>
 				<td>.grid-auto-column</td>
 				<td>.gac</td>
 				<td>true</td>
+				<td>false</td>
 			</tr>
 			<tr>
 				<td>.grid-auto-row</td>
 				<td>.gar</td>
 				<td>true</td>
+				<td>false</td>
 			</tr>
 			<tr>
 				<td>.grid-template</td>
 				<td>.gt</td>
 				<td>true</td>
+				<td>false</td>
 			</tr>
 			<tr>
 				<td>.grid-template-column</td>
 				<td>.gtc</td>
 				<td>true</td>
+				<td>false</td>
 			</tr>
 			<tr>
 				<td>.grid-template-row</td>
 				<td>.gtr</td>
 				<td>true</td>
+				<td>false</td>
 			</tr>
 			<tr>
 				<td>.grid-column</td>
 				<td>.gc</td>
 				<td>true</td>
+				<td>false</td>
 			</tr>
 			<tr>
 				<td>.grid-column-gap</td>
 				<td>.gcg</td>
 				<td>true</td>
+				<td>false</td>
 			</tr>
 			<tr>
 				<td>.grid-column-start</td>
 				<td>.gcs</td>
 				<td>true</td>
+				<td>false</td>
 			</tr>
 			<tr>
 				<td>.grid-column-end</td>
 				<td>.gce</td>
 				<td>true</td>
+				<td>false</td>
 			</tr>
 			<tr>
 				<td>.grid-row</td>
 				<td>.gr</td>
 				<td>true</td>
+				<td>false</td>
 			</tr>
 			<tr>
 				<td>.grid-row-gap</td>
 				<td>.grg</td>
 				<td>true</td>
+				<td>false</td>
 			</tr>
 			<tr>
 				<td>.grid-row-start</td>
 				<td>.grs</td>
 				<td>true</td>
+				<td>false</td>
 			</tr>
 			<tr>
 				<td>.grid-row-end</td>
 				<td>.gre</td>
 				<td>true</td>
+				<td>false</td>
 			</tr>
 			<tr>
 				<td>.grid-gap</td>
 				<td>.gg</td>
 				<td>true</td>
+				<td>false</td>
 			</tr>
 		</tbody>
 	</table>
@@ -399,13 +486,15 @@ set the entry point to your file
 	</summary>
 	<table>
 		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-			</tr>
-		</thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
 		<tbody>
 			<tr>
 				<td>.flex</td>
@@ -460,13 +549,15 @@ set the entry point to your file
 	</summary>
 	<table>
 		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-			</tr>
-		</thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
 		<tbody>
 			<tr>
 				<td>.align-content</td>
@@ -496,13 +587,15 @@ set the entry point to your file
 	</summary>
 	<table>
 		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-			</tr>
-		</thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
 		<tbody>
 			<tr>
 				<td>.justify-content</td>
@@ -527,31 +620,90 @@ set the entry point to your file
 </details>
 
 
-<details id="box-mixin">
+### Block model
+<details id="height-mixin">
 	<summary>
-		Box mixins
+		Height mixins
 	</summary>
 	<table>
 		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-			</tr>
-		</thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
 		<tbody>
 			<tr>
-				<td>.box-shadow</td>
-				<td>.bsh</td>
+				<td>.height</td>
+				<td>.h</td>
 				<td>true</td>
 				<td>false</td>
 			</tr>
 			<tr>
-				<td>.box-sizing</td>
-				<td>.bz</td>
+				<td>.min-height</td>
+				<td>.mih</td>
 				<td>true</td>
 				<td>false</td>
+			</tr>
+			<tr>
+				<td>.max-height</td>
+				<td>.mh</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.minmax-height</td>
+				<td>.mmh</td>
+				<td>true</td>
+				<td>true</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+<details id="width-mixin">
+	<summary>
+		Width mixins
+	</summary>
+	<table>
+		<thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
+		<tbody>
+			<tr>
+				<td>.width</td>
+				<td>.w</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.min-width</td>
+				<td>.miw</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.max-width</td>
+				<td>.mw</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.minmax-width</td>
+				<td>.mmw</td>
+				<td>true</td>
+				<td>true</td>
 			</tr>
 		</tbody>
 	</table>
@@ -563,13 +715,15 @@ set the entry point to your file
 	</summary>
 	<table>
 		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-			</tr>
-		</thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
 		<tbody>
 			<tr>
 				<td>.margin</td>
@@ -697,13 +851,15 @@ set the entry point to your file
 	</summary>
 	<table>
 		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-			</tr>
-		</thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
 		<tbody>
 			<tr>
 				<td>.padding</td>
@@ -825,85 +981,45 @@ set the entry point to your file
 
 </details>
 
-<details id="width-mixin">
+<details id="border-mixin">
 	<summary>
-		Width mixins
+		Border mixin
 	</summary>
 	<table>
 		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-			</tr>
-		</thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
 		<tbody>
 			<tr>
-				<td>.width</td>
-				<td>.w</td>
+				<td>.border</td>
+				<td>.bd</td>
 				<td>true</td>
 				<td>false</td>
 			</tr>
 			<tr>
-				<td>.min-width</td>
-				<td>.miw</td>
+				<td>.border-style</td>
+				<td>.bds</td>
 				<td>true</td>
 				<td>false</td>
 			</tr>
 			<tr>
-				<td>.max-width</td>
-				<td>.mw</td>
+				<td>.border-color</td>
+				<td>.bdc</td>
 				<td>true</td>
 				<td>false</td>
 			</tr>
 			<tr>
-				<td>.minmax-width</td>
-				<td>.mmw</td>
-				<td>true</td>
-				<td>true</td>
-			</tr>
-		</tbody>
-	</table>
-</details>
-
-<details id="height-mixin">
-	<summary>
-		Height mixins
-	</summary>
-	<table>
-		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>.height</td>
-				<td>.h</td>
+				<td>.border-radius</td>
+				<td>.bd-rs</td>
 				<td>true</td>
 				<td>false</td>
-			</tr>
-			<tr>
-				<td>.min-height</td>
-				<td>.mih</td>
-				<td>true</td>
-				<td>false</td>
-			</tr>
-			<tr>
-				<td>.max-height</td>
-				<td>.mh</td>
-				<td>true</td>
-				<td>false</td>
-			</tr>
-			<tr>
-				<td>.minmax-height</td>
-				<td>.mmh</td>
-				<td>true</td>
-				<td>true</td>
 			</tr>
 		</tbody>
 	</table>
@@ -915,13 +1031,15 @@ set the entry point to your file
 	</summary>
 	<table>
 		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-			</tr>
-		</thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
 		<tbody>
 			<tr>
 				<td>.inline-size</td>
@@ -957,13 +1075,15 @@ set the entry point to your file
 	</summary>
 	<table>
 		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-			</tr>
-		</thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
 		<tbody>
 			<tr>
 				<td>.block-size</td>
@@ -999,14 +1119,15 @@ set the entry point to your file
 	</summary>
 	<table>
 		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-				<th>description</th>
-			</tr>
-		</thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
 		<tbody>
 			<tr>
 				<td>.a</td>
@@ -1106,19 +1227,55 @@ set the entry point to your file
 	</table>
 </details>
 
+<details id="box-mixin">
+	<summary>
+		Box mixins
+	</summary>
+	<table>
+		<thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
+		<tbody>
+			<tr>
+				<td>.box-shadow</td>
+				<td>.bsh</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>.box-sizing</td>
+				<td>.bz</td>
+				<td>true</td>
+				<td>false</td>
+			</tr>
+		</tbody>
+	</table>
+</details>
+
+
+### Typography
 <details id="text-mixin">
 	<summary>
 		Text mixins
 	</summary>
 	<table>
 		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-			</tr>
-		</thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
 		<tbody>
 			<tr>
 				<td>.text-align</td>
@@ -1166,13 +1323,15 @@ set the entry point to your file
 	</summary>
 	<table>
 		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-			</tr>
-		</thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
 		<tbody>
 			<tr>
 				<td>.font</td>
@@ -1214,13 +1373,15 @@ set the entry point to your file
 	</summary>
 	<table>
 		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-			</tr>
-		</thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
 		<tbody>
 			<tr>
 				<td>.word-break</td>
@@ -1244,19 +1405,23 @@ set the entry point to your file
 	</table>
 </details>
 
+
+### Other
 <details id="background-mixin">
 	<summary>
 		Background mixin
 	</summary>
 	<table>
 		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-			</tr>
-		</thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
 		<tbody>
 			<tr>
 				<td>.background</td>
@@ -1316,61 +1481,21 @@ set the entry point to your file
 	</table>
 </details>
 
-<details id="border-mixin">
-	<summary>
-		Border mixin
-	</summary>
-	<table>
-		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>.border</td>
-				<td>.bd</td>
-				<td>true</td>
-				<td>false</td>
-			</tr>
-			<tr>
-				<td>.border-style</td>
-				<td>.bds</td>
-				<td>true</td>
-				<td>false</td>
-			</tr>
-			<tr>
-				<td>.border-color</td>
-				<td>.bdc</td>
-				<td>true</td>
-				<td>false</td>
-			</tr>
-			<tr>
-				<td>.border-radius</td>
-				<td>.bd-rs</td>
-				<td>true</td>
-				<td>false</td>
-			</tr>
-		</tbody>
-	</table>
-</details>
-
 <details id="any-mixin">
 	<summary>
 		Any mixin
 	</summary>
 	<table>
 		<thead>
-			<tr>
-				<th>mixin</th>
-				<th>short</th>
-				<th>grid system</th>
-				<th>multi line</th>
-			</tr>
-		</thead>
+	<tr>
+		<th>mixin</th>
+		<th>short</th>
+		<th>
+	<a href="#standard-grid-system">grid system</a>
+</th>
+		<th>multi line</th>
+	</tr>
+</thead>
 		<tbody>
 			<tr>
 				<td>.line-height</td>
