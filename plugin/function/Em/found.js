@@ -1,6 +1,6 @@
 const foundEnd = require('./end');
 const foundStart = require('./start');
-const findRoot = require('../root/findRoot');
+const findRoot = require('../Root/findRoot');
 
 const transform = (text = '') => text
 .replace('font-size', '')
