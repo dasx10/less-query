@@ -1,10 +1,11 @@
 :root {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .adm {
-  min-block-size: 5px;
-  min-inline-size: 5px;
-  max-block-size: 5px;
-  max-inline-size: 5px;
+  min-block-size: 0.35714285714285715rem;
+  min-inline-size: 0.35714285714285715rem;
+  max-block-size: 0.35714285714285715rem;
+  max-inline-size: 0.35714285714285715rem;
+  font-size: 0.35714285714285715rem;
 }
