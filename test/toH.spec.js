@@ -1,12 +1,12 @@
 const {toH} = require('../plugin/function/convert');
 
 test('return vh', () => {
-    expect(toH({value:192})).toBe("10vh");
-    expect(toH({value:1920})).toBe("100vh");
-    expect(toH({value:1920 * 2})).toBe("200vh");
-    expect(toH({value:1920 / 2})).toBe("50vh");
-    expect(toH({value:1920 / 4})).toBe("25vh");
-    expect(toH({value:1920 / 8})).toBe("12.5vh");
+    expect(toH({value:108})).toBe("10vh");
+    expect(toH({value:1080})).toBe("100vh");
+    expect(toH({value:1080 * 2})).toBe("200vh");
+    expect(toH({value:1080 / 2})).toBe("50vh");
+    expect(toH({value:1080 / 4})).toBe("25vh");
+    expect(toH({value:1080 / 8})).toBe("12.5vh");
 });
 
 test('return vh set default params to equal params', () => {

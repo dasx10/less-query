@@ -14,7 +14,8 @@ const calcEm = (props, def, unit)=> {
 }
 
 const filterType = (props, cb) => {
-	if (typeof props.value !== 'number') return props;
+	if (!props) return '0';
+	if (typeof props?.value !== 'number') return props;
 	return cb(props);
 }
 
