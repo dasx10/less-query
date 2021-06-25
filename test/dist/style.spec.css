@@ -2,12 +2,6 @@
   font-size: 14px;
 }
 
-.adm {
-  min-block-size: 0.35714285714285715rem;
-  min-inline-size: 0.35714285714285715rem;
-  max-block-size: 0.35714285714285715rem;
-  max-inline-size: 0.35714285714285715rem;
-  font-size: 0.35714285714285715rem;
-  margin-inline: 4px 4px;
-  width: 7.142857142857143rem;
+.test {
+  margin: 0.07142857142857142rem 0.14285714285714285rem;
 }
